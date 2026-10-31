@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>TempBleu.com — E-mail temporaire gratuit | بريد مؤقت مجاني</title>
-<meta name="description" content="Recevez un e-mail temporaire gratuit en une seconde. Codes de vérification instantanés, zéro spam, sans inscription.">
+<title>TempBleu.com — Free Temporary E-mail | Disposable Temp Mail</title>
+<meta name="description" content="Get a free temporary e-mail address in one second. Instant verification codes, zero spam, no sign-up.">
 <style>
+
   *{margin:0;padding:0;box-sizing:border-box}
   html{scroll-behavior:smooth}
   body{font-family:'Segoe UI',system-ui,Arial,sans-serif;background:#eef1fb;color:#1c2340;line-height:1.6;overflow-x:hidden}
@@ -136,9 +137,400 @@
     .foot-cols{grid-template-columns:1fr}
     .hero{padding-top:84px}
   }
+
+/* ===== single-file router ===== */
+.tb-page{display:none}
+.tb-page.on{display:block}
+section.tb-page{margin:0}
+/* ===== tempbleu-blog.html (scoped) ===== */
+#page-blog, #page-blog *{margin:0;padding:0;box-sizing:border-box}
+#page-blog{font-family:'Segoe UI',system-ui,Arial,sans-serif;background:#eef1fb;color:#1c2340;line-height:1.65}
+#page-blog header{position:absolute;top:0;left:0;right:0;z-index:20;padding:14px 18px;display:flex;justify-content:space-between;align-items:center}
+#page-blog .logo{font-size:25px;font-weight:800;color:#fff;text-decoration:none;text-shadow:0 2px 10px rgba(0,0,0,.25)}
+#page-blog .logo span{color:#4ADE80}
+#page-blog .langs button{background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.45);color:#fff;border-radius:20px;padding:4px 13px;margin-inline-start:6px;cursor:pointer;font-weight:700}
+#page-blog .langs button.on{background:#fff;color:#3F51B5}
+#page-blog .hero{background:linear-gradient(140deg,#3F51B5 0%,#5b3fb8 55%,#8e2fb8 130%);padding:92px 14px 64px;text-align:center;position:relative;overflow:hidden}
+#page-blog .hero .mail{position:absolute;font-size:28px;opacity:.18;animation:float_page-blog 9s ease-in-out infinite}
+@keyframes float_page-blog{0%,100%{transform:translateY(0) rotate(-8deg)}50%{transform:translateY(-22px) rotate(8deg)}}
+#page-blog .hero h1{color:#fff;font-size:32px;text-shadow:0 3px 14px rgba(0,0,0,.25);position:relative}
+#page-blog .hero p{color:#dfe5ff;margin:8px auto 20px;max-width:620px;position:relative}
+#page-blog .search{max-width:520px;margin:0 auto;position:relative}
+#page-blog .search input{width:100%;padding:14px 20px;border:none;border-radius:40px;font-size:16px;box-shadow:0 14px 34px rgba(15,20,60,.3);outline:none}
+#page-blog main{max-width:960px;margin:0 auto;padding:26px 14px 10px}
+#page-blog .chips{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-bottom:20px}
+#page-blog .chip{background:#fff;border:1.5px solid #c9d2f0;color:#26307a;border-radius:30px;padding:7px 18px;font-weight:800;cursor:pointer;font-size:14.5px}
+#page-blog .chip.on{background:#3F51B5;color:#fff;border-color:#3F51B5}
+#page-blog .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+#page-blog .post{background:#fff;border-radius:18px;overflow:hidden;box-shadow:0 10px 26px rgba(38,48,122,.11);cursor:pointer;transition:transform .18s,box-shadow .18s;display:flex;flex-direction:column}
+#page-blog .post:hover{transform:translateY(-4px);box-shadow:0 18px 38px rgba(38,48,122,.18)}
+#page-blog .cover{height:120px;display:flex;align-items:center;justify-content:center;font-size:52px;position:relative}
+#page-blog .g1{background:linear-gradient(135deg,#3F51B5,#7b5cff)}
+#page-blog .g2{background:linear-gradient(135deg,#00897b,#4db6ac)}
+#page-blog .g3{background:linear-gradient(135deg,#fb8c00,#ffb74d)}
+#page-blog .g4{background:linear-gradient(135deg,#8e24aa,#ba68c8)}
+#page-blog .g5{background:linear-gradient(135deg,#3949ab,#5c6bc0)}
+#page-blog .g6{background:linear-gradient(135deg,#e53935,#ef5350)}
+#page-blog .cat{position:absolute;top:10px;inset-inline-start:10px;background:rgba(255,255,255,.92);color:#26307a;font-size:12px;font-weight:800;border-radius:20px;padding:3px 11px}
+#page-blog .feat-tag{position:absolute;top:10px;inset-inline-end:10px;background:#FFD54F;color:#5d4200;font-size:12px;font-weight:900;border-radius:20px;padding:3px 11px}
+#page-blog .pbody{padding:15px 17px 17px;display:flex;flex-direction:column;flex:1}
+#page-blog .pbody h3{color:#26307a;font-size:17px;line-height:1.45;margin-bottom:6px}
+#page-blog .pbody p{color:#5a6482;font-size:14px;flex:1}
+#page-blog .meta{display:flex;justify-content:space-between;color:#8a93b2;font-size:12.5px;margin-top:12px}
+#page-blog .meta .read{color:#3F51B5;font-weight:800}
+#page-blog .featured{grid-column:1/-1;flex-direction:row}
+#page-blog .featured .cover{height:auto;min-height:190px;flex:0 0 38%;font-size:74px}
+#page-blog .featured .pbody h3{font-size:22px}
+#page-blog .featured .pbody p{font-size:15px}
+#page-blog .empty{text-align:center;color:#8a93b2;padding:36px 10px;font-size:16px}
+#page-blog /* ===== Article reader ===== */
+  #reader{display:none;background:#fff;border-radius:20px;box-shadow:0 10px 30px rgba(38,48,122,.12);padding:26px 24px 30px}
+#page-blog #reader .rcover{height:150px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:64px;margin-bottom:18px}
+#page-blog #reader h1{color:#26307a;font-size:26px;line-height:1.4;margin-bottom:6px}
+#page-blog #reader .rmeta{color:#8a93b2;font-size:13.5px;border-bottom:1px solid #e2e7f5;padding-bottom:12px;margin-bottom:16px}
+#page-blog #reader .note{background:#fff8e1;border:1px solid #ffb300;color:#6d5600;border-radius:12px;padding:9px 14px;font-size:13.5px;margin-bottom:16px}
+#page-blog #reader .content p{margin-bottom:13px;color:#39415f}
+#page-blog #reader .content h3{color:#26307a;margin:18px 0 8px;font-size:18.5px}
+#page-blog #reader .content ul{padding-inline-start:22px;color:#39415f;margin-bottom:13px}
+#page-blog #reader .content li{margin-bottom:5px}
+#page-blog .btn{border:none;border-radius:12px;padding:11px 18px;font-size:15px;font-weight:800;cursor:pointer;background:#eef1fa;color:#26307a}
+#page-blog .btn:hover{background:#dde4f7}
+#page-blog .cta{background:linear-gradient(135deg,#3F51B5,#8e2fb8);border-radius:18px;padding:22px;text-align:center;color:#fff;margin:24px 0 6px}
+#page-blog .cta b{font-size:19px}
+#page-blog .cta a{display:inline-block;margin-top:12px;background:#fff;color:#3F51B5;font-weight:900;text-decoration:none;border-radius:30px;padding:11px 26px}
+#page-blog footer{background:#171d3d;color:#aab3d6;margin-top:36px;padding:30px 18px 24px;text-align:center;font-size:13.5px}
+#page-blog .foot-logo{font-size:22px;font-weight:800;color:#fff}
+#page-blog .foot-logo span{color:#4ADE80}
+#page-blog footer a{color:#8fa2ff}
+@media(max-width:760px){#page-blog .grid{grid-template-columns:1fr}
+#page-blog .featured{flex-direction:column}
+#page-blog .featured .cover{min-height:130px}
+#page-blog .hero h1{font-size:26px}}
+/* ===== tempbleu-change.html (scoped) ===== */
+#page-change, #page-change *{margin:0;padding:0;box-sizing:border-box}
+#page-change{scroll-behavior:smooth}
+#page-change{font-family:'Segoe UI',system-ui,Arial,sans-serif;background:#eef1fb;color:#1c2340;line-height:1.6;overflow-x:hidden}
+#page-change .container{max-width:1180px;margin:0 auto;padding:0 14px}
+#page-change .grad{background:linear-gradient(140deg,#3F51B5 0%,#5b3fb8 55%,#8e2fb8 130%)}
+#page-change /* ===== Bandeau supérieur ===== */
+  .topbanner{color:#fff;font-size:14px;text-align:center;padding:9px 42px 9px 14px;position:relative;font-weight:600}
+#page-change .topbanner a{color:#4ADE80;font-weight:800;text-decoration:none}
+#page-change .topbanner .x{position:absolute;inset-inline-end:10px;top:50%;transform:translateY(-50%);background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.4);color:#fff;border-radius:50%;width:24px;height:24px;font-size:15px;cursor:pointer;line-height:1}
+#page-change /* ===== Header blanc, #page-change 3 colonnes ===== */
+  .main-header{background:#fff;box-shadow:0 4px 18px rgba(26,35,126,.10);padding:12px 0;position:relative;z-index:5}
+#page-change .main-header .container{display:flex;align-items:center;justify-content:space-between;gap:10px}
+#page-change .btn-appstore{display:flex;gap:8px;flex:1}
+#page-change .tm-btn{display:inline-flex;align-items:center;gap:7px;border:2px solid #3F51B5;color:#3F51B5;background:#fff;border-radius:12px;padding:8px 15px;font-weight:800;font-size:14px;text-decoration:none;cursor:pointer;transition:all .15s}
+#page-change .tm-btn:hover{background:#3F51B5;color:#fff;transform:translateY(-1px)}
+#page-change .brand{flex:1;text-align:center}
+#page-change .brand a{font-size:30px;font-weight:900;text-decoration:none;letter-spacing:-.5px;background:linear-gradient(120deg,#3F51B5,#8e2fb8);-webkit-background-clip:text;background-clip:text;color:transparent}
+#page-change .brand a span{color:#4CAF50;-webkit-text-fill-color:#4CAF50}
+#page-change .head-right{flex:1;display:flex;align-items:center;justify-content:flex-end;gap:10px}
+#page-change .head-right .seo-link{color:#3F51B5;font-weight:800;text-decoration:none;font-size:14.5px}
+#page-change .langs{display:flex;gap:5px}
+#page-change .langs button{background:#eef1fa;border:1.5px solid #c9d2f0;color:#26307a;border-radius:18px;padding:4px 12px;cursor:pointer;font-weight:800;font-size:13px}
+#page-change .langs button.on{background:linear-gradient(135deg,#3F51B5,#5b3fb8);color:#fff;border-color:transparent}
+#page-change /* ===== Zone adresse sur fond dégradé ===== */
+  .section-top{position:relative;padding:34px 0 74px;overflow:hidden}
+#page-change .section-top .mail{position:absolute;font-size:30px;opacity:.20;animation:float_page-change 9s ease-in-out infinite;pointer-events:none}
+@keyframes float_page-change{0%,100%{transform:translateY(0) rotate(-8deg)}50%{transform:translateY(-24px) rotate(8deg)}}
+#page-change .top-grid{position:relative;display:grid;grid-template-columns:1fr minmax(0,660px) 1fr;gap:16px;align-items:start}
+#page-change .ads-box{display:none;border:2px dashed rgba(255,255,255,.55);border-radius:14px;background:rgba(255,255,255,.10);color:#dfe5ff;align-items:center;justify-content:center;text-align:center;font-size:13px;padding:10px;backdrop-filter:blur(3px)}
+#page-change .ad-336{height:280px}
+#page-change .ad-300x600{height:600px;border-color:#c9d2f0;background:#fafbff;color:#8a93b2;backdrop-filter:none}
+@media(min-width:1200px){#page-change .ads-box{display:flex}}
+#page-change .temp-emailbox{text-align:center;animation:rise_page-change .7s ease both}
+@keyframes rise_page-change{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
+#page-change .temp-emailbox h2{font-size:22px;color:#fff;margin-bottom:15px;font-weight:800;text-shadow:0 3px 12px rgba(0,0,0,.25)}
+#page-change .input-warp{display:flex;background:#fff;border-radius:18px;overflow:hidden;box-shadow:0 24px 55px rgba(10,14,50,.40)}
+#page-change .input-warp input{flex:1;min-width:0;border:none;outline:none;padding:15px 17px;font-size:17.5px;font-weight:800;color:#26307a;font-family:Consolas,monospace;background:#fbfcff}
+#page-change .icon-btn{border:none;cursor:pointer;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1px;padding:9px 14px;font-size:11.5px;font-weight:800;color:#fff;transition:filter .15s}
+#page-change .icon-btn .ic{font-size:20px;line-height:1}
+#page-change .icon-btn.qr{background:linear-gradient(160deg,#546e7a,#37474f)}
+#page-change .icon-btn.cp{background:linear-gradient(160deg,#43c24f,#2f9e44)}
+#page-change .icon-btn:hover{filter:brightness(1.15)}
+#page-change .qr-pop{display:none;margin:13px auto 0;background:#fff;border-radius:16px;box-shadow:0 16px 38px rgba(10,14,50,.35);padding:15px;max-width:245px}
+#page-change .qr-pop img{width:160px;height:160px}
+#page-change .qr-pop div{font-size:13px;color:#5a6482}
+#page-change .emailbox-text{max-width:660px;margin:15px auto 0;text-align:center;color:#dfe5ff;font-size:14.5px;position:relative}
+#page-change .wave{position:absolute;left:0;right:0;bottom:-1px;width:100%;height:52px}
+#page-change /* ===== Barre de boutons ===== */
+  .section-btn{padding:4px 0 6px}
+#page-change .section-btn .container{display:flex;justify-content:center;gap:9px;flex-wrap:wrap}
+#page-change .btn-gray{background:#fff;color:#26307a;border:1.5px solid #dfe4f5;border-radius:12px;box-shadow:0 6px 16px rgba(38,48,122,.10);padding:11px 21px;font-size:14.5px;font-weight:800;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:7px;transition:all .15s}
+#page-change .btn-gray:hover{transform:translateY(-2px);border-color:#3F51B5;color:#3F51B5}
+#page-change .btn-gray.del{color:#c62828}
+#page-change .btn-gray.del:hover{border-color:#ef5350;color:#c62828}
+#page-change /* ===== Contenu ===== */
+  .main-grid{display:grid;grid-template-columns:1fr minmax(0,780px) 1fr;gap:16px;align-items:start;padding:20px 0 6px}
+#page-change .panel{border-radius:20px;overflow:hidden;background:#fff;box-shadow:0 16px 40px rgba(38,48,122,.14)}
+#page-change .bg-header{padding:15px 22px}
+#page-change .bg-header h1{color:#fff;font-size:20px;font-weight:800}
+#page-change .panel-inner{padding:20px 22px 22px}
+#page-change .panel-inner p{color:#39415f;margin-bottom:9px}
+#page-change .free-badge{display:inline-block;background:#e8f7ea;color:#2e7d32;border:1.5px solid #4CAF50;border-radius:20px;padding:4px 14px;font-weight:800;font-size:13.5px;margin-bottom:10px}
+#page-change .input-box-warp{margin-bottom:12px}
+#page-change .input-box-warp input, #page-change .input-box-warp select{width:100%;padding:13px 16px;border:2px solid #c9d2f0;border-radius:12px;font-size:16px;color:#26307a;background:#fff;transition:border-color .15s, box-shadow .15s}
+#page-change .input-box-warp input:focus, #page-change .input-box-warp select:focus{border-color:#3F51B5;box-shadow:0 0 0 4px rgba(63,81,181,.15);outline:none}
+#page-change .save-btn{background:linear-gradient(135deg,#43c24f,#2f9e44);color:#fff;border:none;border-radius:12px;padding:13px 34px;font-size:16.5px;font-weight:800;cursor:pointer;width:100%;transition:transform .15s, box-shadow .15s}
+#page-change .save-btn:hover{transform:translateY(-2px);box-shadow:0 10px 22px rgba(47,158,68,.35)}
+#page-change .note{color:#8a6d00;background:#fff8e1;border:1.5px solid #ffca28;border-radius:12px;padding:10px 15px;font-size:13.5px;margin-top:13px}
+#page-change .ok{display:none;background:#e8f7ea;border:1.5px solid #4CAF50;color:#2e7d32;border-radius:12px;padding:12px 16px;font-weight:700;margin-top:13px}
+#page-change .mid-intro{margin-top:26px;background:#fff;border-radius:20px;box-shadow:0 10px 28px rgba(38,48,122,.09);padding:22px}
+#page-change .mid-intro h2{font-size:22px;color:#26307a;margin-bottom:8px}
+#page-change .mid-intro p{color:#39415f}
+#page-change /* ===== Articles populaires ===== */
+  .pop-section{margin-top:26px}
+#page-change .pop-section h3{font-size:21px;color:#26307a;margin-bottom:14px}
+#page-change .pop{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:13px}
+#page-change .pop li{display:flex;gap:13px;cursor:pointer;padding:13px;background:#fff;border-radius:16px;box-shadow:0 8px 22px rgba(38,48,122,.09);transition:transform .15s, box-shadow .15s}
+#page-change .pop li:hover{transform:translateY(-3px);box-shadow:0 14px 30px rgba(38,48,122,.16)}
+#page-change .pop .thumb{flex:none;width:76px;height:76px;border-radius:13px;display:flex;align-items:center;justify-content:center;font-size:36px;box-shadow:inset 0 -8px 16px rgba(0,0,0,.12)}
+#page-change .g1{background:linear-gradient(135deg,#3F51B5,#7b5cff)}
+#page-change .g2{background:linear-gradient(135deg,#00897b,#4db6ac)}
+#page-change .g3{background:linear-gradient(135deg,#fb8c00,#ffb74d)}
+#page-change .g4{background:linear-gradient(135deg,#8e24aa,#ba68c8)}
+#page-change .g5{background:linear-gradient(135deg,#3949ab,#5c6bc0)}
+#page-change .g6{background:linear-gradient(135deg,#e53935,#ef5350)}
+#page-change .pop a{color:#26307a;font-weight:800;text-decoration:none;font-size:15px;line-height:1.4;display:block}
+#page-change .pop p{color:#5a6482;font-size:13px;margin-top:3px}
+#page-change /* ===== Footer sombre ===== */
+  .page-footer{background:linear-gradient(160deg,#171d3d,#232a5e);color:#c6cdf0;margin-top:34px;padding:26px 0 32px;text-align:center}
+#page-change .footer-nav{list-style:none;display:flex;justify-content:center;flex-wrap:wrap;gap:6px 22px;margin-bottom:17px}
+#page-change .footer-nav a{color:#fff;text-decoration:none;font-weight:800;font-size:13.5px;text-transform:uppercase;letter-spacing:.4px}
+#page-change .footer-nav a:hover{color:#4ADE80}
+#page-change .foot-btns{display:flex;justify-content:center;gap:9px;flex-wrap:wrap;margin-bottom:15px}
+#page-change .tm-btn.light{background:rgba(255,255,255,.08);color:#fff;border-color:rgba(255,255,255,.5)}
+#page-change .tm-btn.light:hover{background:#3F51B5;border-color:#3F51B5}
+#page-change .page-footer small{color:#8a93b2}
+#page-change .page-footer .att{margin-top:5px;font-size:13px}
+#page-change .page-footer .att a{color:#8fa2ff}
+#page-change /* ===== Cookies / toast ===== */
+  .cookie{position:fixed;left:0;right:0;bottom:0;background:rgba(23,29,61,.97);color:#dfe5ff;padding:12px 16px;display:none;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap;z-index:70;font-size:14px;box-shadow:0 -6px 20px rgba(0,0,0,.25)}
+#page-change .cookie.show{display:flex}
+#page-change .cookie a{color:#8fa2ff}
+#page-change .cookie button{background:linear-gradient(135deg,#43c24f,#2f9e44);color:#fff;border:none;border-radius:20px;padding:8px 20px;font-weight:800;cursor:pointer}
+#page-change .toast{position:fixed;bottom:66px;left:50%;transform:translateX(-50%);background:#26307a;color:#fff;padding:12px 24px;border-radius:30px;font-weight:700;opacity:0;pointer-events:none;transition:opacity .3s;z-index:80;box-shadow:0 10px 26px rgba(15,20,60,.35)}
+#page-change .toast.show{opacity:1}
+#page-change .reveal{opacity:0;transform:translateY(18px);transition:opacity .55s ease,transform .55s ease}
+#page-change .reveal.in{opacity:1;transform:none}
+@media(max-width:820px){#page-change .brand a{font-size:23px}
+#page-change .btn-appstore .tm-btn{padding:7px 10px;font-size:13px}
+#page-change .head-right .seo-link{display:none}
+#page-change .pop{grid-template-columns:1fr}
+#page-change .top-grid, #page-change .main-grid{grid-template-columns:minmax(0,1fr)}
+#page-change .temp-emailbox h2{font-size:19px}}
+#page-change /* ===== Mobile side fix: header wraps, #page-change nothing overflows the sides ===== */
+  html, #page-change{overflow-x:hidden}
+#page-change .card a{overflow-wrap:anywhere}
+@media(max-width:700px){#page-change .main-header .container{flex-wrap:wrap}
+#page-change .brand{order:-1;flex:1 1 100%;text-align:center}
+#page-change .hbtns, #page-change .btn-appstore{flex:0 1 auto}
+#page-change .langs, #page-change .head-right{flex:0 1 auto;margin-inline-start:auto}}
+/* ===== tempbleu-privacy.html (scoped) ===== */
+#page-privacy, #page-privacy *{margin:0;padding:0;box-sizing:border-box}
+#page-privacy{font-family:'Segoe UI',system-ui,Arial,sans-serif;background:#eef1fb;color:#1c2340;line-height:1.65}
+#page-privacy .container{max-width:1180px;margin:0 auto;padding:0 14px}
+#page-privacy .grad{background:linear-gradient(140deg,#3F51B5 0%,#5b3fb8 55%,#8e2fb8 130%)}
+#page-privacy .main-header{background:#fff;box-shadow:0 4px 18px rgba(26,35,126,.10);padding:12px 0}
+#page-privacy .main-header .container{display:flex;align-items:center;justify-content:space-between;gap:10px}
+#page-privacy .hbtns{display:flex;gap:8px;flex:1}
+#page-privacy .tm-btn{display:inline-flex;align-items:center;gap:7px;border:2px solid #3F51B5;color:#3F51B5;background:#fff;border-radius:12px;padding:8px 15px;font-weight:800;font-size:14px;text-decoration:none;transition:all .15s}
+#page-privacy .tm-btn:hover{background:#3F51B5;color:#fff}
+#page-privacy .brand{flex:1;text-align:center}
+#page-privacy .brand a{font-size:29px;font-weight:900;text-decoration:none;background:linear-gradient(120deg,#3F51B5,#8e2fb8);-webkit-background-clip:text;background-clip:text;color:transparent}
+#page-privacy .brand a span{color:#4CAF50;-webkit-text-fill-color:#4CAF50}
+#page-privacy .langs{flex:1;display:flex;justify-content:flex-end;gap:5px}
+#page-privacy .langs button{background:#eef1fa;border:1.5px solid #c9d2f0;color:#26307a;border-radius:18px;padding:4px 12px;cursor:pointer;font-weight:800;font-size:13px}
+#page-privacy .langs button.on{background:linear-gradient(135deg,#3F51B5,#5b3fb8);color:#fff;border-color:transparent}
+#page-privacy .band{padding:38px 14px 44px;text-align:center;position:relative;overflow:hidden}
+#page-privacy .band h1{color:#fff;font-size:30px;text-shadow:0 3px 12px rgba(0,0,0,.25);margin-bottom:6px}
+#page-privacy .band p{color:#dfe5ff;font-size:15.5px;max-width:640px;margin:0 auto}
+#page-privacy .band .upd{color:#aeb9ec;font-size:13px;margin-top:10px}
+#page-privacy main{max-width:840px;margin:-22px auto 0;padding:0 14px 10px;position:relative;z-index:3}
+#page-privacy .card{background:#fff;border-radius:20px;box-shadow:0 16px 40px rgba(38,48,122,.14);padding:26px 28px}
+#page-privacy .card h2{color:#26307a;font-size:19.5px;margin:20px 0 7px}
+#page-privacy .card h2:first-child{margin-top:0}
+#page-privacy .card p{color:#39415f;margin-bottom:9px}
+#page-privacy .card ul{margin:0 0 10px;padding-inline-start:22px;color:#39415f}
+#page-privacy .card li{margin-bottom:5px}
+#page-privacy .card a{color:#3F51B5;font-weight:700}
+#page-privacy .fld{margin-bottom:12px}
+#page-privacy .fld label{display:block;font-weight:700;font-size:14px;color:#26307a;margin-bottom:5px}
+#page-privacy .fld input, #page-privacy .fld select, #page-privacy .fld textarea{width:100%;padding:12px 15px;border:2px solid #c9d2f0;border-radius:12px;font-size:15.5px;color:#26307a;background:#fff;font-family:inherit}
+#page-privacy .fld input:focus, #page-privacy .fld select:focus, #page-privacy .fld textarea:focus{border-color:#3F51B5;box-shadow:0 0 0 4px rgba(63,81,181,.15);outline:none}
+#page-privacy .send{background:linear-gradient(135deg,#43c24f,#2f9e44);color:#fff;border:none;border-radius:12px;padding:13px 30px;font-size:16px;font-weight:800;cursor:pointer;width:100%}
+#page-privacy .send:hover{filter:brightness(1.07)}
+#page-privacy footer{background:linear-gradient(160deg,#171d3d,#232a5e);color:#c6cdf0;margin-top:36px;padding:26px 14px 30px;text-align:center}
+#page-privacy .footer-nav{list-style:none;display:flex;justify-content:center;flex-wrap:wrap;gap:6px 20px;margin-bottom:14px}
+#page-privacy .footer-nav a{color:#fff;text-decoration:none;font-weight:800;font-size:13.5px;text-transform:uppercase;letter-spacing:.4px}
+#page-privacy .footer-nav a:hover{color:#4ADE80}
+#page-privacy footer small{color:#8a93b2}
+@media(max-width:700px){#page-privacy .brand a{font-size:22px}
+#page-privacy .hbtns .tm-btn{padding:7px 10px;font-size:13px}
+#page-privacy .card{padding:20px}
+#page-privacy .band h1{font-size:25px}}
+#page-privacy /* ===== Mobile side fix: header wraps, #page-privacy nothing overflows the sides ===== */
+  html, #page-privacy{overflow-x:hidden}
+#page-privacy .card a{overflow-wrap:anywhere}
+@media(max-width:700px){#page-privacy .main-header .container{flex-wrap:wrap}
+#page-privacy .brand{order:-1;flex:1 1 100%;text-align:center}
+#page-privacy .hbtns, #page-privacy .btn-appstore{flex:0 1 auto}
+#page-privacy .langs, #page-privacy .head-right{flex:0 1 auto;margin-inline-start:auto}}
+/* ===== tempbleu-terms.html (scoped) ===== */
+#page-terms, #page-terms *{margin:0;padding:0;box-sizing:border-box}
+#page-terms{font-family:'Segoe UI',system-ui,Arial,sans-serif;background:#eef1fb;color:#1c2340;line-height:1.65}
+#page-terms .container{max-width:1180px;margin:0 auto;padding:0 14px}
+#page-terms .grad{background:linear-gradient(140deg,#3F51B5 0%,#5b3fb8 55%,#8e2fb8 130%)}
+#page-terms .main-header{background:#fff;box-shadow:0 4px 18px rgba(26,35,126,.10);padding:12px 0}
+#page-terms .main-header .container{display:flex;align-items:center;justify-content:space-between;gap:10px}
+#page-terms .hbtns{display:flex;gap:8px;flex:1}
+#page-terms .tm-btn{display:inline-flex;align-items:center;gap:7px;border:2px solid #3F51B5;color:#3F51B5;background:#fff;border-radius:12px;padding:8px 15px;font-weight:800;font-size:14px;text-decoration:none;transition:all .15s}
+#page-terms .tm-btn:hover{background:#3F51B5;color:#fff}
+#page-terms .brand{flex:1;text-align:center}
+#page-terms .brand a{font-size:29px;font-weight:900;text-decoration:none;background:linear-gradient(120deg,#3F51B5,#8e2fb8);-webkit-background-clip:text;background-clip:text;color:transparent}
+#page-terms .brand a span{color:#4CAF50;-webkit-text-fill-color:#4CAF50}
+#page-terms .langs{flex:1;display:flex;justify-content:flex-end;gap:5px}
+#page-terms .langs button{background:#eef1fa;border:1.5px solid #c9d2f0;color:#26307a;border-radius:18px;padding:4px 12px;cursor:pointer;font-weight:800;font-size:13px}
+#page-terms .langs button.on{background:linear-gradient(135deg,#3F51B5,#5b3fb8);color:#fff;border-color:transparent}
+#page-terms .band{padding:38px 14px 44px;text-align:center;position:relative;overflow:hidden}
+#page-terms .band h1{color:#fff;font-size:30px;text-shadow:0 3px 12px rgba(0,0,0,.25);margin-bottom:6px}
+#page-terms .band p{color:#dfe5ff;font-size:15.5px;max-width:640px;margin:0 auto}
+#page-terms .band .upd{color:#aeb9ec;font-size:13px;margin-top:10px}
+#page-terms main{max-width:840px;margin:-22px auto 0;padding:0 14px 10px;position:relative;z-index:3}
+#page-terms .card{background:#fff;border-radius:20px;box-shadow:0 16px 40px rgba(38,48,122,.14);padding:26px 28px}
+#page-terms .card h2{color:#26307a;font-size:19.5px;margin:20px 0 7px}
+#page-terms .card h2:first-child{margin-top:0}
+#page-terms .card p{color:#39415f;margin-bottom:9px}
+#page-terms .card ul{margin:0 0 10px;padding-inline-start:22px;color:#39415f}
+#page-terms .card li{margin-bottom:5px}
+#page-terms .card a{color:#3F51B5;font-weight:700}
+#page-terms .fld{margin-bottom:12px}
+#page-terms .fld label{display:block;font-weight:700;font-size:14px;color:#26307a;margin-bottom:5px}
+#page-terms .fld input, #page-terms .fld select, #page-terms .fld textarea{width:100%;padding:12px 15px;border:2px solid #c9d2f0;border-radius:12px;font-size:15.5px;color:#26307a;background:#fff;font-family:inherit}
+#page-terms .fld input:focus, #page-terms .fld select:focus, #page-terms .fld textarea:focus{border-color:#3F51B5;box-shadow:0 0 0 4px rgba(63,81,181,.15);outline:none}
+#page-terms .send{background:linear-gradient(135deg,#43c24f,#2f9e44);color:#fff;border:none;border-radius:12px;padding:13px 30px;font-size:16px;font-weight:800;cursor:pointer;width:100%}
+#page-terms .send:hover{filter:brightness(1.07)}
+#page-terms footer{background:linear-gradient(160deg,#171d3d,#232a5e);color:#c6cdf0;margin-top:36px;padding:26px 14px 30px;text-align:center}
+#page-terms .footer-nav{list-style:none;display:flex;justify-content:center;flex-wrap:wrap;gap:6px 20px;margin-bottom:14px}
+#page-terms .footer-nav a{color:#fff;text-decoration:none;font-weight:800;font-size:13.5px;text-transform:uppercase;letter-spacing:.4px}
+#page-terms .footer-nav a:hover{color:#4ADE80}
+#page-terms footer small{color:#8a93b2}
+@media(max-width:700px){#page-terms .brand a{font-size:22px}
+#page-terms .hbtns .tm-btn{padding:7px 10px;font-size:13px}
+#page-terms .card{padding:20px}
+#page-terms .band h1{font-size:25px}}
+#page-terms /* ===== Mobile side fix: header wraps, #page-terms nothing overflows the sides ===== */
+  html, #page-terms{overflow-x:hidden}
+#page-terms .card a{overflow-wrap:anywhere}
+@media(max-width:700px){#page-terms .main-header .container{flex-wrap:wrap}
+#page-terms .brand{order:-1;flex:1 1 100%;text-align:center}
+#page-terms .hbtns, #page-terms .btn-appstore{flex:0 1 auto}
+#page-terms .langs, #page-terms .head-right{flex:0 1 auto;margin-inline-start:auto}}
+/* ===== tempbleu-about.html (scoped) ===== */
+#page-about, #page-about *{margin:0;padding:0;box-sizing:border-box}
+#page-about{font-family:'Segoe UI',system-ui,Arial,sans-serif;background:#eef1fb;color:#1c2340;line-height:1.65}
+#page-about .container{max-width:1180px;margin:0 auto;padding:0 14px}
+#page-about .grad{background:linear-gradient(140deg,#3F51B5 0%,#5b3fb8 55%,#8e2fb8 130%)}
+#page-about .main-header{background:#fff;box-shadow:0 4px 18px rgba(26,35,126,.10);padding:12px 0}
+#page-about .main-header .container{display:flex;align-items:center;justify-content:space-between;gap:10px}
+#page-about .hbtns{display:flex;gap:8px;flex:1}
+#page-about .tm-btn{display:inline-flex;align-items:center;gap:7px;border:2px solid #3F51B5;color:#3F51B5;background:#fff;border-radius:12px;padding:8px 15px;font-weight:800;font-size:14px;text-decoration:none;transition:all .15s}
+#page-about .tm-btn:hover{background:#3F51B5;color:#fff}
+#page-about .brand{flex:1;text-align:center}
+#page-about .brand a{font-size:29px;font-weight:900;text-decoration:none;background:linear-gradient(120deg,#3F51B5,#8e2fb8);-webkit-background-clip:text;background-clip:text;color:transparent}
+#page-about .brand a span{color:#4CAF50;-webkit-text-fill-color:#4CAF50}
+#page-about .langs{flex:1;display:flex;justify-content:flex-end;gap:5px}
+#page-about .langs button{background:#eef1fa;border:1.5px solid #c9d2f0;color:#26307a;border-radius:18px;padding:4px 12px;cursor:pointer;font-weight:800;font-size:13px}
+#page-about .langs button.on{background:linear-gradient(135deg,#3F51B5,#5b3fb8);color:#fff;border-color:transparent}
+#page-about .band{padding:38px 14px 44px;text-align:center;position:relative;overflow:hidden}
+#page-about .band h1{color:#fff;font-size:30px;text-shadow:0 3px 12px rgba(0,0,0,.25);margin-bottom:6px}
+#page-about .band p{color:#dfe5ff;font-size:15.5px;max-width:640px;margin:0 auto}
+#page-about .band .upd{color:#aeb9ec;font-size:13px;margin-top:10px}
+#page-about main{max-width:840px;margin:-22px auto 0;padding:0 14px 10px;position:relative;z-index:3}
+#page-about .card{background:#fff;border-radius:20px;box-shadow:0 16px 40px rgba(38,48,122,.14);padding:26px 28px}
+#page-about .card h2{color:#26307a;font-size:19.5px;margin:20px 0 7px}
+#page-about .card h2:first-child{margin-top:0}
+#page-about .card p{color:#39415f;margin-bottom:9px}
+#page-about .card ul{margin:0 0 10px;padding-inline-start:22px;color:#39415f}
+#page-about .card li{margin-bottom:5px}
+#page-about .card a{color:#3F51B5;font-weight:700}
+#page-about .fld{margin-bottom:12px}
+#page-about .fld label{display:block;font-weight:700;font-size:14px;color:#26307a;margin-bottom:5px}
+#page-about .fld input, #page-about .fld select, #page-about .fld textarea{width:100%;padding:12px 15px;border:2px solid #c9d2f0;border-radius:12px;font-size:15.5px;color:#26307a;background:#fff;font-family:inherit}
+#page-about .fld input:focus, #page-about .fld select:focus, #page-about .fld textarea:focus{border-color:#3F51B5;box-shadow:0 0 0 4px rgba(63,81,181,.15);outline:none}
+#page-about .send{background:linear-gradient(135deg,#43c24f,#2f9e44);color:#fff;border:none;border-radius:12px;padding:13px 30px;font-size:16px;font-weight:800;cursor:pointer;width:100%}
+#page-about .send:hover{filter:brightness(1.07)}
+#page-about footer{background:linear-gradient(160deg,#171d3d,#232a5e);color:#c6cdf0;margin-top:36px;padding:26px 14px 30px;text-align:center}
+#page-about .footer-nav{list-style:none;display:flex;justify-content:center;flex-wrap:wrap;gap:6px 20px;margin-bottom:14px}
+#page-about .footer-nav a{color:#fff;text-decoration:none;font-weight:800;font-size:13.5px;text-transform:uppercase;letter-spacing:.4px}
+#page-about .footer-nav a:hover{color:#4ADE80}
+#page-about footer small{color:#8a93b2}
+@media(max-width:700px){#page-about .brand a{font-size:22px}
+#page-about .hbtns .tm-btn{padding:7px 10px;font-size:13px}
+#page-about .card{padding:20px}
+#page-about .band h1{font-size:25px}}
+#page-about /* ===== Mobile side fix: header wraps, #page-about nothing overflows the sides ===== */
+  html, #page-about{overflow-x:hidden}
+#page-about .card a{overflow-wrap:anywhere}
+@media(max-width:700px){#page-about .main-header .container{flex-wrap:wrap}
+#page-about .brand{order:-1;flex:1 1 100%;text-align:center}
+#page-about .hbtns, #page-about .btn-appstore{flex:0 1 auto}
+#page-about .langs, #page-about .head-right{flex:0 1 auto;margin-inline-start:auto}}
+/* ===== tempbleu-contact.html (scoped) ===== */
+#page-contact, #page-contact *{margin:0;padding:0;box-sizing:border-box}
+#page-contact{font-family:'Segoe UI',system-ui,Arial,sans-serif;background:#eef1fb;color:#1c2340;line-height:1.65}
+#page-contact .container{max-width:1180px;margin:0 auto;padding:0 14px}
+#page-contact .grad{background:linear-gradient(140deg,#3F51B5 0%,#5b3fb8 55%,#8e2fb8 130%)}
+#page-contact .main-header{background:#fff;box-shadow:0 4px 18px rgba(26,35,126,.10);padding:12px 0}
+#page-contact .main-header .container{display:flex;align-items:center;justify-content:space-between;gap:10px}
+#page-contact .hbtns{display:flex;gap:8px;flex:1}
+#page-contact .tm-btn{display:inline-flex;align-items:center;gap:7px;border:2px solid #3F51B5;color:#3F51B5;background:#fff;border-radius:12px;padding:8px 15px;font-weight:800;font-size:14px;text-decoration:none;transition:all .15s}
+#page-contact .tm-btn:hover{background:#3F51B5;color:#fff}
+#page-contact .brand{flex:1;text-align:center}
+#page-contact .brand a{font-size:29px;font-weight:900;text-decoration:none;background:linear-gradient(120deg,#3F51B5,#8e2fb8);-webkit-background-clip:text;background-clip:text;color:transparent}
+#page-contact .brand a span{color:#4CAF50;-webkit-text-fill-color:#4CAF50}
+#page-contact .langs{flex:1;display:flex;justify-content:flex-end;gap:5px}
+#page-contact .langs button{background:#eef1fa;border:1.5px solid #c9d2f0;color:#26307a;border-radius:18px;padding:4px 12px;cursor:pointer;font-weight:800;font-size:13px}
+#page-contact .langs button.on{background:linear-gradient(135deg,#3F51B5,#5b3fb8);color:#fff;border-color:transparent}
+#page-contact .band{padding:38px 14px 44px;text-align:center;position:relative;overflow:hidden}
+#page-contact .band h1{color:#fff;font-size:30px;text-shadow:0 3px 12px rgba(0,0,0,.25);margin-bottom:6px}
+#page-contact .band p{color:#dfe5ff;font-size:15.5px;max-width:640px;margin:0 auto}
+#page-contact .band .upd{color:#aeb9ec;font-size:13px;margin-top:10px}
+#page-contact main{max-width:840px;margin:-22px auto 0;padding:0 14px 10px;position:relative;z-index:3}
+#page-contact .card{background:#fff;border-radius:20px;box-shadow:0 16px 40px rgba(38,48,122,.14);padding:26px 28px}
+#page-contact .card h2{color:#26307a;font-size:19.5px;margin:20px 0 7px}
+#page-contact .card h2:first-child{margin-top:0}
+#page-contact .card p{color:#39415f;margin-bottom:9px}
+#page-contact .card ul{margin:0 0 10px;padding-inline-start:22px;color:#39415f}
+#page-contact .card li{margin-bottom:5px}
+#page-contact .card a{color:#3F51B5;font-weight:700}
+#page-contact .fld{margin-bottom:12px}
+#page-contact .fld label{display:block;font-weight:700;font-size:14px;color:#26307a;margin-bottom:5px}
+#page-contact .fld input, #page-contact .fld select, #page-contact .fld textarea{width:100%;padding:12px 15px;border:2px solid #c9d2f0;border-radius:12px;font-size:15.5px;color:#26307a;background:#fff;font-family:inherit}
+#page-contact .fld input:focus, #page-contact .fld select:focus, #page-contact .fld textarea:focus{border-color:#3F51B5;box-shadow:0 0 0 4px rgba(63,81,181,.15);outline:none}
+#page-contact .send{background:linear-gradient(135deg,#43c24f,#2f9e44);color:#fff;border:none;border-radius:12px;padding:13px 30px;font-size:16px;font-weight:800;cursor:pointer;width:100%}
+#page-contact .send:hover{filter:brightness(1.07)}
+#page-contact footer{background:linear-gradient(160deg,#171d3d,#232a5e);color:#c6cdf0;margin-top:36px;padding:26px 14px 30px;text-align:center}
+#page-contact .footer-nav{list-style:none;display:flex;justify-content:center;flex-wrap:wrap;gap:6px 20px;margin-bottom:14px}
+#page-contact .footer-nav a{color:#fff;text-decoration:none;font-weight:800;font-size:13.5px;text-transform:uppercase;letter-spacing:.4px}
+#page-contact .footer-nav a:hover{color:#4ADE80}
+#page-contact footer small{color:#8a93b2}
+@media(max-width:700px){#page-contact .brand a{font-size:22px}
+#page-contact .hbtns .tm-btn{padding:7px 10px;font-size:13px}
+#page-contact .card{padding:20px}
+#page-contact .band h1{font-size:25px}}
+#page-contact /* ===== Mobile side fix: header wraps, #page-contact nothing overflows the sides ===== */
+  html, #page-contact{overflow-x:hidden}
+#page-contact .card a{overflow-wrap:anywhere}
+@media(max-width:700px){#page-contact .main-header .container{flex-wrap:wrap}
+#page-contact .brand{order:-1;flex:1 1 100%;text-align:center}
+#page-contact .hbtns, #page-contact .btn-appstore{flex:0 1 auto}
+#page-contact .langs, #page-contact .head-right{flex:0 1 auto;margin-inline-start:auto}}
 </style>
 </head>
 <body>
+<div class="tb-page on" id="page-home">
 <header>
   <a class="logo" href="#">TempBleu<span>.com</span></a>
   <div class="langs">
@@ -251,7 +643,9 @@
     <h2 data-i="privT"></h2>
     <p data-i="privP"></p>
   </div>
+<div style="width:300px;max-width:92vw;height:250px;margin:20px auto;border:2px dashed #b9c0e8;border-radius:14px;background:#f4f6ff;color:#5a63a8;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center"><div style="font-weight:700;font-size:17px">AdSense Space</div><div style="font-size:12px;opacity:.75">300 × 250</div></div>
 </main>
+<div style="max-width:728px;margin:20px auto;padding:28px 12px;border:2px dashed #b9c0e8;border-radius:14px;background:#f4f6ff;color:#5a63a8;text-align:center"><div style="font-weight:700;font-size:17px">AdSense Space</div><div style="font-size:12px;opacity:.75">In-article · Responsive</div></div>
 
 <footer>
   <div class="foot-in">
@@ -266,7 +660,295 @@
   </div>
 </footer>
 <div class="toast" id="toast"></div>
+</div>
+<section class="tb-page" id="page-blog">
+<header>
+  <a class="logo" href="tempbleu.html">TempBleu<span>.com</span></a>
+  <div class="langs">
+    <button data-lang="fr" class="on">FR</button><button data-lang="en">EN</button><button data-lang="ar">ع</button>
+  </div>
+</header>
 
+<section class="hero">
+  <span class="mail" style="top:64px;left:7%">✉️</span>
+  <span class="mail" style="top:120px;right:9%;animation-delay:1.6s">📚</span>
+  <span class="mail" style="bottom:36px;left:20%;animation-delay:2.8s;font-size:22px">📩</span>
+  <h1 data-i="blogT"></h1>
+  <p data-i="blogSub"></p>
+  <div class="search"><input id="search" type="search" autocomplete="off"></div>
+</section>
+
+<main>
+<div style="max-width:728px;margin:20px auto;padding:28px 12px;border:2px dashed #b9c0e8;border-radius:14px;background:#f4f6ff;color:#5a63a8;text-align:center"><div style="font-weight:700;font-size:17px">AdSense Space</div><div style="font-size:12px;opacity:.75">In-article · Responsive</div></div>
+  <div id="listView">
+    <div class="chips" id="chips"></div>
+    <div class="grid" id="grid"></div>
+    <div class="empty" id="noRes" style="display:none">🔍 <span data-i="noRes"></span></div>
+    <div class="cta"><b data-i="ctaT"></b><br><a href="tempbleu.html" data-i="ctaB"></a></div>
+  </div>
+
+  <article id="reader">
+    <button class="btn" id="btnBack" data-i="backList"></button>
+    <div class="rcover" id="rCover"></div>
+    <h1 id="rTitle"></h1>
+    <div class="rmeta" id="rMeta"></div>
+    <div class="note" id="rNote" data-i="bodyNote"></div>
+    <div class="content" id="rBody"></div>
+    <div class="cta"><b data-i="ctaT"></b><br><a href="tempbleu.html" data-i="ctaB"></a></div>
+  </article>
+<div style="width:300px;max-width:92vw;height:250px;margin:20px auto;border:2px dashed #b9c0e8;border-radius:14px;background:#f4f6ff;color:#5a63a8;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center"><div style="font-weight:700;font-size:17px">AdSense Space</div><div style="font-size:12px;opacity:.75">300 × 250</div></div>
+</main>
+
+<footer>
+  <div class="foot-logo">TempBleu<span>.com</span></div>
+  © 2026 TempBleu.com — <span data-i="rights"></span> · <a href="tempbleu.html" data-i="home"></a><br><a href="tempbleu-privacy.html">Privacy</a> · <a href="tempbleu-terms.html">Terms</a> · <a href="tempbleu-about.html">About</a> · <a href="tempbleu-contact.html">Contact</a>
+</footer>
+</section>
+<section class="tb-page" id="page-change">
+<div class="topbanner grad" id="topBanner">
+  <span data-i="banner"></span> <a href="#changePanel" data-i="freeBtn"></a>
+  <button class="x" id="bannerX" aria-label="×">×</button>
+</div>
+
+<header class="main-header">
+  <div class="container">
+    <div class="btn-appstore">
+      <a class="tm-btn" href="tempbleu.html">🏠 <span data-i="homeShort"></span></a>
+      <a class="tm-btn" href="tempbleu-blog.html">📚 Blog</a>
+    </div>
+    <div class="brand"><a href="tempbleu.html">TempBleu<span>.com</span></a></div>
+    <div class="head-right">
+      <a class="seo-link" href="tempbleu.html" data-i="backInbox"></a>
+      <div class="langs">
+        <button data-lang="fr" class="on">FR</button><button data-lang="en">EN</button><button data-lang="ar">ع</button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="section-top grad">
+  <span class="mail" style="top:12%;left:4%">✉️</span>
+  <span class="mail" style="top:55%;left:10%;animation-delay:1.4s;font-size:22px">📧</span>
+  <span class="mail" style="top:20%;right:5%;animation-delay:.7s">📨</span>
+  <span class="mail" style="top:60%;right:11%;animation-delay:2.1s;font-size:24px">💌</span>
+  <div class="container">
+    <div class="top-grid">
+      <div class="ads-box ad-336" data-i="adBox"></div>
+      <div>
+        <div class="temp-emailbox">
+          <h2 data-i="yourTemp"></h2>
+          <div class="input-warp">
+            <input id="mail" type="text" readonly value="…" onclick="this.select()">
+            <button type="button" class="icon-btn qr" id="btnQR"><span class="ic">▦</span>QR Code</button>
+            <button type="button" class="icon-btn cp" id="btnCopy"><span class="ic">⧉</span><span data-i="copyShort"></span></button>
+          </div>
+          <div class="qr-pop" id="qrPop"><img id="qrImg" alt="QR Code"><div data-i="qrHelp"></div></div>
+        </div>
+        <p class="emailbox-text" data-i="addrText"></p>
+      </div>
+      <div class="ads-box ad-336" data-i="adBox"></div>
+    </div>
+  </div>
+  <svg class="wave" viewBox="0 0 1440 60" preserveAspectRatio="none"><path d="M0,32 C240,60 480,4 720,22 C960,40 1200,58 1440,26 L1440,60 L0,60 Z" fill="#eef1fb"/></svg>
+</div>
+
+<div class="section-btn">
+  <div class="container">
+    <button class="btn-gray" id="btnCopy2">⧉ <span data-i="copyShort"></span></button>
+    <button class="btn-gray" id="btnRefresh">↻ <span data-i="refreshShort"></span></button>
+    <a class="btn-gray" href="tempbleu.html">✏️ <span data-i="backShort"></span></a>
+    <button class="btn-gray del" id="btnDelete">🗑️ <span data-i="delShort"></span></button>
+  </div>
+</div>
+
+<div class="container">
+  <div class="main-grid">
+    <div class="ads-box ad-300x600" data-i="adBox"></div>
+    <div>
+      <div class="panel reveal" id="changePanel">
+        <div class="bg-header grad"><h1 data-i="pageTitle"></h1></div>
+        <div class="panel-inner">
+          <p data-i="intro1"></p>
+          <p data-i="intro2"></p>
+          <span class="free-badge" data-i="freeBadge"></span>
+          <form id="changeForm">
+            <div class="input-box-warp"><input type="text" id="newName" autocomplete="off" placeholder="Login"></div>
+            <div class="input-box-warp">
+              <select id="domainSel"><option value="guerrillamailblock.com">@guerrillamailblock.com</option></select>
+            </div>
+            <div class="input-box-warp"><button class="save-btn" type="submit" data-i="save"></button></div>
+          </form>
+          <div class="ok" id="okBox"></div>
+          <div class="note" data-i="noteDomain"></div>
+        </div>
+      </div>
+
+      <div class="mid-intro reveal">
+        <h2 data-i="seoT"></h2>
+        <p data-i="seoP"></p>
+      </div>
+
+      <div class="pop-section reveal">
+        <h3 data-i="popT"></h3>
+        <ul class="pop" id="popList"></ul>
+      </div>
+    </div>
+    <div class="ads-box ad-300x600" data-i="adBox"></div>
+  </div>
+</div>
+
+<footer class="page-footer">
+  <div class="container">
+    <nav><ul class="footer-nav">
+      <li><a href="tempbleu.html" data-i="homeShort"></a></li>
+      <li><a href="tempbleu-blog.html">Blog</a></li>
+      <li><a href="tempbleu-change.html" data-i="change"></a></li>
+      <li><a href="tempbleu-privacy.html" data-i="privacy"></a></li><li><a href="tempbleu-terms.html" data-i="termsL"></a></li><li><a href="tempbleu-about.html" data-i="aboutL"></a></li><li><a href="tempbleu-contact.html" data-i="contactL"></a></li>
+      <li><a href="tempbleu.html" data-i="backInbox"></a></li>
+    </ul></nav>
+    <div class="foot-btns">
+      <a class="tm-btn light" href="tempbleu.html">✉️ TempBleu</a>
+      <a class="tm-btn light" href="tempbleu-blog.html">📚 Blog</a>
+    </div>
+    <small>© 2026 TempBleu.com — <span data-i="rights"></span></small>
+    <div class="att"><span data-i="foot"></span> <a href="https://www.guerrillamail.com" target="_blank" rel="noopener">Guerrilla Mail</a></div>
+  </div>
+</footer>
+
+<div class="cookie" id="cookieBar">
+  <span><span data-i="cookie"></span> <a href="tempbleu-privacy.html" data-i="privacy"></a></span>
+  <button id="cookieOk" data-i="cookieOk"></button>
+</div>
+<div class="toast" id="toast"></div>
+</section>
+<section class="tb-page" id="page-privacy">
+<header class="main-header">
+  <div class="container">
+    <div class="hbtns">
+      <a class="tm-btn" href="tempbleu.html">🏠 <span data-k="home"></span></a>
+      <a class="tm-btn" href="tempbleu-blog.html">📚 Blog</a>
+    </div>
+    <div class="brand"><a href="tempbleu.html">TempBleu<span>.com</span></a></div>
+    <div class="langs">
+      <button data-lang="fr" class="on">FR</button><button data-lang="en">EN</button><button data-lang="ar">ع</button>
+    </div>
+  </div>
+</header>
+<div class="band grad">
+  <h1 id="pgTitle"></h1>
+  <p id="pgSub"></p>
+  <div class="upd" id="pgUpd"></div>
+</div>
+<main><div class="card" id="pgBody"></div></main>
+<div style="max-width:728px;margin:20px auto;padding:28px 12px;border:2px dashed #b9c0e8;border-radius:14px;background:#f4f6ff;color:#5a63a8;text-align:center"><div style="font-weight:700;font-size:17px">AdSense Space</div><div style="font-size:12px;opacity:.75">In-article · Responsive</div></div>
+<footer>
+  <ul class="footer-nav">
+    <li><a href="tempbleu.html" data-k="home"></a></li>
+    <li><a href="tempbleu-blog.html">Blog</a></li>
+    <li><a href="tempbleu-privacy.html" data-k="privacy"></a></li>
+    <li><a href="tempbleu-terms.html" data-k="terms"></a></li>
+    <li><a href="tempbleu-about.html" data-k="about"></a></li>
+    <li><a href="tempbleu-contact.html" data-k="contact"></a></li>
+  </ul>
+  <small>© 2026 TempBleu.com — <span data-k="rights"></span></small>
+</footer>
+</section>
+<section class="tb-page" id="page-terms">
+<header class="main-header">
+  <div class="container">
+    <div class="hbtns">
+      <a class="tm-btn" href="tempbleu.html">🏠 <span data-k="home"></span></a>
+      <a class="tm-btn" href="tempbleu-blog.html">📚 Blog</a>
+    </div>
+    <div class="brand"><a href="tempbleu.html">TempBleu<span>.com</span></a></div>
+    <div class="langs">
+      <button data-lang="fr" class="on">FR</button><button data-lang="en">EN</button><button data-lang="ar">ع</button>
+    </div>
+  </div>
+</header>
+<div class="band grad">
+  <h1 id="pgTitle"></h1>
+  <p id="pgSub"></p>
+  <div class="upd" id="pgUpd"></div>
+</div>
+<main><div class="card" id="pgBody"></div></main>
+<div style="max-width:728px;margin:20px auto;padding:28px 12px;border:2px dashed #b9c0e8;border-radius:14px;background:#f4f6ff;color:#5a63a8;text-align:center"><div style="font-weight:700;font-size:17px">AdSense Space</div><div style="font-size:12px;opacity:.75">In-article · Responsive</div></div>
+<footer>
+  <ul class="footer-nav">
+    <li><a href="tempbleu.html" data-k="home"></a></li>
+    <li><a href="tempbleu-blog.html">Blog</a></li>
+    <li><a href="tempbleu-privacy.html" data-k="privacy"></a></li>
+    <li><a href="tempbleu-terms.html" data-k="terms"></a></li>
+    <li><a href="tempbleu-about.html" data-k="about"></a></li>
+    <li><a href="tempbleu-contact.html" data-k="contact"></a></li>
+  </ul>
+  <small>© 2026 TempBleu.com — <span data-k="rights"></span></small>
+</footer>
+</section>
+<section class="tb-page" id="page-about">
+<header class="main-header">
+  <div class="container">
+    <div class="hbtns">
+      <a class="tm-btn" href="tempbleu.html">🏠 <span data-k="home"></span></a>
+      <a class="tm-btn" href="tempbleu-blog.html">📚 Blog</a>
+    </div>
+    <div class="brand"><a href="tempbleu.html">TempBleu<span>.com</span></a></div>
+    <div class="langs">
+      <button data-lang="fr" class="on">FR</button><button data-lang="en">EN</button><button data-lang="ar">ع</button>
+    </div>
+  </div>
+</header>
+<div class="band grad">
+  <h1 id="pgTitle"></h1>
+  <p id="pgSub"></p>
+  <div class="upd" id="pgUpd"></div>
+</div>
+<main><div class="card" id="pgBody"></div></main>
+<div style="max-width:728px;margin:20px auto;padding:28px 12px;border:2px dashed #b9c0e8;border-radius:14px;background:#f4f6ff;color:#5a63a8;text-align:center"><div style="font-weight:700;font-size:17px">AdSense Space</div><div style="font-size:12px;opacity:.75">In-article · Responsive</div></div>
+<footer>
+  <ul class="footer-nav">
+    <li><a href="tempbleu.html" data-k="home"></a></li>
+    <li><a href="tempbleu-blog.html">Blog</a></li>
+    <li><a href="tempbleu-privacy.html" data-k="privacy"></a></li>
+    <li><a href="tempbleu-terms.html" data-k="terms"></a></li>
+    <li><a href="tempbleu-about.html" data-k="about"></a></li>
+    <li><a href="tempbleu-contact.html" data-k="contact"></a></li>
+  </ul>
+  <small>© 2026 TempBleu.com — <span data-k="rights"></span></small>
+</footer>
+</section>
+<section class="tb-page" id="page-contact">
+<header class="main-header">
+  <div class="container">
+    <div class="hbtns">
+      <a class="tm-btn" href="tempbleu.html">🏠 <span data-k="home"></span></a>
+      <a class="tm-btn" href="tempbleu-blog.html">📚 Blog</a>
+    </div>
+    <div class="brand"><a href="tempbleu.html">TempBleu<span>.com</span></a></div>
+    <div class="langs">
+      <button data-lang="fr" class="on">FR</button><button data-lang="en">EN</button><button data-lang="ar">ع</button>
+    </div>
+  </div>
+</header>
+<div class="band grad">
+  <h1 id="pgTitle"></h1>
+  <p id="pgSub"></p>
+  <div class="upd" id="pgUpd"></div>
+</div>
+<main><div class="card" id="pgBody"></div></main>
+<div style="max-width:728px;margin:20px auto;padding:28px 12px;border:2px dashed #b9c0e8;border-radius:14px;background:#f4f6ff;color:#5a63a8;text-align:center"><div style="font-weight:700;font-size:17px">AdSense Space</div><div style="font-size:12px;opacity:.75">In-article · Responsive</div></div>
+<footer>
+  <ul class="footer-nav">
+    <li><a href="tempbleu.html" data-k="home"></a></li>
+    <li><a href="tempbleu-blog.html">Blog</a></li>
+    <li><a href="tempbleu-privacy.html" data-k="privacy"></a></li>
+    <li><a href="tempbleu-terms.html" data-k="terms"></a></li>
+    <li><a href="tempbleu-about.html" data-k="about"></a></li>
+    <li><a href="tempbleu-contact.html" data-k="contact"></a></li>
+  </ul>
+  <small>© 2026 TempBleu.com — <span data-k="rights"></span></small>
+</footer>
+</section>
 <script>
 
 "use strict";
@@ -286,7 +968,7 @@ const I18N = {
   en:{title:"Your free temporary e-mail",sub:"No sign-up. Keep spam away from your real inbox.",copy:"📋 Copy",refresh:"🔄 Refresh",custom:"✏️ Custom name",new:"🎲 New address",del:"🗑️ Delete",create:"Create",inbox:"📥 Inbox",waiting:"Waiting for e-mails… Use the address above, messages will appear here automatically.",back:"← Back",whatT:"What is a temporary e-mail?",whatP:"A temporary (disposable) e-mail is an address you use to sign up on websites without revealing your real address. Confirmation messages arrive here, your personal inbox stays clean and spam-free.",howT:"How to use it?",how1:"Copy the address shown above.",how2:"Paste it on the site asking for an e-mail.",how3:"The confirmation message appears here within seconds, no page reload needed.",q1:"Is it free?",a1:"Yes, completely free with no sign-up.",q2:"How long do messages stay?",a2:"Messages are temporary and automatically deleted by the receiving server. Never use this for important accounts (bank, main account recovery).",q3:"Can I send e-mails?",a3:"No. This service is receive-only.",foot:"Temporary receiving service. Test mode: receiving powered by",ready:"Address ready — auto-refresh every {s}s",copied:"Address copied ✔",creating:"Creating address…",checking:"Checking…",err:"Network error — automatic retry",confirmDel:"Delete this address and create a new one?",taken:"Name already taken, try another",badge:"✉️ 100% free — no sign-up",yourAddr:"Your temporary address",qrHelp:"Scan to get this address on another device",timeLeft:"Time left:",extend:"+10 min",extended:"Extended by 10 minutes ✔",expired:"⏰ Address expired — new address created",termsL:"📜 Terms",aboutL:"ℹ️ About",contactL:"✉️ Contact",featT:"Why TempBleu?",f1t:"Total anti-spam",f1p:"Keep your real inbox clean: spam stays here, not with you.",f2t:"Express OTP codes",f2p:"Verification codes arrive fast: the inbox auto-updates every minute (and the moment you return to the tab).",f3t:"Zero sign-up",f3p:"No account, no password, no personal data requested.",f4t:"Automatic deletion",f4p:"Address and messages are temporary and erase themselves.",f5t:"Privacy",f5p:"Your real identity never leaves your pocket.",f6t:"3 languages",f6p:"Interface in French, English and Arabic, built for mobile.",useT:"What is it for?",u1:"📝 Quick sign-ups on sites and forums",u2:"🎁 Free offers and trials without the spam after",u3:"🧪 Testing your own app with real addresses",u4:"🔐 Receiving a one-time verification code",secT:"⚠️ Never use it for…",secP:"Important accounts: banking, your main e-mail, recovery of your essential accounts. A temporary address is made for one-time use, not to last.",q4:"How long does my address stay active?",a4:"Your address lives 10 minutes (live countdown shown). The +10 min button extends it. After expiry, a new address is created automatically.",privT:"Privacy",privP:"This service receives messages on a temporary address. Never receive sensitive documents here. In test mode, receiving is handled by our technical partner named in the footer.",rights:"All rights reserved."},
   ar:{title:"بريدك الإلكتروني المؤقت مجانا",sub:"بدون تسجيل. احمِ بريدك الحقيقي من الرسائل المزعجة.",copy:"📋 نسخ",refresh:"🔄 تحديث",custom:"✏️ اسم مخصص",new:"🎲 عنوان جديد",del:"🗑️ حذف",create:"إنشاء",inbox:"📥 صندوق الوارد",waiting:"في انتظار الرسائل… استعمل العنوان أعلاه، وستظهر الرسائل هنا تلقائيا.",back:"← رجوع",whatT:"ما هو البريد المؤقت؟",whatP:"البريد المؤقت هو عنوان تستعمله للتسجيل في المواقع دون كشف عنوانك الحقيقي. رسائل التأكيد تصل هنا، ويبقى بريدك الشخصي نظيفا وبدون سبام.",howT:"كيف تستعمله؟",how1:"انسخ العنوان الظاهر أعلاه.",how2:"الصقه في الموقع الذي يطلب بريدا إلكترونيا.",how3:"تصل رسالة التأكيد هنا في ثوانٍ، دون تحديث الصفحة.",q1:"هل هو مجاني؟",a1:"نعم، مجاني تماما وبدون تسجيل.",q2:"كم تبقى الرسائل؟",a2:"الرسائل مؤقتة وتُحذف تلقائيا من خادم الاستقبال. لا تستعمل هذا أبدا للحسابات المهمة (بنك، استرجاع حساب رئيسي).",q3:"هل يمكنني إرسال رسائل؟",a3:"لا. هذه الخدمة للاستقبال فقط.",foot:"خدمة استقبال مؤقتة. وضع التجربة: الاستقبال عبر",ready:"العنوان جاهز — تحديث تلقائي كل {s} ثوانٍ",copied:"تم نسخ العنوان ✔",creating:"جارٍ إنشاء العنوان…",checking:"جارٍ التحقق…",err:"خطأ في الشبكة — إعادة محاولة تلقائية",confirmDel:"حذف هذا العنوان وإنشاء واحد جديد؟",taken:"الاسم محجوز، جرب اسما آخر",badge:"✉️ مجاني 100% — بدون تسجيل",yourAddr:"عنوانك المؤقت",qrHelp:"سكانّي باش تلقى هاد العنوان في جهاز آخر",timeLeft:"الوقت اللي بقى:",extend:"+10 دقائق",extended:"تزادت 10 دقائق ✔",expired:"⏰ سالات مدة العنوان — تصاوب عنوان جديد",termsL:"📜 الشروط",aboutL:"ℹ️ حول الموقع",contactL:"✉️ اتصل بنا",featT:"لماذا TempBleu؟",f1t:"ضد السبام كليا",f1p:"خلي بريدك الحقيقي نظيفا: السبام يبقى هنا، لا عندك.",f2t:"أكواد تأكيد سريعة",f2p:"أكواد التحقق كتوصل بسرعة: الصندوق كيتحين بوحدو كل دقيقة (وفور ما ترجع للتبويب).",f3t:"بدون أي تسجيل",f3p:"لا حساب، لا كلمة سر، لا معلومات شخصية مطلوبة.",f4t:"حذف تلقائي",f4p:"العنوان والرسائل مؤقتة وتتمسح بوحدها.",f5t:"الخصوصية",f5p:"هويتك الحقيقية لا تغادر جيبك أبدا.",f6t:"3 لغات",f6p:"واجهة بالفرنسية والإنجليزية والعربية، مصممة للهاتف.",useT:"فيم يستعمل؟",u1:"📝 تسجيلات سريعة في المواقع والمنتديات",u2:"🎁 عروض وتجارب مجانية بلا سبام بعدها",u3:"🧪 تجربة تطبيقك الخاص بعناوين حقيقية",u4:"🔐 استقبال كود تحقق لمرة واحدة",secT:"⚠️ لا تستعمله أبدا في…",secP:"الحسابات المهمة: البنك، بريدك الرئيسي، استرجاع حساباتك الأساسية. العنوان المؤقت مصنوع لاستعمال واحد، لا ليدوم.",q4:"كم يبقى عنواني خداما؟",a4:"العنوان كيعيش 10 دقائق (العداد باين قدامك). زر +10 دقائق كيزيد في المدة. ملي كتسالي، كيتصاوب عنوان جديد بوحدو.",privT:"الخصوصية",privP:"هذه الخدمة تستقبل رسائل على عنوان مؤقت. لا تستقبل هنا أبدا وثائق حساسة. في وضع التجربة، الاستقبال يؤمنه شريكنا التقني المذكور أسفل الصفحة.",rights:"كل الحقوق محفوظة."}
 };
-let lang = 'fr';
+let lang = 'en';
 const t = k => (I18N[lang][k] || k);
 function applyLang(){
   document.querySelectorAll('[data-i]').forEach(el=>{ el.textContent = t(el.dataset.i); });
@@ -452,10 +1134,533 @@ if(session && session.address){ if(!session.exp) session.exp = Date.now()+ADDR_T
 if(session && session.address){ showAddress(); startPolling(); refreshInbox(); startCountdown(); }
 else newAddress();
 
-</script>
-<script>
+</script><script>
 const io = new IntersectionObserver(es=>es.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('on'); io.unobserve(e.target);} }), {threshold:.08});
 document.querySelectorAll('.rv').forEach(el=>io.observe(el));
 </script>
+<script>
+/* ===== TempBleu single-file router ===== */
+const TB_TITLES = {'home':'TempBleu.com — Free Temporary E-mail | Disposable Temp Mail','blog':'TempBleu Blog — Temporary E-mail Guides & Tips','change':'TempBleu — Change E-mail Address','privacy':'TempBleu — Privacy Policy','terms':'TempBleu — Terms of Use','about':'TempBleu — About TempBleu','contact':'TempBleu — Contact'};
+let TB_CUR = 'home';
+function showPage(name){
+  if (TB_CUR === 'change' && name === 'home') { location.hash = '#/home'; location.reload(); return; }
+  TB_CUR = name;
+  document.querySelectorAll('.tb-page').forEach(p => p.classList.toggle('on', p.id === 'page-' + name));
+  if (TB_TITLES[name]) document.title = TB_TITLES[name];
+  window.scrollTo(0, 0);
+  if (('#/' + name) !== location.hash) history.pushState(null, '', name === 'home' ? location.pathname : '#/' + name);
+}
+window.showPage = showPage;
+document.addEventListener('click', e => {
+  const a = e.target.closest ? e.target.closest('a') : null;
+  if (!a) return;
+  const h = a.getAttribute('href') || '';
+  const m = h.match(/(?:^|\/)(tempbleu(?:-(blog|change|privacy|terms|about|contact))?\.html)(?:[?#].*)?$/);
+  if (m) { e.preventDefault(); showPage(m[2] || 'home'); }
+  else if (/(?:^|\/)index\.html$/.test(h)) { e.preventDefault(); showPage('home'); }
+});
+window.addEventListener('popstate', () => {
+  const n = (location.hash.replace('#/', '') || 'home');
+  if (document.getElementById('page-' + n)) showPage(n);
+});
+(function(){ const n = location.hash.replace('#/', ''); if (n && n !== 'home' && document.getElementById('page-' + n)) showPage(n); })();
+</script>
+<script>/* ===== tempbleu-blog.html ===== */
+
+;(function(){
+  const ROOT = document.getElementById('page-blog');
+  const __real = document;
+  const __scoped = {
+    getElementById: id => ROOT.querySelector('#' + id),
+    querySelector: s => ROOT.querySelector(s),
+    querySelectorAll: s => ROOT.querySelectorAll(s),
+    createElement: (...a) => __real.createElement(...a),
+    createElementNS: (...a) => __real.createElementNS(...a),
+    addEventListener: (...a) => __real.addEventListener(...a),
+    removeEventListener: (...a) => __real.removeEventListener(...a),
+    body: ROOT, documentElement: ROOT, activeElement: null,
+  };
+  Object.defineProperty(__scoped, 'title', { get: () => __real.title, set: v => { __real.title = v; } });
+  const document = __scoped;
+
+"use strict";
+const I18N = {
+  fr:{blogT:"📚 Le Blog TempBleu",blogSub:"Guides, astuces et sécurité autour de l'e-mail temporaire — écrits par l'équipe TempBleu.",searchPh:"🔍 Rechercher un article…",all:"Tous",read:"Lire →",backList:"← Tous les articles",feat:"⭐ À la une",min:"min",noRes:"Aucun article ne correspond à votre recherche.",ctaT:"Besoin d'une adresse maintenant ?",ctaB:"✉️ Obtenir mon e-mail temporaire",bodyNote:"ℹ️ Article complet en français — les titres et résumés sont disponibles en 3 langues.",rights:"Tous droits réservés.",home:"Accueil Temp Mail",cat_guide:"Guides",cat_secu:"Sécurité",cat_astuce:"Astuces",cat_tech:"Technique"},
+  en:{blogT:"📚 The TempBleu Blog",blogSub:"Guides, tips and security around temporary e-mail — written by the TempBleu team.",searchPh:"🔍 Search an article…",all:"All",read:"Read →",backList:"← All articles",feat:"⭐ Featured",min:"min",noRes:"No article matches your search.",ctaT:"Need an address right now?",ctaB:"✉️ Get my temporary e-mail",bodyNote:"ℹ️ Full article in French — titles and summaries are available in 3 languages.",rights:"All rights reserved.",home:"Temp Mail home",cat_guide:"Guides",cat_secu:"Security",cat_astuce:"Tips",cat_tech:"Technical"},
+  ar:{blogT:"📚 مدونة TempBleu",blogSub:"أدلة ونصائح وأمان حول البريد المؤقت — من فريق TempBleu.",searchPh:"🔍 ابحث عن مقال…",all:"الكل",read:"اقرأ ←",backList:"→ كل المقالات",feat:"⭐ مختار",min:"دقائق",noRes:"لا يوجد مقال يطابق بحثك.",ctaT:"محتاج عنوانا الآن؟",ctaB:"✉️ احصل على بريدي المؤقت",bodyNote:"ℹ️ المقال الكامل بالفرنسية — العناوين والملخصات متوفرة بثلاث لغات.",rights:"كل الحقوق محفوظة.",home:"رئيسية البريد المؤقت",cat_guide:"أدلة",cat_secu:"أمان",cat_astuce:"نصائح",cat_tech:"تقني"}
+};
+let lang='en', curCat='all', curQ='';
+const t=k=>I18N[lang][k]||k;
+
+const ARTICLES=[
+{id:1,icon:"📬",grad:"g1",cat:"guide",date:"2026-10-30",mins:5,feat:true,
+ title:{fr:"Qu'est-ce qu'un e-mail jetable ? Le guide complet",en:"What is a disposable e-mail? The complete guide",ar:"ما هو البريد المؤقت؟ الدليل الكامل"},
+ ex:{fr:"Définition, fonctionnement réel, vrais avantages et limites honnêtes de l'adresse temporaire — tout ce qu'il faut savoir avant de l'utiliser.",en:"Definition, how it really works, real benefits and honest limits of a temporary address — everything to know before using one.",ar:"التعريف، كيف يشتغل فعلا، المزايا الحقيقية والحدود بصراحة — كل ما خاصك تعرف قبل ما تستعمله."},
+ body:`<p>Un e-mail jetable — on dit aussi temporaire ou « temp mail » — est une adresse créée en une seconde, sans inscription, qui sert à recevoir des messages pendant une courte période avant d'être abandonnée. Ce n'est pas un faux e-mail : les messages arrivent réellement, dans une boîte que vous lisez depuis votre navigateur.</p>
+ <h3>Comment ça marche, concrètement</h3>
+ <p>Derrière la page que vous voyez, trois pièces travaillent ensemble. D'abord, un nom de domaine configuré pour recevoir du courrier : ses enregistrements MX indiquent aux serveurs du monde entier où livrer les messages. Ensuite, une règle dite « catch-all » : n'importe quelle adresse du domaine — par exemple <b>soleil4821@exemple.com</b> — est acceptée, sans qu'il soit nécessaire de la créer à l'avance. Enfin, un programme reçoit chaque message, le range dans une base temporaire, et votre page l'affiche en quelques secondes. Après un délai court, tout est effacé automatiquement.</p>
+ <h3>Pourquoi les gens l'utilisent</h3>
+ <ul><li><b>Éviter le spam</b> : l'adresse donnée aux sites peu importants absorbe les publicités à la place de votre vraie boîte.</li><li><b>Recevoir un code de vérification</b> : inscription à un forum, essai gratuit, téléchargement… le code arrive ici, pas dans votre vie privée.</li><li><b>Tester</b> : les développeurs créent des dizaines d'adresses pour vérifier leurs propres applications.</li></ul>
+ <h3>Les limites, honnêtement</h3>
+ <p>Une adresse temporaire n'est pas faite pour durer : si vous perdez la page, vous perdez l'accès aux messages. Certains grands services la refusent dès l'inscription parce que son domaine est connu. Et surtout, elle ne doit jamais servir pour la banque, les paiements ou la récupération de vos comptes importants. Utilisée pour ce qu'elle est — un outil jetable, comme un mouchoir en papier — elle rend un vrai service, tous les jours.</p>`},
+{id:2,icon:"🛡️",grad:"g2",cat:"secu",date:"2026-10-27",mins:4,
+ title:{fr:"Spam : la méthode simple pour garder votre boîte propre",en:"Spam: the simple method to keep your inbox clean",ar:"السبام: الطريقة البسيطة باش يبقى بريدك نظيفا"},
+ ex:{fr:"D'où vient vraiment le spam, la règle d'une adresse par usage, et les habitudes qui changent tout en une semaine.",en:"Where spam really comes from, the one-address-per-use rule, and the habits that change everything in a week.",ar:"من أين يأتي السبام فعلا، قاعدة عنوان لكل استعمال، والعادات اللي كتبدل كلشي في أسبوع."},
+ body:`<p>Le spam ne tombe pas du ciel. Dans la grande majorité des cas, votre adresse a été collectée là où vous l'avez donnée : une inscription, un concours, un achat… puis revendue, échangée, ou récupérée lors d'une fuite de données d'un site que vous aviez oublié.</p>
+ <h3>La règle qui change tout : une adresse par niveau de confiance</h3>
+ <p>Gardez votre adresse principale pour ce qui compte vraiment : famille, travail, banque, administrations. Pour tout le reste — boutiques occasionnelles, forums, essais, téléchargements — servez-vous d'une adresse temporaire. Le jour où l'une d'elles se met à recevoir des publicités, vous l'abandonnez, et votre vraie boîte n'a rien vu passer.</p>
+ <h3>Trois habitudes en plus</h3>
+ <ul><li>Ne publiez jamais votre adresse principale en clair sur une page publique : les robots la récoltent.</li><li>Désinscrivez-vous des listes que vous ne lisez plus, au lieu de les ignorer pendant des mois.</li><li>Méfiez-vous des cases pré-cochées « recevoir nos offres partenaires » lors d'une inscription.</li></ul>
+ <p>En une semaine d'application, la plupart des utilisateurs voient leur boîte principale redevenir calme. Le spam n'a pas disparu d'Internet : il a simplement changé d'adresse — une adresse jetable.</p>`},
+{id:3,icon:"🔢",grad:"g3",cat:"guide",date:"2026-10-24",mins:3,
+ title:{fr:"Codes de vérification (OTP) : recevoir un code en 30 secondes",en:"Verification codes (OTP): receive a code in 30 seconds",ar:"أكواد التحقق (OTP): استقبل كودا في 30 ثانية"},
+ ex:{fr:"Le pas-à-pas exact pour recevoir un code avec TempBleu, et quoi faire quand le code n'arrive pas.",en:"The exact step-by-step to receive a code with TempBleu, and what to do when the code does not arrive.",ar:"الخطوات بالضبط باش تستقبل كودا مع TempBleu، وشنو تدير إذا ما وصلش الكود."},
+ body:`<p>Un code OTP est un mot de passe à usage unique, le plus souvent 6 chiffres, envoyé par e-mail ou SMS pour prouver que vous contrôlez bien l'adresse ou le numéro indiqué. Voici comment le recevoir avec une adresse temporaire.</p>
+ <h3>Pas à pas</h3>
+ <ul><li><b>1.</b> Ouvrez TempBleu : une adresse s'affiche immédiatement. Copiez-la avec le bouton vert.</li><li><b>2.</b> Collez-la dans le formulaire du site qui demande une vérification.</li><li><b>3.</b> Revenez sur l'onglet TempBleu sans le fermer : la page vérifie automatiquement toutes les 10 secondes.</li><li><b>4.</b> Le message apparaît dans la boîte : cliquez dessus, le code est en gros dans le texte.</li></ul>
+ <h3>Le code n'arrive pas ?</h3>
+ <p>Patientez d'abord deux minutes complètes : certains services envoient par lots. Vérifiez ensuite que l'adresse collée est exactement celle affichée, sans espace ajouté. Enfin, sachez que certains services refusent d'envoyer vers des domaines temporaires connus : dans ce cas, rien ne « bloquera » chez vous, le service a simplement décidé de ne pas écrire à ce type d'adresse — utilisez alors une adresse durable pour ce service-là.</p>
+ <p><b>Sécurité :</b> un code OTP est un secret éphémère. Ne le partagez avec personne, ne le saisissez que sur le site qui vient de vous l'envoyer.</p>`},
+{id:4,icon:"📱",grad:"g4",cat:"astuce",date:"2026-10-20",mins:4,
+ title:{fr:"E-mail temporaire et réseaux sociaux : ce qui marche, ce qui bloque",en:"Temporary e-mail and social networks: what works, what blocks",ar:"البريد المؤقت ومواقع التواصل: شنو خدام وشنو كيتحظر"},
+ ex:{fr:"La vérité sans fard : les grandes plateformes détectent souvent les domaines jetables. Voici quand l'adresse temporaire reste utile — et quand elle vous piègera.",en:"The plain truth: big platforms often detect disposable domains. Here is when a temporary address stays useful — and when it will trap you.",ar:"الحقيقة بلا تجميل: المنصات الكبرى غالبا كتكشف الدومينات المؤقتة. هنا إمتى كيبقى العنوان المؤقت مفيدا — وإمتى غادي يضرك."},
+ body:`<p>Beaucoup d'articles promettent monts et merveilles. Soyons directs : Facebook, Google, Instagram et la plupart des grandes plateformes entretiennent des listes de domaines temporaires connus, et refusent l'inscription dès la saisie de l'adresse. Ce n'est pas un bug de votre côté, c'est une politique assumée contre les faux comptes.</p>
+ <h3>Quand l'adresse temporaire reste utile</h3>
+ <ul><li>Créer un compte de <b>test</b> sur un petit service, un forum, un jeu.</li><li>Lire un contenu ou télécharger un fichier qui exige une « inscription ».</li><li>Essayer une application avant de décider si elle mérite votre vraie adresse.</li></ul>
+ <h3>Le piège classique</h3>
+ <p>Le vrai danger n'est pas le refus à l'inscription, c'est la perte d'accès plus tard. Un compte créé avec une adresse jetable devient irrécupérable le jour où le mot de passe est oublié : le lien de réinitialisation part vers une boîte qui n'existe plus. Si un compte compte pour vous — contacts, photos, historique — il mérite une adresse durable, éventuellement un alias de votre boîte principale.</p>
+ <p>La règle TempBleu : <b>jetable pour le jetable, durable pour le durable.</b> Choisir en connaissance de cause, c'est déjà être protégé.</p>`},
+{id:5,icon:"🌐",grad:"g5",cat:"tech",date:"2026-10-16",mins:5,
+ title:{fr:"Votre propre e-mail temporaire avec votre domaine : comment ça marche",en:"Your own temporary e-mail on your domain: how it works",ar:"بريدك المؤقت الخاص بدومينك: كيفاش كيخدم"},
+ ex:{fr:"MX, catch-all, routage et stockage temporaire expliqués simplement — c'est exactement la feuille de route que suit TempBleu.",en:"MX, catch-all, routing and temporary storage explained simply — this is exactly the roadmap TempBleu follows.",ar:"MX و catch-all والتوجيه والتخزين المؤقت مشروحة ببساطة — وهي بالضبط خطة الطريق اللي كيتبعها TempBleu."},
+ body:`<p>Peut-on avoir son propre service d'e-mail temporaire, avec ses adresses à soi — par exemple <b>nimporte@mon-domaine.com</b> ? Oui, et l'infrastructure moderne a rendu cela étonnamment abordable. Voici les pièces du puzzle, sans jargon inutile.</p>
+ <h3>Les quatre pièces</h3>
+ <ul><li><b>Un domaine dédié</b> (environ 10 €/an) : dédié, car un domaine temporaire finit souvent sur des listes de blocage — on ne risque jamais son domaine principal.</li><li><b>Les enregistrements MX</b> : ils annoncent au monde où livrer le courrier de ce domaine.</li><li><b>Un service de routage d'e-mails</b> avec une règle « catch-all » : tout ce qui arrive sur le domaine, vers n'importe quelle adresse, est transmis à votre programme.</li><li><b>Un petit programme + une base temporaire</b> : il lit chaque message, le stocke quelques heures, et une page web l'affiche à la bonne personne. Un nettoyage automatique efface le reste.</li></ul>
+ <h3>Combien ça coûte, vraiment</h3>
+ <p>Le domaine est le seul coût obligatoire. Le routage, l'hébergement de la page et la petite base de données existent en offres gratuites généreuses chez les grands hébergeurs « edge » — largement assez pour démarrer et apprendre. On paie plus tard, seulement si le trafic le justifie.</p>
+ <p>C'est exactement la feuille de route de TempBleu : d'abord une page qui fonctionne avec un partenaire de réception, ensuite — dernière étape — le domaine personnel et le programme maison qui prennent le relais, sans changer l'expérience des visiteurs.</p>`},
+{id:6,icon:"⚠️",grad:"g6",cat:"secu",date:"2026-10-12",mins:4,
+ title:{fr:"7 erreurs à éviter avec un e-mail temporaire",en:"7 mistakes to avoid with a temporary e-mail",ar:"7 أخطاء خاصك تتجنبها مع البريد المؤقت"},
+ ex:{fr:"Banque, récupération de compte, codes partagés… les sept usages qui transforment un outil pratique en vrai problème.",en:"Banking, account recovery, shared codes… the seven uses that turn a handy tool into a real problem.",ar:"البنك، استرجاع الحساب، مشاركة الأكواد… سبعة استعمالات كتحول أداة مفيدة لمشكل حقيقي."},
+ body:`<p>L'e-mail temporaire est un excellent outil — à condition de ne pas lui demander ce qu'il ne peut pas donner. Voici les sept erreurs que nous voyons le plus souvent.</p>
+ <h3>La liste</h3>
+ <ul><li><b>1. L'utiliser pour la banque ou les paiements.</b> Relevés, alertes, confirmations : tout cela doit arriver sur une adresse durable et protégée.</li><li><b>2. Le mettre en « e-mail de secours »</b> de votre boîte principale : le jour du problème, le secours n'existe plus.</li><li><b>3. Créer un compte important</b> (travail, réseau social principal) avec une adresse qu'on abandonnera.</li><li><b>4. Réutiliser le même mot de passe</b> partout « parce que c'est un compte jetable » : les fuites ne font pas la différence.</li><li><b>5. Recevoir des documents sensibles</b> : contrats, dossiers médicaux, pièces d'identité n'ont rien à faire dans une boîte éphémère.</li><li><b>6. Croire à un anonymat total</b> : une adresse temporaire protège votre boîte, elle ne vous rend pas invisible.</li><li><b>7. Partager un code OTP reçu</b> : un code se saisit, il ne se transmet jamais à un tiers.</li></ul>
+ <p>Évitez ces sept cas, et l'outil reste ce qu'il doit être : simple, rapide, et sans conséquence le jour où vous fermez la page.</p>`},
+{id:7,icon:"🕵️",grad:"g2",cat:"secu",date:"2026-10-08",mins:4,
+ title:{fr:"Phishing : pourquoi une adresse jetable désarme les arnaqueurs",en:"Phishing: why a disposable address disarms scammers",ar:"التصيد: علاش العنوان المؤقت كيضعف المحتالين"},
+ ex:{fr:"Lien piégé, fausse livraison, banque imitée : le phishing vit de votre vraie adresse. Voici comment le temp mail casse son modèle.",en:"Trapped links, fake deliveries, imitated banks: phishing lives off your real address. Here is how temp mail breaks its model.",ar:"روابط مفخخة، توصيل وهمي، بنك مقلد: التصيد كيعيش من عنوانك الحقيقي. هاكيفاش الإيميل المؤقت كيكسر هاد النموذج."},
+ body:`<p>Le phishing — ces faux messages qui imitent votre banque, un transporteur ou un service officiel — commence presque toujours au même endroit : quelqu'un a obtenu votre vraie adresse e-mail. Sans elle, l'arnaque ne peut même pas commencer.</p>
+ <h3>Le parcours d'une arnaque réussie</h3>
+ <p>Première étape, la collecte : votre adresse est récupérée lors d'une fuite de données, achetée dans des listes, ou moissonnée là où vous l'avez laissée. Deuxième étape, le message piégé arrive dans une boîte que vous lisez tous les jours, mélangé à vos vrais messages — c'est ce mélange qui le rend crédible. Troisième étape, un clic pressé, et vos identifiants partent chez l'arnaqueur.</p>
+ <h3>Ce que change l'adresse temporaire</h3>
+ <ul><li><b>Elle casse l'étape 1</b> : les sites secondaires ne reçoivent jamais votre vraie adresse, donc elle circule beaucoup moins.</li><li><b>Elle isole l'étape 2</b> : un message « officiel » qui arrive dans une boîte jetable est suspect par définition — vous savez que votre banque n'écrit jamais là.</li><li><b>Elle s'auto-détruit</b> : après 10 minutes, même l'adresse piégée cesse d'exister.</li></ul>
+ <p>Le temp mail ne remplace ni l'antivirus ni la vigilance : vérifiez toujours l'expéditeur réel et ne cliquez jamais un lien de « banque » reçu par e-mail. Mais en réduisant la circulation de votre vraie adresse, il retire aux arnaqueurs leur matière première.</p>`},
+{id:8,icon:"🛒",grad:"g3",cat:"astuce",date:"2026-10-05",mins:4,
+ title:{fr:"Achats en ligne : profiter des promos sans le spam éternel",en:"Online shopping: grab the deals without the eternal spam",ar:"التسوق أونلاين: استافد من العروض بلا سبام أبدي"},
+ ex:{fr:"-10 % contre votre e-mail : l'échange semble honnête, la facture arrive ensuite en newsletters infinies. La méthode propre, étape par étape.",en:"-10% for your e-mail: the deal looks fair, the bill arrives later as endless newsletters. The clean method, step by step.",ar:"-10% مقابل إيميلك: الصفقة كتبان عادلة، والفاتورة كتوصل من بعد في نشرات لا نهائية. الطريقة النظيفة، خطوة بخطوة."},
+ body:`<p>« Inscrivez-vous à la newsletter et recevez -10 % sur votre première commande. » L'offre est partout, et elle fonctionne : le marchand obtient une adresse qu'il pourra solliciter pendant des années, pour un bon d'achat à usage unique. Le calcul n'est pas en votre faveur.</p>
+ <h3>La méthode propre</h3>
+ <ul><li><b>1.</b> Au moment de créer le compte « juste pour la promo », utilisez une adresse temporaire.</li><li><b>2.</b> Le code de réduction arrive ici ; passez votre commande avec, comme invité ou avec le compte jetable.</li><li><b>3.</b> Laissez l'adresse expirer : les relances « vous nous manquez » partiront dans le vide.</li></ul>
+ <h3>Les deux exceptions à retenir</h3>
+ <p>Pour un achat important — garantie, facture, livraison suivie — utilisez votre vraie adresse : vous aurez besoin des messages pendant des mois. Et si la boutique refuse l'adresse temporaire (certaines entretiennent des listes de domaines connus), c'est son droit : à vous de décider si la promo vaut votre vraie adresse. L'idée n'est pas de fuir toutes les newsletters, mais de choisir lesquelles méritent d'entrer chez vous.</p>`},
+{id:9,icon:"🧪",grad:"g5",cat:"tech",date:"2026-10-02",mins:5,
+ title:{fr:"Développeurs : tester les e-mails de votre application avec des adresses jetables",en:"Developers: test your app's e-mails with disposable addresses",ar:"للمطورين: جرب إيميلات تطبيقك بعناوين مؤقتة"},
+ ex:{fr:"Inscriptions, confirmations, réinitialisations : une app envoie plus d'e-mails qu'on ne croit. Comment les tester proprement, sans polluer de vraies boîtes.",en:"Sign-ups, confirmations, resets: an app sends more e-mails than you think. How to test them cleanly, without polluting real inboxes.",ar:"تسجيلات، تأكيدات، إعادة تعيين: التطبيق كيصيفط إيميلات كثر مما كتظن. كيفاش تجربهم بنظافة، بلا ما توسخ صناديق حقيقية."},
+ body:`<p>Chaque application finit par envoyer des e-mails : confirmation d'inscription, réinitialisation de mot de passe, reçus, alertes. Les tester avec sa propre adresse devient vite un cauchemar — sujets mélangés, impossible de vérifier l'inscription « comme un nouvel utilisateur », boîtes partagées entre testeurs.</p>
+ <h3>Le protocole simple</h3>
+ <ul><li><b>Une adresse par scénario</b> : inscription, mot de passe oublié, changement d'e-mail — chacun avec sa propre adresse jetable, pour ne jamais confondre les messages.</li><li><b>Vérifiez le fond et la forme</b> : le code ou le lien fonctionne-t-il ? L'objet s'affiche-t-il correctement, y compris les caractères accentués ? Le rendu mobile est-il lisible ?</li><li><b>Testez le pire cas</b> : lien cliqué après expiration du code, double inscription avec la même adresse, message marqué comme spam.</li></ul>
+ <h3>Les limites de l'exercice</h3>
+ <p>Les adresses temporaires testent le contenu et le parcours utilisateur, pas la délivrabilité réelle : pour mesurer vos taux de rebond et votre réputation d'expéditeur (SPF, DKIM, DMARC), utilisez vos propres outils d'envoi. Les deux approches sont complémentaires — et aucune ne demande de sacrifier la boîte personnelle de qui que ce soit.</p>`},
+{id:10,icon:"🏷️",grad:"g4",cat:"guide",date:"2026-09-28",mins:4,
+ title:{fr:"Alias, « +adressing », jetable : quelles différences ?",en:"Aliases, plus-addressing, disposable: what are the differences?",ar:"الأسماء المستعارة، +adressing، المؤقت: شنو الفرق؟"},
+ ex:{fr:"Trois outils pour ne pas donner la même adresse partout — mais ils ne protègent pas de la même façon. Le comparatif honnête.",en:"Three tools to avoid giving the same address everywhere — but they do not protect in the same way. The honest comparison.",ar:"ثلاثة أدوات باش ما تعطيش نفس العنوان في كل بلاصة — ولكن ما كيحميوكش بنفس الطريقة. المقارنة الصريحة."},
+ body:`<p>Vous voulez arrêter de donner votre adresse principale partout. Trois techniques existent, souvent confondues. Voici ce que chacune fait vraiment.</p>
+ <h3>Le « +adressing »</h3>
+ <p>Chez beaucoup de fournisseurs, <b>vous+site@exemple.com</b> arrive dans la même boîte que <b>vous@exemple.com</b>. Pratique pour repérer qui a revendu votre adresse… mais le site n'a qu'à retirer le « +site » pour retrouver l'adresse mère. Protection : faible, traçabilité : bonne.</p>
+ <h3>L'alias</h3>
+ <p>Une autre adresse, durable, qui redirige vers votre boîte (services dédiés ou fonction de votre fournisseur). Elle cache votre vraie adresse tant que vous ne répondez pas avec. Protection : moyenne à bonne, durée : permanente — pensez à la supprimer si elle commence à recevoir du spam.</p>
+ <h3>L'adresse jetable</h3>
+ <p>Créée en une seconde, sans compte, elle reçoit pendant quelques minutes puis disparaît entièrement — adresse et messages. Protection : maximale pour les usages courts, durée : minimale par conception. C'est l'outil des inscriptions ponctuelles, des codes de vérification et des tests ; les deux autres servent les relations qui durent.</p>
+ <p>Le bon choix dépend donc d'une seule question : aurez-vous encore besoin de cette adresse dans un mois ? Non → jetable. Oui → alias. Juste curieux de savoir qui spamme → +adressing.</p>`}
+];
+
+const $=id=>document.getElementById(id);
+function applyLang(){
+  document.querySelectorAll('[data-i]').forEach(el=>{ el.textContent=t(el.dataset.i); });
+  $('search').placeholder=t('searchPh');
+  document.documentElement.lang=lang;
+  document.documentElement.dir=(lang==='ar')?'rtl':'ltr';
+  document.querySelectorAll('.langs button').forEach(b=>b.classList.toggle('on',b.dataset.lang===lang));
+  renderChips(); renderGrid();
+}
+document.querySelectorAll('.langs button').forEach(b=>b.onclick=()=>{ lang=b.dataset.lang; applyLang(); if($('reader').style.display==='block'){ /* keep body, refresh list behind */ } });
+
+function fmtDate(iso){ try{ return new Date(iso+'T12:00:00').toLocaleDateString(lang==='ar'?'ar':lang,{day:'numeric',month:'short',year:'numeric'}); }catch(e){ return iso; } }
+function renderChips(){
+  const cats=['all','guide','secu','astuce','tech'];
+  $('chips').innerHTML='';
+  cats.forEach(c=>{
+    const b=document.createElement('button');
+    b.className='chip'+(curCat===c?' on':'');
+    b.textContent=(c==='all')?t('all'):t('cat_'+c);
+    b.onclick=()=>{ curCat=c; renderChips(); renderGrid(); };
+    $('chips').appendChild(b);
+  });
+}
+function renderGrid(){
+  const q=curQ.trim().toLowerCase();
+  const list=ARTICLES.filter(a=>
+    (curCat==='all'||a.cat===curCat) &&
+    (!q || (a.title[lang]+' '+a.ex[lang]).toLowerCase().includes(q))
+  );
+  const g=$('grid'); g.innerHTML='';
+  $('noRes').style.display=list.length?'none':'block';
+  list.forEach(a=>{
+    const d=document.createElement('article');
+    d.className='post'+(a.feat&&curCat==='all'&&!q?' featured':'');
+    d.innerHTML='<div class="cover '+a.grad+'"><span>'+a.icon+'</span><span class="cat"></span>'+(a.feat?'<span class="feat-tag"></span>':'')+'</div>'
+      +'<div class="pbody"><h3></h3><p></p><div class="meta"><span class="d"></span><span class="read"></span></div></div>';
+    d.querySelector('.cat').textContent=t('cat_'+a.cat);
+    if(a.feat) d.querySelector('.feat-tag').textContent=t('feat');
+    d.querySelector('h3').textContent=a.title[lang];
+    d.querySelector('p').textContent=a.ex[lang];
+    d.querySelector('.d').textContent=fmtDate(a.date)+' · '+a.mins+' '+t('min');
+    d.querySelector('.read').textContent=t('read');
+    d.onclick=()=>openArticle(a.id);
+    g.appendChild(d);
+  });
+}
+function openArticle(id){
+  const a=ARTICLES.find(x=>x.id===id); if(!a) return;
+  $('listView').style.display='none';
+  const r=$('reader'); r.style.display='block';
+  const cov=$('rCover'); cov.className='rcover '+a.grad; cov.textContent=a.icon;
+  $('rTitle').textContent=a.title[lang];
+  $('rMeta').textContent=t('cat_'+a.cat)+' · '+fmtDate(a.date)+' · '+a.mins+' '+t('min');
+  $('rNote').style.display=(lang==='fr')?'none':'block';
+  $('rBody').innerHTML=a.body;
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+$('btnBack').onclick=()=>{ $('reader').style.display='none'; $('listView').style.display='block'; window.scrollTo({top:0,behavior:'smooth'}); };
+$('search').addEventListener('input',e=>{ curQ=e.target.value; renderGrid(); });
+
+applyLang();
+
+})();</script><script>/* ===== tempbleu-change.html ===== */
+
+;(function(){
+  const ROOT = document.getElementById('page-change');
+  const __real = document;
+  const __scoped = {
+    getElementById: id => ROOT.querySelector('#' + id),
+    querySelector: s => ROOT.querySelector(s),
+    querySelectorAll: s => ROOT.querySelectorAll(s),
+    createElement: (...a) => __real.createElement(...a),
+    createElementNS: (...a) => __real.createElementNS(...a),
+    addEventListener: (...a) => __real.addEventListener(...a),
+    removeEventListener: (...a) => __real.removeEventListener(...a),
+    body: ROOT, documentElement: ROOT, activeElement: null,
+  };
+  Object.defineProperty(__scoped, 'title', { get: () => __real.title, set: v => { __real.title = v; } });
+  const document = __scoped;
+
+
+"use strict";
+const GM='https://api.guerrillamail.com/ajax.php';
+const LS_KEY='tempbleu_v1';
+const I18N={
+ fr:{home:"🏠 Accueil",yourTemp:"Votre adresse électronique temporaire",copy:"📋 Copier",qrHelp:"Scannez pour ouvrir cette adresse sur un autre appareil",addrText:"Oubliez spam, publicités et robots : votre adresse temporaire est anonyme, gratuite et sans engagement. Les messages arrivent ici, votre vraie boîte reste tranquille.",refresh:"🔄 Actualiser",backInbox:"📥 Boîte de réception",del:"🗑️ Supprimer",pageTitle:"Changer d'adresse électronique",intro1:"TempBleu vous permet de changer d'adresse électronique sur cette page.",intro2:"Pour changer d'adresse, saisissez le nom souhaité, puis cliquez sur Enregistrer.",freeBadge:"✅ Gratuit chez TempBleu — pas d'abonnement Premium",save:"Enregistrer",noteDomain:"ℹ️ Mode test : un seul domaine de réception est disponible pour le moment. Votre domaine personnel arrivera à la dernière étape du projet, et cette liste s'élargira alors.",seoT:"Qu'est-ce qu'un e-mail temporaire jetable ?",seoP:"Un e-mail jetable est un service qui permet de recevoir du courrier à une adresse temporaire qui s'auto-détruit après un certain temps. On l'appelle aussi temp mail, faux-mail ou trash-mail. Forums, sites et blogs demandent souvent une inscription avant d'afficher leur contenu ou de permettre un téléchargement : l'adresse temporaire vous aide à franchir cette étape sans exposer votre vraie adresse, et à rester à l'abri du spam.",termsL:"Conditions",aboutL:"À propos",contactL:"Contact",popT:"Articles populaires",change:"Changer d'adresse",privacy:"Confidentialité",rights:"Tous droits réservés.",foot:"Service de réception temporaire. Mode test : réception assurée par",copied:"Adresse copiée ✔",refreshed:"Actualisé ! Boîte : ",msgs:"message(s)",confirmDel:"Supprimer cette adresse et en créer une nouvelle ?",saved:"✅ Nouvelle adresse enregistrée : ",creating:"Création…",err:"Erreur réseau — réessayez",tooShort:"Nom trop court (3 caractères minimum)",banner:"📧 Chez TempBleu, changer d’adresse est 100% gratuit — aucun Premium",freeBtn:"100% Gratuit",cookie:"Ce site utilise des cookies pour le confort de navigation.",cookieOk:"C’est compris",adBox:"AdSense Space",homeShort:"Accueil",copyShort:"Copier",refreshShort:"Actualiser",backShort:"Retour",delShort:"Supprimer"},
+ en:{home:"🏠 Home",yourTemp:"Your temporary e-mail address",copy:"📋 Copy",qrHelp:"Scan to open this address on another device",addrText:"Forget spam, ads and bots: your temporary address is anonymous, free and commitment-free. Messages arrive here, your real inbox stays quiet.",refresh:"🔄 Refresh",backInbox:"📥 Inbox",del:"🗑️ Delete",pageTitle:"Change e-mail address",intro1:"TempBleu lets you change your e-mail address on this page.",intro2:"To change your address, type the name you want, then click Save.",freeBadge:"✅ Free at TempBleu — no Premium subscription",save:"Save",noteDomain:"ℹ️ Test mode: only one receiving domain is available for now. Your personal domain will arrive at the project's final step, and this list will grow then.",seoT:"What is a disposable temporary e-mail?",seoP:"A disposable e-mail is a service that lets you receive mail at a temporary address which self-destructs after a while. It is also called temp mail, fake mail or trash mail. Forums, sites and blogs often ask you to sign up before showing content or allowing a download: a temporary address helps you pass that step without exposing your real address, and stay safe from spam.",termsL:"Terms",aboutL:"About",contactL:"Contact",popT:"Popular articles",change:"Change address",privacy:"Privacy",rights:"All rights reserved.",foot:"Temporary receiving service. Test mode: receiving powered by",copied:"Address copied ✔",refreshed:"Refreshed! Inbox: ",msgs:"message(s)",confirmDel:"Delete this address and create a new one?",saved:"✅ New address saved: ",creating:"Creating…",err:"Network error — try again",tooShort:"Name too short (3 characters minimum)",banner:"📧 At TempBleu, changing your address is 100% free — no Premium",freeBtn:"100% Free",cookie:"This website uses cookies for browsing comfort.",cookieOk:"That’s fine",adBox:"AdSense Space",homeShort:"Home",copyShort:"Copy",refreshShort:"Refresh",backShort:"Back",delShort:"Delete"},
+ ar:{home:"🏠 الرئيسية",yourTemp:"عنوانك الإلكتروني المؤقت",copy:"📋 نسخ",qrHelp:"امسح باش تفتح هاد العنوان في جهاز آخر",addrText:"انسَ السبام والإعلانات والروبوتات: عنوانك المؤقت مجهول، مجاني وبدون أي التزام. الرسائل كتوصل هنا، وبريدك الحقيقي كيبقى مرتاح.",refresh:"🔄 تحديث",backInbox:"📥 صندوق الوارد",del:"🗑️ حذف",pageTitle:"تغيير العنوان الإلكتروني",intro1:"كيخليك TempBleu تبدل عنوانك الإلكتروني في هاد الصفحة.",intro2:"باش تبدل العنوان، كتب الاسم اللي بغيتي، واضغط على حفظ.",freeBadge:"✅ مجاني عند TempBleu — بلا اشتراك Premium",save:"حفظ",noteDomain:"ℹ️ وضع التجربة: دومين استقبال واحد متاح دابا. دومينك الشخصي غادي يوصل في آخر خطوة ديال المشروع، وهاد اللائحة غادي تكبر وقتها.",seoT:"شنو هو البريد المؤقت القابل للرمي؟",seoP:"البريد القابل للرمي هو خدمة كتخليك تستقبل الرسائل في عنوان مؤقت كيتدمر بوحدو بعد مدة. كيتسمى أيضا temp mail أو بريد مزيف. بزاف ديال المنتديات والمواقع كيطلبو التسجيل قبل ما يبينو المحتوى أو يخليوك تحمل شي حاجة: العنوان المؤقت كيعاونك تدوز هاد الخطوة بلا ما تكشف عنوانك الحقيقي، وكيحميك من السبام.",termsL:"الشروط",aboutL:"حول",contactL:"اتصل بنا",popT:"مقالات مشهورة",change:"تغيير العنوان",privacy:"الخصوصية",rights:"كل الحقوق محفوظة.",foot:"خدمة استقبال مؤقتة. وضع التجربة: الاستقبال عبر",copied:"تم نسخ العنوان ✔",refreshed:"تم التحديث! الصندوق: ",msgs:"رسالة",confirmDel:"حذف هاد العنوان وإنشاء واحد جديد؟",saved:"✅ تم حفظ العنوان الجديد: ",creating:"جارٍ الإنشاء…",err:"خطأ في الشبكة — عاود المحاولة",tooShort:"الاسم قصير بزاف (3 حروف على الأقل)",banner:"📧 عند TempBleu، تغيير العنوان مجاني 100% — بلا Premium",freeBtn:"مجاني 100%",cookie:"هاد الموقع كيستعمل الكوكيز لراحة التصفح.",cookieOk:"مفهوم",adBox:"AdSense Space",homeShort:"الرئيسية",copyShort:"نسخ",refreshShort:"تحديث",backShort:"رجوع",delShort:"حذف"}
+};
+const POP=[
+ {icon:"📬",grad:"g1",fr:"Qu'est-ce qu'un e-mail jetable ? Le guide complet",en:"What is a disposable e-mail? The complete guide",ar:"ما هو البريد المؤقت؟ الدليل الكامل",ex:{fr:"Définition, fonctionnement réel, avantages et limites honnêtes.",en:"Definition, how it works, benefits and honest limits.",ar:"التعريف، كيفاش كيخدم، المزايا والحدود بصراحة."}},
+ {icon:"🛡️",grad:"g2",fr:"Spam : la méthode simple pour garder votre boîte propre",en:"Spam: the simple method to keep your inbox clean",ar:"السبام: الطريقة البسيطة لبريد نظيف",ex:{fr:"D'où vient le spam et la règle d'une adresse par usage.",en:"Where spam comes from and the one-address-per-use rule.",ar:"من أين يأتي السبام وقاعدة عنوان لكل استعمال."}},
+ {icon:"🔢",grad:"g3",fr:"Codes OTP : recevoir un code en 30 secondes",en:"OTP codes: receive a code in 30 seconds",ar:"أكواد OTP: استقبل كودا في 30 ثانية",ex:{fr:"Le pas-à-pas exact, et quoi faire si le code n'arrive pas.",en:"The exact steps, and what to do if the code does not arrive.",ar:"الخطوات بالضبط، وشنو تدير إذا ما وصلش الكود."}},
+ {icon:"📱",grad:"g4",fr:"E-mail temporaire et réseaux sociaux : ce qui bloque",en:"Temporary e-mail and social networks: what blocks",ar:"البريد المؤقت ومواقع التواصل: شنو كيتحظر",ex:{fr:"La vérité sur les plateformes qui refusent les domaines jetables.",en:"The truth about platforms refusing disposable domains.",ar:"الحقيقة على المنصات اللي كترفض الدومينات المؤقتة."}},
+ {icon:"🌐",grad:"g5",fr:"Votre propre e-mail temporaire avec votre domaine",en:"Your own temporary e-mail on your domain",ar:"بريدك المؤقت الخاص بدومينك",ex:{fr:"MX, catch-all et routage expliqués simplement.",en:"MX, catch-all and routing explained simply.",ar:"MX و catch-all والتوجيه مشروحة ببساطة."}},
+ {icon:"⚠️",grad:"g6",fr:"7 erreurs à éviter avec un e-mail temporaire",en:"7 mistakes to avoid with a temporary e-mail",ar:"7 أخطاء خاصك تتجنبها",ex:{fr:"Les usages qui transforment un outil pratique en problème.",en:"The uses that turn a handy tool into a problem.",ar:"الاستعمالات اللي كتحول أداة مفيدة لمشكل."}}
+];
+let lang='en';
+let session=null;
+const $=id=>document.getElementById(id);
+const t=k=>I18N[lang][k]||k;
+function toast(m){ const el=$('toast'); el.textContent=m; el.classList.add('show'); setTimeout(()=>el.classList.remove('show'),2400); }
+function save(){ localStorage.setItem(LS_KEY, JSON.stringify(session)); }
+function load(){ try{ return JSON.parse(localStorage.getItem(LS_KEY)); }catch(e){ return null; } }
+async function gmCall(params){ const r=await fetch(GM+'?'+new URLSearchParams(params).toString()); if(!r.ok) throw new Error('HTTP '+r.status); return r.json(); }
+function decodeEnt(s){ if(!s) return ''; const ta=document.createElement('textarea'); ta.innerHTML=s; return ta.value; }
+
+async function createSession(nameWanted){
+  let d=await gmCall({f:'get_email_address', lang: lang==='ar'?'en':lang});
+  let sid=d.sid_token, address=d.email_addr;
+  if(nameWanted){
+    d=await gmCall({f:'set_email_user', email_user:nameWanted, lang:'en', site:'guerrillamail.com', sid_token:sid});
+    if(d.email_addr) address=d.email_addr;
+    sid=d.sid_token||sid;
+  }
+  return {address, password:'', token:sid, accountId:''};
+}
+function showAddr(){ $('mail').value=session.address; $('qrImg').src='https://api.qrserver.com/v1/create-qr-code/?size=160x160&data='+encodeURIComponent('mailto:'+session.address); }
+
+function renderPop(){
+  const ul=$('popList'); ul.innerHTML='';
+  POP.forEach(a=>{
+    const li=document.createElement('li');
+    const th=document.createElement('div'); th.className='thumb '+a.grad; th.textContent=a.icon;
+    const wrap=document.createElement('div');
+    const link=document.createElement('a'); link.href='tempbleu-blog.html'; link.textContent=a[lang];
+    const p=document.createElement('p'); p.textContent=a.ex[lang];
+    wrap.append(link,p); li.append(th,wrap);
+    li.onclick=()=>showPage('blog');
+    ul.appendChild(li);
+  });
+}
+function applyLang(){
+  document.querySelectorAll('[data-i]').forEach(el=>{ el.textContent=t(el.dataset.i); });
+  document.documentElement.lang=lang;
+  document.documentElement.dir=(lang==='ar')?'rtl':'ltr';
+  document.querySelectorAll('.langs button').forEach(b=>b.classList.toggle('on',b.dataset.lang===lang));
+  renderPop();
+}
+document.querySelectorAll('.langs button').forEach(b=>b.onclick=()=>{ lang=b.dataset.lang; applyLang(); });
+
+async function copyAddr(){
+  if(!session) return;
+  try{ await navigator.clipboard.writeText(session.address); }catch(e){ $('mail').select(); document.execCommand('copy'); }
+  toast(t('copied'));
+}
+$('btnCopy').onclick=copyAddr;
+$('btnCopy2').onclick=copyAddr;
+$('btnQR').onclick=()=>{ const p=$('qrPop'); p.style.display=p.style.display==='block'?'none':'block'; };
+$('btnRefresh').onclick=async()=>{
+  if(!session) return;
+  try{ const d=await gmCall({f:'check_email', seq:0, sid_token:session.token}); if(d.sid_token){ session.token=d.sid_token; save(); } toast(t('refreshed')+(d.count||0)+' '+t('msgs')); }
+  catch(e){ toast(t('err')); }
+};
+$('btnDelete').onclick=async()=>{
+  if(!session || !confirm(t('confirmDel'))) return;
+  try{ await gmCall({f:'forget_me', email_addr:session.address, sid_token:session.token}); }catch(e){}
+  localStorage.removeItem(LS_KEY);
+  session=await createSession(); save(); showAddr(); toast('🗑️');
+};
+$('changeForm').addEventListener('submit', async e=>{
+  e.preventDefault();
+  const name=$('newName').value.trim().toLowerCase().replace(/[^a-z0-9._-]/g,'');
+  if(name.length<3){ toast(t('tooShort')); return; }
+  toast(t('creating'));
+  try{
+    session=await createSession(name); save(); showAddr();
+    const ok=$('okBox'); ok.style.display='block'; ok.textContent=t('saved')+session.address;
+  }catch(err){ toast(t('err')); }
+});
+
+applyLang();
+session=load();
+if(session && session.address){ showAddr(); }
+else { createSession().then(s=>{ session=s; save(); showAddr(); }).catch(()=>toast(t('err'))); }
+
+
+
+document.getElementById('bannerX').onclick=()=>{ document.getElementById('topBanner').style.display='none'; };
+const ck=document.getElementById('cookieBar');
+if(!localStorage.getItem('tempbleu_cookies')) ck.classList.add('show');
+document.getElementById('cookieOk').onclick=()=>{ localStorage.setItem('tempbleu_cookies','1'); ck.classList.remove('show'); };
+const io=new IntersectionObserver(es=>es.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} }),{threshold:.08});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+})();</script><script>/* ===== tempbleu-privacy.html ===== */
+
+;(function(){
+  const ROOT = document.getElementById('page-privacy');
+  const __real = document;
+  const __scoped = {
+    getElementById: id => ROOT.querySelector('#' + id),
+    querySelector: s => ROOT.querySelector(s),
+    querySelectorAll: s => ROOT.querySelectorAll(s),
+    createElement: (...a) => __real.createElement(...a),
+    createElementNS: (...a) => __real.createElementNS(...a),
+    addEventListener: (...a) => __real.addEventListener(...a),
+    removeEventListener: (...a) => __real.removeEventListener(...a),
+    body: ROOT, documentElement: ROOT, activeElement: null,
+  };
+  Object.defineProperty(__scoped, 'title', { get: () => __real.title, set: v => { __real.title = v; } });
+  const document = __scoped;
+
+const PAGE = {"title": {"fr": "Politique de confidentialité", "en": "Privacy Policy", "ar": "سياسة الخصوصية"}, "sub": {"fr": "Comment TempBleu traite vos données : presque rien, et seulement 10 minutes.", "en": "How TempBleu handles your data: almost nothing, and only for 10 minutes.", "ar": "كيف كيتعامل TempBleu مع بياناتك: تقريبا والو، وغير لمدة 10 دقائق."}, "html": {"fr": "\n<h2>1. Qui sommes-nous</h2>\n<p>TempBleu.com est un service gratuit de réception d'e-mails temporaires. Vous pouvez nous contacter via notre page <a href=\"tempbleu-contact.html\">Contact</a>. Cette politique explique quelles données le service manipule, pourquoi, et combien de temps.</p>\n<h2>2. Les données que nous traitons</h2>\n<p>Le service fonctionne <b>sans inscription</b> : nous ne demandons ni nom, ni mot de passe, ni votre véritable adresse e-mail.</p>\n<ul>\n<li><b>L'adresse temporaire</b> générée pour vous et les messages qu'elle reçoit : ils sont conservés au maximum <b>10 minutes</b>, puis automatiquement supprimés.</li>\n<li><b>Les données techniques minimales</b> : comme tout site web, notre hébergeur peut enregistrer des journaux techniques (adresse IP, navigateur, pages visitées) pour la sécurité et la lutte contre les abus.</li>\n<li><b>Le stockage local de votre navigateur</b> : la langue choisie, l'adresse en cours et le consentement aux cookies sont gardés sur votre appareil (localStorage), jamais transmis comme données personnelles.</li>\n</ul>\n<h2>3. Cookies</h2>\n<p>Nous utilisons des cookies et le stockage local pour le fonctionnement du service (langue, session temporaire, consentement). Vous pouvez les effacer à tout moment depuis les réglages de votre navigateur ; le service continuera de fonctionner, avec une nouvelle adresse.</p>\n<h2>4. Publicité — Google AdSense</h2>\n<p>Ce site peut afficher des publicités fournies par Google (AdSense) et d'autres régies. À ce titre :</p>\n<ul>\n<li>Des fournisseurs tiers, dont Google, utilisent des cookies pour diffuser des annonces en fonction de vos visites précédentes sur ce site et sur d'autres sites.</li>\n<li>L'utilisation par Google de cookies publicitaires lui permet, ainsi qu'à ses partenaires, de vous proposer des annonces personnalisées.</li>\n<li>Vous pouvez désactiver la publicité personnalisée dans les <a href=\"https://adssettings.google.com\" target=\"_blank\" rel=\"noopener\">Paramètres des annonces Google</a>, ou via <a href=\"https://www.aboutads.info/choices/\" target=\"_blank\" rel=\"noopener\">aboutads.info</a>.</li>\n</ul>\n<h2>5. Partage des données</h2>\n<p>Nous ne vendons aucune donnée. En phase de lancement, la réception technique des messages peut être assurée par un partenaire technique nommé en pied de page ; il ne reçoit que le contenu des messages adressés à votre adresse temporaire, pour les afficher dans votre navigateur. Les journaux techniques restent chez l'hébergeur.</p>\n<h2>6. Durée de conservation</h2>\n<p>Adresses et messages : <b>10 minutes maximum</b>, suppression automatique ensuite. Journaux techniques : durée courte, limitée aux besoins de sécurité.</p>\n<h2>7. Vos choix</h2>\n<ul>\n<li>Le bouton « Supprimer » détruit immédiatement votre adresse et sa session.</li>\n<li>Vous pouvez bloquer ou effacer les cookies dans votre navigateur.</li>\n<li>Pour toute question sur vos données, écrivez-nous via la page Contact.</li>\n</ul>\n<h2>8. Enfants</h2>\n<p>Ce service ne s'adresse pas aux enfants de moins de 13 ans et ne collecte sciemment aucune donnée les concernant.</p>\n<h2>9. Modifications</h2>\n<p>Cette politique peut évoluer ; la date de mise à jour figure en haut de la page. Les changements importants seront signalés sur le site.</p>\n", "en": "\n<h2>1. Who we are</h2>\n<p>TempBleu.com is a free temporary e-mail receiving service. You can reach us through our <a href=\"tempbleu-contact.html\">Contact</a> page. This policy explains what data the service handles, why, and for how long.</p>\n<h2>2. Data we handle</h2>\n<p>The service works <b>with no sign-up</b>: we never ask for your name, a password, or your real e-mail address.</p>\n<ul>\n<li><b>The temporary address</b> generated for you and the messages it receives: kept for a maximum of <b>10 minutes</b>, then automatically deleted.</li>\n<li><b>Minimal technical data</b>: like any website, our host may keep technical logs (IP address, browser, pages visited) for security and abuse prevention.</li>\n<li><b>Your browser's local storage</b>: chosen language, current address and cookie consent stay on your device (localStorage) and are never sent to us as personal data.</li>\n</ul>\n<h2>3. Cookies</h2>\n<p>We use cookies and local storage for the service to work (language, temporary session, consent). You can clear them anytime in your browser settings; the service keeps working, with a new address.</p>\n<h2>4. Advertising — Google AdSense</h2>\n<p>This site may display ads provided by Google (AdSense) and other ad networks. Therefore:</p>\n<ul>\n<li>Third-party vendors, including Google, use cookies to serve ads based on your prior visits to this and other websites.</li>\n<li>Google's use of advertising cookies enables it and its partners to serve you personalized ads.</li>\n<li>You can opt out of personalized advertising in <a href=\"https://adssettings.google.com\" target=\"_blank\" rel=\"noopener\">Google Ads Settings</a>, or via <a href=\"https://www.aboutads.info/choices/\" target=\"_blank\" rel=\"noopener\">aboutads.info</a>.</li>\n</ul>\n<h2>5. Data sharing</h2>\n<p>We sell no data. During the launch phase, technical message receiving may be handled by a technical partner named in the footer; it only receives the content of messages sent to your temporary address, in order to display them in your browser. Technical logs stay with the host.</p>\n<h2>6. Retention</h2>\n<p>Addresses and messages: <b>10 minutes maximum</b>, then automatic deletion. Technical logs: short retention, limited to security needs.</p>\n<h2>7. Your choices</h2>\n<ul>\n<li>The \"Delete\" button immediately destroys your address and its session.</li>\n<li>You can block or clear cookies in your browser.</li>\n<li>For any question about your data, write to us via the Contact page.</li>\n</ul>\n<h2>8. Children</h2>\n<p>This service is not directed at children under 13 and knowingly collects no data about them.</p>\n<h2>9. Changes</h2>\n<p>This policy may change; the update date appears at the top of this page. Significant changes will be announced on the site.</p>\n", "ar": "\n<h2>1. شكون حنا</h2>\n<p>TempBleu.com خدمة مجانية لاستقبال الإيميلات المؤقتة. تقدر تواصل معانا من صفحة <a href=\"tempbleu-contact.html\">اتصل بنا</a>. هاد السياسة كتشرح شنو البيانات اللي كتتعامل معها الخدمة، علاش، وشحال كتبقى.</p>\n<h2>2. البيانات اللي كنعالجو</h2>\n<p>الخدمة خدامة <b>بلا تسجيل</b>: ما كنطلبو لا اسم، لا كلمة سر، لا إيميلك الحقيقي.</p>\n<ul>\n<li><b>العنوان المؤقت</b> اللي كيتصاوب لك والرسائل اللي كيستقبل: كيبقاو <b>10 دقائق على الأكثر</b>، ومن بعد كيتمسحو بوحدهم.</li>\n<li><b>بيانات تقنية بسيطة</b>: كيف أي موقع، المستضيف يقدر يسجل سجلات تقنية (عنوان IP، المتصفح، الصفحات المزارة) للأمن ومحاربة الإساءة.</li>\n<li><b>التخزين المحلي في متصفحك</b>: اللغة المختارة، العنوان الحالي وموافقة الكوكيز كيبقاو في جهازك (localStorage) وما كيتصيفطو لينا كبيانات شخصية.</li>\n</ul>\n<h2>3. الكوكيز</h2>\n<p>كنستعملو الكوكيز والتخزين المحلي باش تخدم الخدمة (اللغة، الجلسة المؤقتة، الموافقة). تقدر تمسحهم في أي وقت من إعدادات المتصفح؛ الخدمة غادي تكمل خدامة بعنوان جديد.</p>\n<h2>4. الإعلانات — Google AdSense</h2>\n<p>هاد الموقع يقدر يعرض إعلانات من Google (AdSense) وشبكات أخرى. وبالتالي:</p>\n<ul>\n<li>مقدمون خارجيون، منهم Google، كيستعملو الكوكيز لعرض إعلانات بناء على زياراتك السابقة لهاد الموقع ومواقع أخرى.</li>\n<li>استعمال Google لكوكيز الإعلانات كيخليه هو وشركاؤه يعرضو عليك إعلانات مخصصة.</li>\n<li>تقدر تلغي الإعلانات المخصصة من <a href=\"https://adssettings.google.com\" target=\"_blank\" rel=\"noopener\">إعدادات إعلانات Google</a> أو عبر <a href=\"https://www.aboutads.info/choices/\" target=\"_blank\" rel=\"noopener\">aboutads.info</a>.</li>\n</ul>\n<h2>5. مشاركة البيانات</h2>\n<p>ما كنبيعو حتى بيانات. في مرحلة الإطلاق، الاستقبال التقني للرسائل يقدر يكون عند شريك تقني مذكور في أسفل الصفحة؛ هو كيستقبل غير محتوى الرسائل المرسلة لعنوانك المؤقت باش يعرضهم في متصفحك. والسجلات التقنية كتبقى عند المستضيف.</p>\n<h2>6. مدة الاحتفاظ</h2>\n<p>العناوين والرسائل: <b>10 دقائق على الأكثر</b>، ومن بعد حذف تلقائي. السجلات التقنية: مدة قصيرة، محدودة بحاجيات الأمن.</p>\n<h2>7. اختياراتك</h2>\n<ul>\n<li>زر «حذف» كيدمر عنوانك وجلستك فورا.</li>\n<li>تقدر تحظر أو تمسح الكوكيز من متصفحك.</li>\n<li>لأي سؤال على بياناتك، كتب لينا من صفحة اتصل بنا.</li>\n</ul>\n<h2>8. الأطفال</h2>\n<p>هاد الخدمة ماشي موجهة للأطفال أقل من 13 عام وما كتجمع حتى بيانات عليهم عن قصد.</p>\n<h2>9. التعديلات</h2>\n<p>هاد السياسة تقدر تبدل؛ تاريخ التحديث باين في أعلى الصفحة. والتغييرات المهمة غادي نعلنو عليها في الموقع.</p>\n"}};
+const NAVL = {"home": {"fr": "Accueil", "en": "Home", "ar": "الرئيسية"}, "privacy": {"fr": "Confidentialité", "en": "Privacy", "ar": "الخصوصية"}, "terms": {"fr": "Conditions", "en": "Terms", "ar": "الشروط"}, "about": {"fr": "À propos", "en": "About", "ar": "حول"}, "contact": {"fr": "Contact", "en": "Contact", "ar": "اتصل بنا"}, "rights": {"fr": "Tous droits réservés.", "en": "All rights reserved.", "ar": "جميع الحقوق محفوظة."}};
+const UPD = {"fr": "Dernière mise à jour : 31 octobre 2026", "en": "Last updated: October 31, 2026", "ar": "آخر تحديث: 31 أكتوبر 2026"};
+let lang = localStorage.getItem('tempbleu_lang') || 'en';
+function apply(l){
+  lang = l; localStorage.setItem('tempbleu_lang', l);
+  document.documentElement.lang = l; document.documentElement.dir = (l==='ar') ? 'rtl' : 'ltr';
+  document.querySelectorAll('.langs button').forEach(b=>b.classList.toggle('on', b.dataset.lang===l));
+  document.getElementById('pgTitle').textContent = PAGE.title[l];
+  document.getElementById('pgSub').textContent = PAGE.sub[l];
+  document.getElementById('pgUpd').textContent = true ? UPD[l] : '';
+  document.getElementById('pgBody').innerHTML = PAGE.html[l];
+  document.querySelectorAll('[data-k]').forEach(el=>{ el.textContent = NAVL[el.dataset.k][l]; });
+  document.title = 'TempBleu — ' + PAGE.title[l];
+  bindForm();
+}
+function bindForm(){
+  const f = document.getElementById('cForm');
+  if(!f) return;
+  f.onsubmit = (e)=>{
+    e.preventDefault();
+    const name=document.getElementById('cfName').value, mail=document.getElementById('cfMail').value,
+          subj=document.getElementById('cfSubj').value, msg=document.getElementById('cfMsg').value;
+    const body = msg + '\n\n— ' + name + (mail ? ' <'+mail+'>' : '');
+    location.href = 'mailto:contact@tempbleu.com?subject=' + encodeURIComponent('[TempBleu] ' + subj) + '&body=' + encodeURIComponent(body);
+  };
+}
+document.querySelectorAll('.langs button').forEach(b=> b.onclick = ()=>apply(b.dataset.lang));
+apply(['fr','en','ar'].includes(lang) ? lang : 'fr');
+
+})();</script><script>/* ===== tempbleu-terms.html ===== */
+
+;(function(){
+  const ROOT = document.getElementById('page-terms');
+  const __real = document;
+  const __scoped = {
+    getElementById: id => ROOT.querySelector('#' + id),
+    querySelector: s => ROOT.querySelector(s),
+    querySelectorAll: s => ROOT.querySelectorAll(s),
+    createElement: (...a) => __real.createElement(...a),
+    createElementNS: (...a) => __real.createElementNS(...a),
+    addEventListener: (...a) => __real.addEventListener(...a),
+    removeEventListener: (...a) => __real.removeEventListener(...a),
+    body: ROOT, documentElement: ROOT, activeElement: null,
+  };
+  Object.defineProperty(__scoped, 'title', { get: () => __real.title, set: v => { __real.title = v; } });
+  const document = __scoped;
+
+const PAGE = {"title": {"fr": "Conditions d'utilisation", "en": "Terms of Service", "ar": "شروط الاستخدام"}, "sub": {"fr": "Les règles simples du service TempBleu, en langage clair.", "en": "The simple rules of the TempBleu service, in plain language.", "ar": "قواعد خدمة TempBleu البسيطة، بلغة واضحة."}, "html": {"fr": "\n<h2>1. Le service</h2>\n<p>TempBleu.com fournit gratuitement des adresses e-mail temporaires permettant uniquement de <b>recevoir</b> des messages pendant <b>10 minutes</b> (prolongation possible par tranches de 10 minutes). L'envoi de messages n'est pas possible. Aucune inscription n'est requise.</p>\n<h2>2. Acceptation</h2>\n<p>En utilisant ce site, vous acceptez les présentes conditions. Si vous n'êtes pas d'accord, n'utilisez pas le service.</p>\n<h2>3. Usage acceptable</h2>\n<ul>\n<li>Utilisez le service uniquement à des fins légales.</li>\n<li>Ne l'utilisez pas pour créer des comptes frauduleux, contourner des interdictions, harceler, ou recevoir des contenus illégaux.</li>\n<li>Ne tentez pas de perturber le service, de le surcharger, ou d'accéder aux messages d'autres utilisateurs.</li>\n<li>Les adresses sont publiques par nature : n'importe qui connaît l'adresse peut lire ses messages. Ne recevez donc <b>jamais</b> de documents sensibles ni de codes liés à des comptes importants (banque, paiements, récupération de votre compte principal).</li>\n</ul>\n<h2>4. Disponibilité et suppression</h2>\n<p>Adresses et messages disparaissent automatiquement après leur durée de vie, sans possibilité de récupération. Le service est fourni « tel quel », sans garantie de disponibilité continue ni de réception de chaque message : certains expéditeurs bloquent les domaines temporaires, ce qui échappe à notre contrôle.</p>\n<h2>5. Responsabilité</h2>\n<p>Vous êtes responsable de l'usage que vous faites de l'adresse temporaire. Dans les limites permises par la loi, TempBleu ne peut être tenu responsable des pertes liées à l'expiration d'une adresse, à un message non reçu, ou à l'usage d'une adresse temporaire pour un compte important malgré nos avertissements.</p>\n<h2>6. Propriété intellectuelle</h2>\n<p>Le nom TempBleu, le logo, le design et les textes de ce site appartiennent à leurs auteurs et ne peuvent être reproduits sans autorisation.</p>\n<h2>7. Modifications</h2>\n<p>Nous pouvons modifier ces conditions ; la version en vigueur est celle publiée sur cette page, avec sa date de mise à jour.</p>\n<h2>8. Contact</h2>\n<p>Pour toute question sur ces conditions, utilisez notre page <a href=\"tempbleu-contact.html\">Contact</a>.</p>\n", "en": "\n<h2>1. The service</h2>\n<p>TempBleu.com provides free temporary e-mail addresses that can only <b>receive</b> messages, for <b>10 minutes</b> (extendable in 10-minute steps). Sending messages is not possible. No sign-up is required.</p>\n<h2>2. Acceptance</h2>\n<p>By using this site, you accept these terms. If you do not agree, please do not use the service.</p>\n<h2>3. Acceptable use</h2>\n<ul>\n<li>Use the service only for lawful purposes.</li>\n<li>Do not use it to create fraudulent accounts, evade bans, harass anyone, or receive illegal content.</li>\n<li>Do not attempt to disrupt or overload the service, or to access other users' messages.</li>\n<li>Addresses are public by nature: anyone who knows the address can read its messages. So <b>never</b> receive sensitive documents or codes tied to important accounts (banking, payments, recovery of your main account).</li>\n</ul>\n<h2>4. Availability and deletion</h2>\n<p>Addresses and messages disappear automatically at the end of their lifetime, with no way to recover them. The service is provided \"as is\", with no guarantee of continuous availability or of receiving every message: some senders block temporary domains, which is beyond our control.</p>\n<h2>5. Liability</h2>\n<p>You are responsible for how you use the temporary address. To the extent permitted by law, TempBleu cannot be held liable for losses linked to an address expiring, a message not received, or the use of a temporary address for an important account despite our warnings.</p>\n<h2>6. Intellectual property</h2>\n<p>The TempBleu name, logo, design and texts on this site belong to their authors and may not be reproduced without permission.</p>\n<h2>7. Changes</h2>\n<p>We may change these terms; the version in force is the one published on this page, with its update date.</p>\n<h2>8. Contact</h2>\n<p>For any question about these terms, use our <a href=\"tempbleu-contact.html\">Contact</a> page.</p>\n", "ar": "\n<h2>1. الخدمة</h2>\n<p>TempBleu.com كيوفر عناوين إيميل مؤقتة مجانية، للاستقبال <b>فقط</b>، لمدة <b>10 دقائق</b> (قابلة للتمديد بـ 10 دقائق في كل مرة). الإرسال غير ممكن. ولا حاجة لأي تسجيل.</p>\n<h2>2. القبول</h2>\n<p>باستعمالك هاد الموقع، أنت قابل هاد الشروط. إلا ما كنتيش موافق، ما تستعملش الخدمة.</p>\n<h2>3. الاستعمال المقبول</h2>\n<ul>\n<li>استعمل الخدمة غير لأغراض قانونية.</li>\n<li>ما تستعملهاش لإنشاء حسابات وهمية، تجاوز الحظر، التحرش، أو استقبال محتوى غير قانوني.</li>\n<li>ما تحاولش تعطل الخدمة أو تثقلها، أو توصل لرسائل مستعملين آخرين.</li>\n<li>العناوين عمومية بطبيعتها: أي واحد كيعرف العنوان يقدر يقرا رسائله. لذلك <b>أبدا</b> ما تستقبل وثائق حساسة أو أكواد مرتبطة بحسابات مهمة (البنك، الأداء، استرجاع حسابك الرئيسي).</li>\n</ul>\n<h2>4. التوفر والحذف</h2>\n<p>العناوين والرسائل كيختفيو بوحدهم في نهاية مدتهم، بلا إمكانية استرجاع. الخدمة مقدمة «كما هي»، بلا ضمان توفر مستمر ولا استقبال كل رسالة: بعض المرسلين كيحظرو الدومينات المؤقتة، وهذا خارج سيطرتنا.</p>\n<h2>5. المسؤولية</h2>\n<p>أنت مسؤول على استعمالك للعنوان المؤقت. في الحدود اللي كيسمح بيها القانون، TempBleu ما يتحملش مسؤولية خسائر مرتبطة بانتهاء عنوان، رسالة ما وصلاتش، أو استعمال عنوان مؤقت لحساب مهم رغم تحذيراتنا.</p>\n<h2>6. الملكية الفكرية</h2>\n<p>اسم TempBleu واللوغو والتصميم ونصوص هاد الموقع ملك لأصحابها وما يمكنش يعاد إنتاجهم بلا إذن.</p>\n<h2>7. التعديلات</h2>\n<p>نقدرو نبدلو هاد الشروط؛ النسخة السارية هي المنشورة في هاد الصفحة مع تاريخ تحديثها.</p>\n<h2>8. الاتصال</h2>\n<p>لأي سؤال على هاد الشروط، استعمل صفحة <a href=\"tempbleu-contact.html\">اتصل بنا</a>.</p>\n"}};
+const NAVL = {"home": {"fr": "Accueil", "en": "Home", "ar": "الرئيسية"}, "privacy": {"fr": "Confidentialité", "en": "Privacy", "ar": "الخصوصية"}, "terms": {"fr": "Conditions", "en": "Terms", "ar": "الشروط"}, "about": {"fr": "À propos", "en": "About", "ar": "حول"}, "contact": {"fr": "Contact", "en": "Contact", "ar": "اتصل بنا"}, "rights": {"fr": "Tous droits réservés.", "en": "All rights reserved.", "ar": "جميع الحقوق محفوظة."}};
+const UPD = {"fr": "Dernière mise à jour : 31 octobre 2026", "en": "Last updated: October 31, 2026", "ar": "آخر تحديث: 31 أكتوبر 2026"};
+let lang = localStorage.getItem('tempbleu_lang') || 'en';
+function apply(l){
+  lang = l; localStorage.setItem('tempbleu_lang', l);
+  document.documentElement.lang = l; document.documentElement.dir = (l==='ar') ? 'rtl' : 'ltr';
+  document.querySelectorAll('.langs button').forEach(b=>b.classList.toggle('on', b.dataset.lang===l));
+  document.getElementById('pgTitle').textContent = PAGE.title[l];
+  document.getElementById('pgSub').textContent = PAGE.sub[l];
+  document.getElementById('pgUpd').textContent = true ? UPD[l] : '';
+  document.getElementById('pgBody').innerHTML = PAGE.html[l];
+  document.querySelectorAll('[data-k]').forEach(el=>{ el.textContent = NAVL[el.dataset.k][l]; });
+  document.title = 'TempBleu — ' + PAGE.title[l];
+  bindForm();
+}
+function bindForm(){
+  const f = document.getElementById('cForm');
+  if(!f) return;
+  f.onsubmit = (e)=>{
+    e.preventDefault();
+    const name=document.getElementById('cfName').value, mail=document.getElementById('cfMail').value,
+          subj=document.getElementById('cfSubj').value, msg=document.getElementById('cfMsg').value;
+    const body = msg + '\n\n— ' + name + (mail ? ' <'+mail+'>' : '');
+    location.href = 'mailto:contact@tempbleu.com?subject=' + encodeURIComponent('[TempBleu] ' + subj) + '&body=' + encodeURIComponent(body);
+  };
+}
+document.querySelectorAll('.langs button').forEach(b=> b.onclick = ()=>apply(b.dataset.lang));
+apply(['fr','en','ar'].includes(lang) ? lang : 'fr');
+
+})();</script><script>/* ===== tempbleu-about.html ===== */
+
+;(function(){
+  const ROOT = document.getElementById('page-about');
+  const __real = document;
+  const __scoped = {
+    getElementById: id => ROOT.querySelector('#' + id),
+    querySelector: s => ROOT.querySelector(s),
+    querySelectorAll: s => ROOT.querySelectorAll(s),
+    createElement: (...a) => __real.createElement(...a),
+    createElementNS: (...a) => __real.createElementNS(...a),
+    addEventListener: (...a) => __real.addEventListener(...a),
+    removeEventListener: (...a) => __real.removeEventListener(...a),
+    body: ROOT, documentElement: ROOT, activeElement: null,
+  };
+  Object.defineProperty(__scoped, 'title', { get: () => __real.title, set: v => { __real.title = v; } });
+  const document = __scoped;
+
+const PAGE = {"title": {"fr": "À propos de TempBleu", "en": "About TempBleu", "ar": "حول TempBleu"}, "sub": {"fr": "Un e-mail temporaire simple, gratuit et honnête — créé pour protéger votre vraie boîte.", "en": "A simple, free and honest temporary e-mail — built to protect your real inbox.", "ar": "إيميل مؤقت بسيط، مجاني وصريح — تصاوب باش يحمي صندوقك الحقيقي."}, "html": {"fr": "\n<h2>Notre idée</h2>\n<p>Chaque jour, des sites vous demandent votre e-mail pour une inscription sans importance — puis vous inondent de publicités pendant des années. TempBleu est né d'un constat simple : pour ces usages-là, vous ne devriez jamais donner votre vraie adresse. Nous vous en prêtons une, le temps qu'il faut, puis elle disparaît.</p>\n<h2>Comment ça marche</h2>\n<ul>\n<li><b>1.</b> Une adresse temporaire est créée instantanément, sans inscription.</li>\n<li><b>2.</b> Vous la donnez au site qui vous demande un e-mail ; le message de confirmation arrive ici.</li>\n<li><b>3.</b> Après 10 minutes (prolongeables), l'adresse et ses messages sont automatiquement supprimés.</li>\n</ul>\n<h2>Nos engagements</h2>\n<ul>\n<li><b>100 % gratuit</b>, sans compte premium et sans inscription.</li>\n<li><b>Vie privée par conception</b> : aucune donnée personnelle demandée, aucune conservation au-delà de 10 minutes.</li>\n<li><b>Honnêteté</b> : nous disons clairement ce que le service ne peut pas faire — par exemple, certains grands sites refusent les adresses temporaires, et il ne faut jamais l'utiliser pour des comptes importants.</li>\n<li><b>Contenu original</b> : notre blog explique le sujet en profondeur, sans copier qui que ce soit.</li>\n</ul>\n<h2>La famille Bleu</h2>\n<p>TempBleu fait partie d'une petite famille de sites gratuits construits avec le même soin : <b>CalcBlue.com</b> (calculatrices financières et pratiques) et <b>PdfBleu.com</b> (outils PDF qui fonctionnent dans votre navigateur). Même philosophie partout : gratuit, rapide, respectueux de l'utilisateur.</p>\n<h2>Nous écrire</h2>\n<p>Une question, une suggestion, un abus à signaler ? Passez par la page <a href=\"tempbleu-contact.html\">Contact</a>.</p>\n", "en": "\n<h2>Our idea</h2>\n<p>Every day, websites ask for your e-mail for a sign-up that doesn't matter — then flood you with ads for years. TempBleu started from a simple observation: for those uses, you should never hand over your real address. We lend you one, for as long as needed, then it disappears.</p>\n<h2>How it works</h2>\n<ul>\n<li><b>1.</b> A temporary address is created instantly, with no sign-up.</li>\n<li><b>2.</b> You give it to the site asking for an e-mail; the confirmation message arrives here.</li>\n<li><b>3.</b> After 10 minutes (extendable), the address and its messages are automatically deleted.</li>\n</ul>\n<h2>Our commitments</h2>\n<ul>\n<li><b>100% free</b>, no premium account and no sign-up.</li>\n<li><b>Privacy by design</b>: no personal data requested, nothing kept beyond 10 minutes.</li>\n<li><b>Honesty</b>: we clearly state what the service cannot do — for example, some large sites refuse temporary addresses, and it must never be used for important accounts.</li>\n<li><b>Original content</b>: our blog explains the topic in depth, copying no one.</li>\n</ul>\n<h2>The Bleu family</h2>\n<p>TempBleu belongs to a small family of free sites built with the same care: <b>CalcBlue.com</b> (financial and everyday calculators) and <b>PdfBleu.com</b> (PDF tools that run in your browser). Same philosophy everywhere: free, fast, respectful of the user.</p>\n<h2>Write to us</h2>\n<p>A question, a suggestion, abuse to report? Use the <a href=\"tempbleu-contact.html\">Contact</a> page.</p>\n", "ar": "\n<h2>فكرتنا</h2>\n<p>كل نهار، مواقع كيطلبو إيميلك لتسجيل ما عندو أهمية — ومن بعد كيغرقوك بالإعلانات لسنوات. TempBleu تولد من ملاحظة بسيطة: لهاد الاستعمالات، ما خاصكش أبدا تعطي عنوانك الحقيقي. حنا كنسلفوك واحد، للوقت اللي تحتاج، ومن بعد كيختفي.</p>\n<h2>كيفاش خدام</h2>\n<ul>\n<li><b>1.</b> عنوان مؤقت كيتصاوب فورا، بلا تسجيل.</li>\n<li><b>2.</b> كتعطيه للموقع اللي طلب الإيميل؛ رسالة التأكيد كتوصل هنا.</li>\n<li><b>3.</b> بعد 10 دقائق (قابلة للتمديد)، العنوان ورسائله كيتمسحو بوحدهم.</li>\n</ul>\n<h2>التزاماتنا</h2>\n<ul>\n<li><b>مجاني 100%</b>، بلا حساب مدفوع وبلا تسجيل.</li>\n<li><b>الخصوصية بالتصميم</b>: حتى بيانات شخصية ما كتطلب، وحتى حاجة ما كتبقى فوق 10 دقائق.</li>\n<li><b>الصراحة</b>: كنقولو بوضوح شنو الخدمة ما تقدرش تدير — مثلا، بعض المواقع الكبيرة كترفض العناوين المؤقتة، وما خاصهاش تستعمل أبدا للحسابات المهمة.</li>\n<li><b>محتوى أصلي</b>: مدونتنا كتشرح الموضوع بعمق، بلا نسخ من حتى واحد.</li>\n</ul>\n<h2>عائلة Bleu</h2>\n<p>TempBleu جزء من عائلة صغيرة ديال مواقع مجانية مبنية بنفس العناية: <b>CalcBlue.com</b> (حاسبات مالية وعملية) و <b>PdfBleu.com</b> (أدوات PDF كتخدم في متصفحك). نفس الفلسفة في كل بلاصة: مجاني، سريع، وكيحترم المستعمل.</p>\n<h2>كتب لينا</h2>\n<p>سؤال، اقتراح، أو إساءة بغيتي تبلغ عليها؟ دوز من صفحة <a href=\"tempbleu-contact.html\">اتصل بنا</a>.</p>\n"}};
+const NAVL = {"home": {"fr": "Accueil", "en": "Home", "ar": "الرئيسية"}, "privacy": {"fr": "Confidentialité", "en": "Privacy", "ar": "الخصوصية"}, "terms": {"fr": "Conditions", "en": "Terms", "ar": "الشروط"}, "about": {"fr": "À propos", "en": "About", "ar": "حول"}, "contact": {"fr": "Contact", "en": "Contact", "ar": "اتصل بنا"}, "rights": {"fr": "Tous droits réservés.", "en": "All rights reserved.", "ar": "جميع الحقوق محفوظة."}};
+const UPD = {"fr": "Dernière mise à jour : 31 octobre 2026", "en": "Last updated: October 31, 2026", "ar": "آخر تحديث: 31 أكتوبر 2026"};
+let lang = localStorage.getItem('tempbleu_lang') || 'en';
+function apply(l){
+  lang = l; localStorage.setItem('tempbleu_lang', l);
+  document.documentElement.lang = l; document.documentElement.dir = (l==='ar') ? 'rtl' : 'ltr';
+  document.querySelectorAll('.langs button').forEach(b=>b.classList.toggle('on', b.dataset.lang===l));
+  document.getElementById('pgTitle').textContent = PAGE.title[l];
+  document.getElementById('pgSub').textContent = PAGE.sub[l];
+  document.getElementById('pgUpd').textContent = false ? UPD[l] : '';
+  document.getElementById('pgBody').innerHTML = PAGE.html[l];
+  document.querySelectorAll('[data-k]').forEach(el=>{ el.textContent = NAVL[el.dataset.k][l]; });
+  document.title = 'TempBleu — ' + PAGE.title[l];
+  bindForm();
+}
+function bindForm(){
+  const f = document.getElementById('cForm');
+  if(!f) return;
+  f.onsubmit = (e)=>{
+    e.preventDefault();
+    const name=document.getElementById('cfName').value, mail=document.getElementById('cfMail').value,
+          subj=document.getElementById('cfSubj').value, msg=document.getElementById('cfMsg').value;
+    const body = msg + '\n\n— ' + name + (mail ? ' <'+mail+'>' : '');
+    location.href = 'mailto:contact@tempbleu.com?subject=' + encodeURIComponent('[TempBleu] ' + subj) + '&body=' + encodeURIComponent(body);
+  };
+}
+document.querySelectorAll('.langs button').forEach(b=> b.onclick = ()=>apply(b.dataset.lang));
+apply(['fr','en','ar'].includes(lang) ? lang : 'fr');
+
+})();</script><script>/* ===== tempbleu-contact.html ===== */
+
+;(function(){
+  const ROOT = document.getElementById('page-contact');
+  const __real = document;
+  const __scoped = {
+    getElementById: id => ROOT.querySelector('#' + id),
+    querySelector: s => ROOT.querySelector(s),
+    querySelectorAll: s => ROOT.querySelectorAll(s),
+    createElement: (...a) => __real.createElement(...a),
+    createElementNS: (...a) => __real.createElementNS(...a),
+    addEventListener: (...a) => __real.addEventListener(...a),
+    removeEventListener: (...a) => __real.removeEventListener(...a),
+    body: ROOT, documentElement: ROOT, activeElement: null,
+  };
+  Object.defineProperty(__scoped, 'title', { get: () => __real.title, set: v => { __real.title = v; } });
+  const document = __scoped;
+
+const PAGE = {"title": {"fr": "Contact", "en": "Contact", "ar": "اتصل بنا"}, "sub": {"fr": "Une question, une suggestion, un abus à signaler ? Écrivez-nous.", "en": "A question, a suggestion, abuse to report? Write to us.", "ar": "سؤال، اقتراح، أو إساءة بغيتي تبلغ عليها؟ كتب لينا."}, "html": {"fr": "\n<h2>Par e-mail</h2>\n<p>Le moyen le plus simple : <b>contact@tempbleu.com</b>. Nous lisons tout et répondons en général sous 48 heures ouvrées.</p>\n<h2>Formulaire</h2>\n<p>Remplissez ce formulaire : il ouvre votre application e-mail avec le message déjà préparé, adressé à notre équipe.</p>\n<form id=\"cForm\">\n  <div class=\"fld\"><label>Votre nom</label><input type=\"text\" id=\"cfName\" autocomplete=\"name\"></div>\n  <div class=\"fld\"><label>Votre e-mail</label><input type=\"email\" id=\"cfMail\" autocomplete=\"email\"></div>\n  <div class=\"fld\"><label>Sujet</label>\n    <select id=\"cfSubj\"><option>Question générale</option><option>Suggestion</option><option>Signaler un abus</option><option>Problème technique</option><option>Autre</option></select></div>\n  <div class=\"fld\"><label>Votre message</label><textarea id=\"cfMsg\" rows=\"5\"></textarea></div>\n  <button class=\"send\" type=\"submit\">📧 Envoyer le message</button>\n</form>\n<h2>Signaler un abus</h2>\n<p>Si une adresse TempBleu est utilisée pour du spam, une fraude ou du harcèlement, signalez-le avec le sujet « Signaler un abus » en précisant l'adresse concernée et les faits. Nous prenons ces signalements au sérieux.</p>\n<h2>Bon à savoir</h2>\n<p>Nous ne pouvons pas récupérer une adresse expirée ni ses messages : tout est supprimé automatiquement après 10 minutes, par conception. Pour comprendre comment le service fonctionne, lisez notre page <a href=\"tempbleu-about.html\">À propos</a> et notre <a href=\"tempbleu-blog.html\">blog</a>.</p>\n", "en": "\n<h2>By e-mail</h2>\n<p>The simplest way: <b>contact@tempbleu.com</b>. We read everything and usually reply within 2 business days.</p>\n<h2>Form</h2>\n<p>Fill in this form: it opens your e-mail app with the message already prepared, addressed to our team.</p>\n<form id=\"cForm\">\n  <div class=\"fld\"><label>Your name</label><input type=\"text\" id=\"cfName\" autocomplete=\"name\"></div>\n  <div class=\"fld\"><label>Your e-mail</label><input type=\"email\" id=\"cfMail\" autocomplete=\"email\"></div>\n  <div class=\"fld\"><label>Subject</label>\n    <select id=\"cfSubj\"><option>General question</option><option>Suggestion</option><option>Report abuse</option><option>Technical problem</option><option>Other</option></select></div>\n  <div class=\"fld\"><label>Your message</label><textarea id=\"cfMsg\" rows=\"5\"></textarea></div>\n  <button class=\"send\" type=\"submit\">📧 Send the message</button>\n</form>\n<h2>Report abuse</h2>\n<p>If a TempBleu address is used for spam, fraud or harassment, report it with the subject \"Report abuse\", stating the address involved and the facts. We take these reports seriously.</p>\n<h2>Good to know</h2>\n<p>We cannot recover an expired address or its messages: everything is automatically deleted after 10 minutes, by design. To understand how the service works, read our <a href=\"tempbleu-about.html\">About</a> page and our <a href=\"tempbleu-blog.html\">blog</a>.</p>\n", "ar": "\n<h2>بالإيميل</h2>\n<p>أسهل طريقة: <b>contact@tempbleu.com</b>. كنقراو كلشي وكنجاوبو عادة في ظرف يومي عمل.</p>\n<h2>النموذج</h2>\n<p>عمر هاد النموذج: غادي يفتح تطبيق الإيميل ديالك بالرسالة واجدة، موجهة لفريقنا.</p>\n<form id=\"cForm\">\n  <div class=\"fld\"><label>اسمك</label><input type=\"text\" id=\"cfName\" autocomplete=\"name\"></div>\n  <div class=\"fld\"><label>إيميلك</label><input type=\"email\" id=\"cfMail\" autocomplete=\"email\"></div>\n  <div class=\"fld\"><label>الموضوع</label>\n    <select id=\"cfSubj\"><option>سؤال عام</option><option>اقتراح</option><option>تبليغ عن إساءة</option><option>مشكل تقني</option><option>آخر</option></select></div>\n  <div class=\"fld\"><label>رسالتك</label><textarea id=\"cfMsg\" rows=\"5\"></textarea></div>\n  <button class=\"send\" type=\"submit\">📧 صيفط الرسالة</button>\n</form>\n<h2>التبليغ عن إساءة</h2>\n<p>إلا تستعمل عنوان TempBleu للسبام أو النصب أو التحرش، بلغ عليه بالموضوع «تبليغ عن إساءة» مع ذكر العنوان المعني والوقائع. كناخدو هاد التبليغات بجدية.</p>\n<h2>مهم تعرف</h2>\n<p>ما نقدروش نرجعو عنوان سالات مدتو أو رسائله: كلشي كيتمسح بوحدو بعد 10 دقائق، بالتصميم. باش تفهم كيفاش خدامة الخدمة، قرا صفحة <a href=\"tempbleu-about.html\">حول TempBleu</a> و <a href=\"tempbleu-blog.html\">المدونة</a>.</p>\n"}};
+const NAVL = {"home": {"fr": "Accueil", "en": "Home", "ar": "الرئيسية"}, "privacy": {"fr": "Confidentialité", "en": "Privacy", "ar": "الخصوصية"}, "terms": {"fr": "Conditions", "en": "Terms", "ar": "الشروط"}, "about": {"fr": "À propos", "en": "About", "ar": "حول"}, "contact": {"fr": "Contact", "en": "Contact", "ar": "اتصل بنا"}, "rights": {"fr": "Tous droits réservés.", "en": "All rights reserved.", "ar": "جميع الحقوق محفوظة."}};
+const UPD = {"fr": "Dernière mise à jour : 31 octobre 2026", "en": "Last updated: October 31, 2026", "ar": "آخر تحديث: 31 أكتوبر 2026"};
+let lang = localStorage.getItem('tempbleu_lang') || 'en';
+function apply(l){
+  lang = l; localStorage.setItem('tempbleu_lang', l);
+  document.documentElement.lang = l; document.documentElement.dir = (l==='ar') ? 'rtl' : 'ltr';
+  document.querySelectorAll('.langs button').forEach(b=>b.classList.toggle('on', b.dataset.lang===l));
+  document.getElementById('pgTitle').textContent = PAGE.title[l];
+  document.getElementById('pgSub').textContent = PAGE.sub[l];
+  document.getElementById('pgUpd').textContent = false ? UPD[l] : '';
+  document.getElementById('pgBody').innerHTML = PAGE.html[l];
+  document.querySelectorAll('[data-k]').forEach(el=>{ el.textContent = NAVL[el.dataset.k][l]; });
+  document.title = 'TempBleu — ' + PAGE.title[l];
+  bindForm();
+}
+function bindForm(){
+  const f = document.getElementById('cForm');
+  if(!f) return;
+  f.onsubmit = (e)=>{
+    e.preventDefault();
+    const name=document.getElementById('cfName').value, mail=document.getElementById('cfMail').value,
+          subj=document.getElementById('cfSubj').value, msg=document.getElementById('cfMsg').value;
+    const body = msg + '\n\n— ' + name + (mail ? ' <'+mail+'>' : '');
+    location.href = 'mailto:contact@tempbleu.com?subject=' + encodeURIComponent('[TempBleu] ' + subj) + '&body=' + encodeURIComponent(body);
+  };
+}
+document.querySelectorAll('.langs button').forEach(b=> b.onclick = ()=>apply(b.dataset.lang));
+apply(['fr','en','ar'].includes(lang) ? lang : 'fr');
+
+})();</script>
 </body>
-</html>
+           </html>
