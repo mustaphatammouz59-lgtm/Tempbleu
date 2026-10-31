@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TempBleu.com — E-mail temporaire gratuit | بريد مؤقت مجاني</title>
+<meta name="description" content="Recevez un e-mail temporaire gratuit en une seconde. Codes de vérification instantanés, zéro spam, sans inscription.">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:'Segoe UI',system-ui,Arial,sans-serif;background:#eef1fb;color:#1c2340;line-height:1.6;overflow-x:hidden}
+  /* ===== Top bar ===== */
+  header{position:absolute;top:0;left:0;right:0;z-index:20;padding:14px 18px;display:flex;justify-content:space-between;align-items:center}
+  .logo{font-size:25px;font-weight:800;color:#fff;text-decoration:none;text-shadow:0 2px 10px rgba(0,0,0,.25)}
+  .logo span{color:#4ADE80}
+  .langs button{background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.45);color:#fff;border-radius:20px;padding:4px 13px;margin-inline-start:6px;cursor:pointer;font-weight:700;backdrop-filter:blur(4px)}
+  .langs button.on{background:#fff;color:#3F51B5}
+  /* ===== Hero ===== */
+  .hero{position:relative;background:linear-gradient(140deg,#3F51B5 0%,#5b3fb8 55%,#8e2fb8 130%);padding:96px 14px 90px;overflow:hidden}
+  .hero .mail{position:absolute;font-size:30px;opacity:.20;animation:float 9s ease-in-out infinite;pointer-events:none}
+  @keyframes float{0%,100%{transform:translateY(0) rotate(-8deg)}50%{transform:translateY(-26px) rotate(8deg)}}
+  .hero-inner{position:relative;max-width:860px;margin:0 auto;text-align:center}
+  .badge{display:inline-block;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.5);color:#fff;border-radius:30px;padding:5px 16px;font-size:13.5px;font-weight:700;backdrop-filter:blur(4px)}
+  h1{color:#fff;font-size:33px;line-height:1.3;margin:16px 0 8px;text-shadow:0 3px 14px rgba(0,0,0,.25)}
+  .sub{color:#dfe5ff;font-size:16.5px;margin-bottom:26px}
+  /* ===== Mailbox card ===== */
+  .mailcard{background:#fff;border-radius:22px;box-shadow:0 24px 60px rgba(15,20,60,.35);padding:22px;text-align:start;animation:rise .7s ease both}
+  @keyframes rise{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+  .mailcard label{font-size:13px;font-weight:800;letter-spacing:.6px;text-transform:uppercase;color:#8a93b2}
+  .addr-box{display:flex;gap:9px;flex-wrap:wrap;margin-top:8px}
+  .addr{flex:1;min-width:230px;background:linear-gradient(180deg,#f2f5ff,#e7edff);border:2px dashed #3F51B5;border-radius:14px;padding:14px 16px;font-size:18.5px;font-weight:800;color:#26307a;word-break:break-all;text-align:center;font-family:Consolas,monospace}
+  .btn{border:none;border-radius:12px;padding:12px 18px;font-size:15px;font-weight:800;cursor:pointer;transition:transform .15s,box-shadow .15s,background .15s;display:inline-flex;align-items:center;justify-content:center;gap:6px}
+  .btn:hover{transform:translateY(-2px);box-shadow:0 8px 18px rgba(38,48,122,.25)}
+  .btn:active{transform:scale(.97)}
+  .btn.green{background:linear-gradient(135deg,#43c24f,#2f9e44);color:#fff}
+  .btn.main{background:linear-gradient(135deg,#3F51B5,#5b3fb8);color:#fff}
+  .btn.grey{background:#eef1fa;color:#26307a}
+  .btn.red{background:linear-gradient(135deg,#ef5350,#d32f2f);color:#fff}
+  .qr-pop{display:none;margin:12px auto 0;background:#fff;border:1.5px solid #e2e7f5;border-radius:16px;box-shadow:0 14px 34px rgba(15,20,60,.16);padding:14px;max-width:240px;text-align:center}
+  .qr-pop img{width:160px;height:160px}
+  .qr-pop div{font-size:13px;color:#5a6482}
+  .row{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+  .row .btn{flex:1;min-width:128px}
+  .custom{display:none;margin-top:14px;gap:8px;flex-wrap:wrap}
+  .custom input{flex:1;min-width:180px;padding:11px 14px;border:2px solid #c9d2f0;border-radius:12px;font-size:15px}
+  .status{display:flex;align-items:center;gap:7px;font-size:13.5px;color:#5a6482;margin-top:14px}
+  .status .dot{width:9px;height:9px;border-radius:50%;background:#4CAF50;animation:pulse 1.6s infinite;flex:none}
+  @keyframes pulse{0%,100%{opacity:1;box-shadow:0 0 0 0 rgba(76,175,80,.5)}50%{opacity:.6;box-shadow:0 0 0 6px rgba(76,175,80,0)}}
+  .refreshbar{height:5px;background:#e7ebfa;border-radius:4px;margin-top:9px;overflow:hidden}
+  .refreshbar i{display:block;height:100%;width:100%;background:linear-gradient(90deg,#3F51B5,#4ADE80);transform-origin:left;animation:fill 10s linear infinite}
+  @keyframes fill{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+  [dir=rtl] .refreshbar i{transform-origin:right}
+  .wave{display:block;width:100%;height:56px;margin-top:-1px}
+  /* ===== Stats ===== */
+  .stats{max-width:860px;margin:-34px auto 0;padding:0 14px;position:relative;z-index:5;display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+  .stat{background:#fff;border-radius:16px;box-shadow:0 10px 26px rgba(38,48,122,.13);padding:14px 8px;text-align:center}
+  .stat .n{font-size:21px;font-weight:900;color:#3F51B5}
+  .stat .l{font-size:12.5px;color:#5a6482;font-weight:600}
+  /* ===== Main ===== */
+  main{max-width:860px;margin:0 auto;padding:26px 14px 10px}
+  .card{background:#fff;border-radius:20px;box-shadow:0 10px 30px rgba(38,48,122,.10);padding:20px;margin-bottom:20px}
+  .inbox-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}
+  .inbox-head h2{font-size:20px;color:#26307a}
+  #count{background:#3F51B5;color:#fff;border-radius:20px;padding:2px 12px;font-weight:800;font-size:14px}
+  #count:empty{display:none}
+  .msg{border:1.5px solid #e2e7f5;border-inline-start:5px solid #c9d2f0;border-radius:14px;padding:13px 15px;margin-bottom:10px;cursor:pointer;background:#fff;transition:border-color .15s,transform .15s;animation:slidein .35s ease both}
+  @keyframes slidein{from{opacity:0;transform:translateX(-14px)}to{opacity:1;transform:none}}
+  .msg:hover{border-color:#3F51B5;transform:translateY(-1px)}
+  .msg.unread{background:#eef4ff;border-color:#b9c8f5;border-inline-start-color:#3F51B5}
+  .msg .from{font-weight:800;color:#26307a}
+  .msg .subj{font-weight:700}
+  .msg .intro{color:#5a6482;font-size:14px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .msg .time{color:#8a93b2;font-size:12px}
+  .empty{text-align:center;color:#8a93b2;padding:30px 10px}
+  .empty .big{font-size:46px;animation:bob 2.4s ease-in-out infinite}
+  @keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+  .dots::after{content:'';animation:dots 1.5s steps(4) infinite}
+  @keyframes dots{0%{content:''}25%{content:'.'}50%{content:'..'}75%{content:'...'}}
+  .reader{display:none}
+  .reader h3{color:#26307a;margin:10px 0 4px}
+  .reader .meta{color:#5a6482;font-size:14px;margin-bottom:12px;border-bottom:1px solid #e2e7f5;padding-bottom:10px}
+  .reader .body{white-space:pre-wrap;word-break:break-word;background:#f7f9ff;border-radius:12px;padding:14px;font-size:15px}
+  .reader iframe{width:100%;min-height:320px;border:1px solid #e2e7f5;border-radius:12px;background:#fff}
+  /* ===== Sections ===== */
+  .rv{opacity:0;transform:translateY(26px);transition:opacity .6s ease,transform .6s ease}
+  .rv.on{opacity:1;transform:none}
+  h2.sec{font-size:23px;color:#26307a;text-align:center;margin:30px 0 6px}
+  .sec-sub{text-align:center;color:#5a6482;margin-bottom:18px}
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+  .feat{background:#fff;border-radius:18px;padding:18px 16px;box-shadow:0 8px 22px rgba(38,48,122,.09);border-top:4px solid #3F51B5}
+  .feat:nth-child(2){border-top-color:#8e2fb8}.feat:nth-child(3){border-top-color:#4CAF50}
+  .feat:nth-child(4){border-top-color:#fb8c00}.feat:nth-child(5){border-top-color:#00897b}.feat:nth-child(6){border-top-color:#e53935}
+  .feat .ic{font-size:30px}
+  .feat b{display:block;color:#26307a;font-size:16.5px;margin:6px 0 3px}
+  .feat p{color:#5a6482;font-size:14px}
+  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+  .step{background:linear-gradient(160deg,#fff,#eef2ff);border-radius:18px;padding:18px 16px;box-shadow:0 8px 22px rgba(38,48,122,.09);position:relative}
+  .step .num{position:absolute;top:-13px;inset-inline-start:16px;background:linear-gradient(135deg,#3F51B5,#8e2fb8);color:#fff;width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:900;box-shadow:0 6px 14px rgba(63,81,181,.4)}
+  .step p{color:#39415f;font-size:15px;padding-top:6px}
+  .uses{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+  .use{background:#fff;border-radius:16px;padding:15px 16px;box-shadow:0 8px 22px rgba(38,48,122,.08);font-weight:700;color:#39415f}
+  .warn{background:linear-gradient(135deg,#fff8e1,#ffecb3);border:1.5px solid #ffb300;border-radius:18px;padding:18px 20px;margin:24px 0}
+  .warn b{color:#8d6e00;font-size:17px}
+  .warn p{color:#6d5600}
+  .about{background:#fff;border-radius:18px;padding:20px;box-shadow:0 8px 22px rgba(38,48,122,.08)}
+  .about h2{color:#26307a;font-size:20px;margin-bottom:8px}
+  .about p{color:#39415f}
+  details.faq{background:#fff;border-radius:14px;box-shadow:0 6px 18px rgba(38,48,122,.08);margin-bottom:10px;padding:14px 18px}
+  details.faq summary{cursor:pointer;font-weight:800;color:#26307a;list-style:none}
+  details.faq summary::after{content:'＋';float:right;color:#3F51B5}
+  details.faq[open ] summary::after{content:'－'}
+  details.faq p{color:#39415f;margin-top:8px}
+  [dir=rtl] details.faq summary::after{float:left}
+  /* ===== Footer ===== */
+  footer{background:#171d3d;color:#aab3d6;margin-top:36px;padding:34px 18px 26px}
+  .foot-in{max-width:860px;margin:0 auto}
+  .foot-logo{font-size:23px;font-weight:800;color:#fff}
+  .foot-logo span{color:#4ADE80}
+  .foot-cols{display:grid;grid-template-columns:2fr 1fr 1fr;gap:18px;margin-top:14px;font-size:14px}
+  .foot-cols b{color:#fff;display:block;margin-bottom:7px}
+  .foot-cols a{color:#aab3d6;text-decoration:none;display:block;margin-bottom:5px}
+  .foot-cols a:hover{color:#fff}
+  .foot-base{border-top:1px solid #2b3463;margin-top:20px;padding-top:14px;font-size:13px;text-align:center}
+  footer a{color:#8fa2ff}
+.timer-row{display:flex;gap:8px;align-items:center;margin-top:12px}
+  .timer-chip{flex:1;background:#eef1fa;border-radius:12px;padding:10px 14px;font-weight:700;color:#26307a;text-align:center}
+  .timer-chip b{font-family:Consolas,monospace;font-size:17px}
+  .timer-chip.low{background:#fdecea;color:#c62828}
+  .toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(20px);background:#26307a;color:#fff;padding:12px 24px;border-radius:30px;font-weight:700;opacity:0;pointer-events:none;transition:all .3s;z-index:60;box-shadow:0 12px 30px rgba(15,20,60,.4)}
+  .toast.show{opacity:1;transform:translateX(-50%)}
+  @media(max-width:640px){
+    h1{font-size:26px}
+    .stats{grid-template-columns:repeat(2,1fr)}
+    .grid,.steps{grid-template-columns:1fr}
+    .uses{grid-template-columns:1fr}
+    .foot-cols{grid-template-columns:1fr}
+    .hero{padding-top:84px}
+  }
+</style>
+</head>
+<body>
+<header>
+  <a class="logo" href="#">TempBleu<span>.com</span></a>
+  <div class="langs">
+    <button data-lang="fr" class="on">FR</button><button data-lang="en">EN</button><button data-lang="ar">ع</button>
+  </div>
+</header>
+
+<section class="hero">
+  <span class="mail" style="top:70px;left:6%">✉️</span>
+  <span class="mail" style="top:150px;right:8%;animation-delay:1.4s;font-size:38px">📩</span>
+  <span class="mail" style="bottom:90px;left:12%;animation-delay:2.6s;font-size:24px">📨</span>
+  <span class="mail" style="top:90px;right:26%;animation-delay:.8s;font-size:22px">✉️</span>
+  <span class="mail" style="bottom:130px;right:14%;animation-delay:3.4s">📧</span>
+  <div class="hero-inner">
+    <span class="badge" data-i="badge"></span>
+    <h1 data-i="title"></h1>
+    <p class="sub" data-i="sub"></p>
+    <div class="mailcard">
+      <label data-i="yourAddr"></label>
+      <div class="addr-box">
+        <div class="addr" id="addr">…</div>
+        <button class="btn green" id="btnCopy" data-i="copy"></button>
+        <button class="btn grey" id="btnQR">▦ QR Code</button>
+      </div>
+      <div class="qr-pop" id="qrPop"><img id="qrImg" alt="QR Code"><div data-i="qrHelp"></div></div>
+      <div class="row">
+        <button class="btn main" id="btnRefresh" data-i="refresh"></button>
+        <button class="btn grey" id="btnCustom" data-i="custom"></button>
+        <button class="btn grey" id="btnNew" data-i="new"></button>
+        <button class="btn red" id="btnDelete" data-i="del"></button>
+      </div>
+      <div class="custom" id="customBox">
+        <input id="customName" type="text" placeholder="mon-nom" autocomplete="off">
+        <button class="btn main" id="btnCustomGo" data-i="create"></button>
+      </div>
+      <div class="status"><span class="dot"></span><span id="statusText">…</span></div>
+            <div class="timer-row"><span class="timer-chip">⏱ <span data-i="timeLeft"></span> <b id="countdown">10:00</b></span><button class="btn grey" id="btnExtend" data-i="extend"></button></div>
+    </div>
+  </div>
+</section>
+<svg class="wave" viewBox="0 0 1440 56" preserveAspectRatio="none" style="background:linear-gradient(90deg,#6a3fb8,#8e2fb8)"><path d="M0,34 C240,58 480,58 720,38 C960,18 1200,10 1440,32 L1440,56 L0,56 Z" fill="#eef1fb"/></svg>
+
+<div class="stats rv">
+  <div class="stat"><div class="n">⚡ 1s</div><div class="l">Adresse instantanée</div></div>
+  <div class="stat"><div class="n">📝 0</div><div class="l">Inscription requise</div></div>
+  <div class="stat"><div class="n">🗑️ Auto</div><div class="l">Suppression des messages</div></div>
+  <div class="stat"><div class="n">🌍 3</div><div class="l">Langues : FR · EN · ع</div></div>
+</div>
+
+<main>
+  <div class="card rv">
+    <div class="inbox-head">
+      <h2 data-i="inbox"></h2>
+      <span id="count"></span>
+    </div>
+    <div id="list"><div class="empty"><div class="big">📬</div><span class="dots" data-i="waiting"></span></div></div>
+    <div class="reader" id="reader">
+      <button class="btn grey" id="btnBack" data-i="back"></button>
+      <h3 id="rSubj"></h3>
+      <div class="meta" id="rMeta"></div>
+      <div class="body" id="rText"></div>
+      <div id="rHtmlWrap"></div>
+    </div>
+  </div>
+
+  <h2 class="sec rv" data-i="featT"></h2>
+  <p class="sec-sub rv">TempBleu</p>
+  <div class="grid rv">
+    <div class="feat"><div class="ic">🛡️</div><b data-i="f1t"></b><p data-i="f1p"></p></div>
+    <div class="feat"><div class="ic">🔢</div><b data-i="f2t"></b><p data-i="f2p"></p></div>
+    <div class="feat"><div class="ic">⚡</div><b data-i="f3t"></b><p data-i="f3p"></p></div>
+    <div class="feat"><div class="ic">🗑️</div><b data-i="f4t"></b><p data-i="f4p"></p></div>
+    <div class="feat"><div class="ic">🔒</div><b data-i="f5t"></b><p data-i="f5p"></p></div>
+    <div class="feat"><div class="ic">🌍</div><b data-i="f6t"></b><p data-i="f6p"></p></div>
+  </div>
+
+  <h2 class="sec rv" data-i="howT"></h2>
+  <p class="sec-sub rv">1 · 2 · 3</p>
+  <div class="steps rv">
+    <div class="step"><div class="num">1</div><p data-i="how1"></p></div>
+    <div class="step"><div class="num">2</div><p data-i="how2"></p></div>
+    <div class="step"><div class="num">3</div><p data-i="how3"></p></div>
+  </div>
+
+  <h2 class="sec rv" data-i="useT"></h2>
+  <p class="sec-sub rv">&nbsp;</p>
+  <div class="uses rv">
+    <div class="use" data-i="u1"></div>
+    <div class="use" data-i="u2"></div>
+    <div class="use" data-i="u3"></div>
+    <div class="use" data-i="u4"></div>
+  </div>
+
+  <div class="warn rv"><b data-i="secT"></b><p data-i="secP"></p></div>
+
+  <div class="about rv">
+    <h2 data-i="whatT"></h2>
+    <p data-i="whatP"></p>
+  </div>
+
+  <h2 class="sec rv">FAQ</h2>
+  <div class="rv">
+    <details class="faq"><summary data-i="q1"></summary><p data-i="a1"></p></details>
+    <details class="faq"><summary data-i="q2"></summary><p data-i="a2"></p></details>
+    <details class="faq"><summary data-i="q3"></summary><p data-i="a3"></p></details>
+    <details class="faq"><summary data-i="q4"></summary><p data-i="a4"></p></details>
+  </div>
+
+  <div class="about rv" id="privacy">
+    <h2 data-i="privT"></h2>
+    <p data-i="privP"></p>
+  </div>
+</main>
+
+<footer>
+  <div class="foot-in">
+    <div class="foot-logo">TempBleu<span>.com</span></div>
+    <div class="foot-cols">
+      <div><b>TempBleu</b><span data-i="whatP"></span></div>
+      <div><b>Service</b><a href="tempbleu-blog.html">📚 Blog</a><a href="#" data-i="inbox"></a><a href="tempbleu-privacy.html" data-i="privT"></a><a href="tempbleu-terms.html" data-i="termsL"></a><a href="tempbleu-about.html" data-i="aboutL"></a><a href="tempbleu-contact.html" data-i="contactL"></a><a href="#" data-i="featT"></a></div>
+      <div><b>Langues</b><a href="#">Français</a><a href="#">English</a><a href="#">العربية</a></div>
+    </div>
+    <div class="foot-base">© 2026 TempBleu.com — <span data-i="rights"></span><br>
+    <span data-i="foot"></span> <a href="https://www.guerrillamail.com" target="_blank" rel="noopener">Guerrilla Mail</a></div>
+  </div>
+</footer>
+<div class="toast" id="toast"></div>
+
+<script>
+
+"use strict";
+/* ============ CONFIG — à changer le jour du domaine ============
+   MODE 'test' : backend Guerrilla Mail (adresses @guerrillamailblock.com etc.)
+   MODE 'own'  : ton Worker Cloudflare — mets son URL dans OWN_API_BASE
+================================================================ */
+const MODE = 'test';
+const OWN_API_BASE = 'https://api.tempbleu.com'; // ← URL du Worker, le jour du domaine
+const GM = 'https://api.guerrillamail.com/ajax.php';
+const LS_KEY = 'tempbleu_v1';
+const ADDR_TTL_MS = 10*60*1000;
+const REFRESH_SEC = 60;
+
+const I18N = {
+  fr:{title:"Votre e-mail temporaire gratuit",sub:"Sans inscription. Protégez votre vraie adresse du spam.",copy:"📋 Copier",refresh:"🔄 Actualiser",custom:"✏️ Personnaliser",new:"🎲 Nouvelle adresse",del:"🗑️ Supprimer",create:"Créer",inbox:"📥 Boîte de réception",waiting:"En attente d'e-mails… Utilisez l'adresse ci-dessus, les messages apparaîtront ici automatiquement.",back:"← Retour",whatT:"Qu'est-ce qu'un e-mail temporaire ?",whatP:"Un e-mail temporaire (jetable) est une adresse que vous utilisez pour vous inscrire sur des sites sans dévoiler votre vraie adresse. Les messages de confirmation arrivent ici, votre boîte personnelle reste propre et sans spam.",howT:"Comment l'utiliser ?",how1:"Copiez l'adresse affichée ci-dessus.",how2:"Collez-la sur le site qui demande un e-mail.",how3:"Le message de confirmation apparaît ici en quelques secondes, sans actualiser la page.",q1:"Est-ce gratuit ?",a1:"Oui, totalement gratuit et sans inscription.",q2:"Combien de temps les messages restent-ils ?",a2:"Les messages sont temporaires et supprimés automatiquement par le serveur de réception. Ne les utilisez jamais pour des comptes importants (banque, récupération de compte principal).",q3:"Puis-je envoyer des e-mails ?",a3:"Non. Ce service sert uniquement à recevoir.",foot:"Service de réception temporaire. Mode test : réception assurée par",ready:"Adresse prête — actualisation automatique toutes les {s} s",copied:"Adresse copiée ✔",creating:"Création de l'adresse…",checking:"Vérification…",err:"Erreur réseau — nouvel essai automatique",confirmDel:"Supprimer cette adresse et créer une nouvelle ?",taken:"Nom déjà pris, essayez-en un autre",badge:"✉️ 100% gratuit — aucune inscription",yourAddr:"Votre adresse temporaire",qrHelp:"Scannez pour récupérer l’adresse sur un autre appareil",timeLeft:"Temps restant :",extend:"+10 min",extended:"Prolongé de 10 minutes ✔",expired:"⏰ Adresse expirée — nouvelle adresse créée",termsL:"📜 Conditions",aboutL:"ℹ️ À propos",contactL:"✉️ Contact",featT:"Pourquoi TempBleu ?",f1t:"Anti-spam total",f1p:"Gardez votre vraie boîte propre : le spam reste ici, pas chez vous.",f2t:"Codes OTP express",f2p:"Les codes de vérification arrivent vite : la boîte se met à jour automatiquement toutes les minutes (et dès que vous revenez sur l'onglet).",f3t:"Zéro inscription",f3p:"Aucun compte, aucun mot de passe, aucune donnée personnelle demandée.",f4t:"Suppression automatique",f4p:"Adresse et messages sont temporaires et s'effacent tout seuls.",f5t:"Confidentialité",f5p:"Votre identité réelle ne quitte jamais votre poche.",f6t:"3 langues",f6p:"Interface en français, anglais et arabe, pensée pour mobile.",useT:"Pour quels usages ?",u1:"📝 Inscriptions rapides sur les sites et forums",u2:"🎁 Offres et essais gratuits sans spam ensuite",u3:"🧪 Tester votre propre application avec de vraies adresses",u4:"🔐 Recevoir un code de vérification ponctuel",secT:"⚠️ À ne jamais utiliser pour…",secP:"Les comptes importants : banque, e-mail principal, récupération de vos comptes essentiels. Une adresse temporaire est faite pour l'usage unique, pas pour durer.",q4:"Combien de temps mon adresse reste-t-elle active ?",a4:"Votre adresse vit 10 minutes (compte à rebours affiché). Le bouton +10 min la prolonge. Après expiration, une nouvelle adresse est créée automatiquement.",privT:"Confidentialité",privP:"Ce service reçoit des messages sur une adresse temporaire. N'y recevez jamais de documents sensibles. En mode test, la réception est assurée par notre partenaire technique indiqué en bas de page.",rights:"Tous droits réservés."},
+  en:{title:"Your free temporary e-mail",sub:"No sign-up. Keep spam away from your real inbox.",copy:"📋 Copy",refresh:"🔄 Refresh",custom:"✏️ Custom name",new:"🎲 New address",del:"🗑️ Delete",create:"Create",inbox:"📥 Inbox",waiting:"Waiting for e-mails… Use the address above, messages will appear here automatically.",back:"← Back",whatT:"What is a temporary e-mail?",whatP:"A temporary (disposable) e-mail is an address you use to sign up on websites without revealing your real address. Confirmation messages arrive here, your personal inbox stays clean and spam-free.",howT:"How to use it?",how1:"Copy the address shown above.",how2:"Paste it on the site asking for an e-mail.",how3:"The confirmation message appears here within seconds, no page reload needed.",q1:"Is it free?",a1:"Yes, completely free with no sign-up.",q2:"How long do messages stay?",a2:"Messages are temporary and automatically deleted by the receiving server. Never use this for important accounts (bank, main account recovery).",q3:"Can I send e-mails?",a3:"No. This service is receive-only.",foot:"Temporary receiving service. Test mode: receiving powered by",ready:"Address ready — auto-refresh every {s}s",copied:"Address copied ✔",creating:"Creating address…",checking:"Checking…",err:"Network error — automatic retry",confirmDel:"Delete this address and create a new one?",taken:"Name already taken, try another",badge:"✉️ 100% free — no sign-up",yourAddr:"Your temporary address",qrHelp:"Scan to get this address on another device",timeLeft:"Time left:",extend:"+10 min",extended:"Extended by 10 minutes ✔",expired:"⏰ Address expired — new address created",termsL:"📜 Terms",aboutL:"ℹ️ About",contactL:"✉️ Contact",featT:"Why TempBleu?",f1t:"Total anti-spam",f1p:"Keep your real inbox clean: spam stays here, not with you.",f2t:"Express OTP codes",f2p:"Verification codes arrive fast: the inbox auto-updates every minute (and the moment you return to the tab).",f3t:"Zero sign-up",f3p:"No account, no password, no personal data requested.",f4t:"Automatic deletion",f4p:"Address and messages are temporary and erase themselves.",f5t:"Privacy",f5p:"Your real identity never leaves your pocket.",f6t:"3 languages",f6p:"Interface in French, English and Arabic, built for mobile.",useT:"What is it for?",u1:"📝 Quick sign-ups on sites and forums",u2:"🎁 Free offers and trials without the spam after",u3:"🧪 Testing your own app with real addresses",u4:"🔐 Receiving a one-time verification code",secT:"⚠️ Never use it for…",secP:"Important accounts: banking, your main e-mail, recovery of your essential accounts. A temporary address is made for one-time use, not to last.",q4:"How long does my address stay active?",a4:"Your address lives 10 minutes (live countdown shown). The +10 min button extends it. After expiry, a new address is created automatically.",privT:"Privacy",privP:"This service receives messages on a temporary address. Never receive sensitive documents here. In test mode, receiving is handled by our technical partner named in the footer.",rights:"All rights reserved."},
+  ar:{title:"بريدك الإلكتروني المؤقت مجانا",sub:"بدون تسجيل. احمِ بريدك الحقيقي من الرسائل المزعجة.",copy:"📋 نسخ",refresh:"🔄 تحديث",custom:"✏️ اسم مخصص",new:"🎲 عنوان جديد",del:"🗑️ حذف",create:"إنشاء",inbox:"📥 صندوق الوارد",waiting:"في انتظار الرسائل… استعمل العنوان أعلاه، وستظهر الرسائل هنا تلقائيا.",back:"← رجوع",whatT:"ما هو البريد المؤقت؟",whatP:"البريد المؤقت هو عنوان تستعمله للتسجيل في المواقع دون كشف عنوانك الحقيقي. رسائل التأكيد تصل هنا، ويبقى بريدك الشخصي نظيفا وبدون سبام.",howT:"كيف تستعمله؟",how1:"انسخ العنوان الظاهر أعلاه.",how2:"الصقه في الموقع الذي يطلب بريدا إلكترونيا.",how3:"تصل رسالة التأكيد هنا في ثوانٍ، دون تحديث الصفحة.",q1:"هل هو مجاني؟",a1:"نعم، مجاني تماما وبدون تسجيل.",q2:"كم تبقى الرسائل؟",a2:"الرسائل مؤقتة وتُحذف تلقائيا من خادم الاستقبال. لا تستعمل هذا أبدا للحسابات المهمة (بنك، استرجاع حساب رئيسي).",q3:"هل يمكنني إرسال رسائل؟",a3:"لا. هذه الخدمة للاستقبال فقط.",foot:"خدمة استقبال مؤقتة. وضع التجربة: الاستقبال عبر",ready:"العنوان جاهز — تحديث تلقائي كل {s} ثوانٍ",copied:"تم نسخ العنوان ✔",creating:"جارٍ إنشاء العنوان…",checking:"جارٍ التحقق…",err:"خطأ في الشبكة — إعادة محاولة تلقائية",confirmDel:"حذف هذا العنوان وإنشاء واحد جديد؟",taken:"الاسم محجوز، جرب اسما آخر",badge:"✉️ مجاني 100% — بدون تسجيل",yourAddr:"عنوانك المؤقت",qrHelp:"سكانّي باش تلقى هاد العنوان في جهاز آخر",timeLeft:"الوقت اللي بقى:",extend:"+10 دقائق",extended:"تزادت 10 دقائق ✔",expired:"⏰ سالات مدة العنوان — تصاوب عنوان جديد",termsL:"📜 الشروط",aboutL:"ℹ️ حول الموقع",contactL:"✉️ اتصل بنا",featT:"لماذا TempBleu؟",f1t:"ضد السبام كليا",f1p:"خلي بريدك الحقيقي نظيفا: السبام يبقى هنا، لا عندك.",f2t:"أكواد تأكيد سريعة",f2p:"أكواد التحقق كتوصل بسرعة: الصندوق كيتحين بوحدو كل دقيقة (وفور ما ترجع للتبويب).",f3t:"بدون أي تسجيل",f3p:"لا حساب، لا كلمة سر، لا معلومات شخصية مطلوبة.",f4t:"حذف تلقائي",f4p:"العنوان والرسائل مؤقتة وتتمسح بوحدها.",f5t:"الخصوصية",f5p:"هويتك الحقيقية لا تغادر جيبك أبدا.",f6t:"3 لغات",f6p:"واجهة بالفرنسية والإنجليزية والعربية، مصممة للهاتف.",useT:"فيم يستعمل؟",u1:"📝 تسجيلات سريعة في المواقع والمنتديات",u2:"🎁 عروض وتجارب مجانية بلا سبام بعدها",u3:"🧪 تجربة تطبيقك الخاص بعناوين حقيقية",u4:"🔐 استقبال كود تحقق لمرة واحدة",secT:"⚠️ لا تستعمله أبدا في…",secP:"الحسابات المهمة: البنك، بريدك الرئيسي، استرجاع حساباتك الأساسية. العنوان المؤقت مصنوع لاستعمال واحد، لا ليدوم.",q4:"كم يبقى عنواني خداما؟",a4:"العنوان كيعيش 10 دقائق (العداد باين قدامك). زر +10 دقائق كيزيد في المدة. ملي كتسالي، كيتصاوب عنوان جديد بوحدو.",privT:"الخصوصية",privP:"هذه الخدمة تستقبل رسائل على عنوان مؤقت. لا تستقبل هنا أبدا وثائق حساسة. في وضع التجربة، الاستقبال يؤمنه شريكنا التقني المذكور أسفل الصفحة.",rights:"كل الحقوق محفوظة."}
+};
+let lang = 'fr';
+const t = k => (I18N[lang][k] || k);
+function applyLang(){
+  document.querySelectorAll('[data-i]').forEach(el=>{ el.textContent = t(el.dataset.i); });
+  document.documentElement.lang = lang;
+  document.documentElement.dir = (lang==='ar') ? 'rtl' : 'ltr';
+  document.querySelectorAll('.langs button').forEach(b=>b.classList.toggle('on', b.dataset.lang===lang));
+  setStatus(t('ready').replace('{s}', REFRESH_SEC));
+}
+document.querySelectorAll('.langs button').forEach(b=>b.onclick=()=>{ lang=b.dataset.lang; applyLang(); });
+
+/* ============ State ============ */
+let session = null; // {address, password, token, accountId}
+let timer = null, knownIds = new Set();
+
+const $ = id => document.getElementById(id);
+function toast(msg){ const el=$('toast'); el.textContent=msg; el.classList.add('show'); setTimeout(()=>el.classList.remove('show'),2200); }
+function setStatus(msg){ $('statusText').textContent = msg; }
+function randName(){ const w=['bleu','rapide','soleil','lune','etoile','nuage','vent','mer','ciel','fleur']; return w[Math.floor(Math.random()*w.length)] + Math.floor(1000+Math.random()*9000); }
+function randPass(){ return 'Tb!' + Math.random().toString(36).slice(2,10) + Math.floor(Math.random()*99); }
+async function jfetch(url, opts){ const r = await fetch(url, opts); if(!r.ok) throw new Error('HTTP '+r.status); return r.status===204 ? null : r.json(); }
+
+/* ============ Backend: Guerrilla Mail (test) ============
+   CORS vérifié: Access-Control-Allow-Origin: * (mail.tm bloquait le navigateur)
+   Session par sid_token, aucun cookie requis. */
+function decodeEnt(s){ if(!s) return ''; const ta=document.createElement('textarea'); ta.innerHTML=s; return ta.value; }
+async function gmCall(params){
+  const qs = new URLSearchParams(params).toString();
+  return jfetch(GM + '?' + qs);
+}
+async function gmCreate(nameWanted){
+  // 1) nouvelle session
+  let d = await gmCall({f:'get_email_address', lang: lang==='ar' ? 'en' : lang});
+  let sid = d.sid_token, address = d.email_addr;
+  // 2) nom personnalisé si demandé
+  if(nameWanted){
+    d = await gmCall({f:'set_email_user', email_user:nameWanted, lang:'en', site:'guerrillamail.com', sid_token:sid});
+    if(d.email_addr) address = d.email_addr;
+    sid = d.sid_token || sid;
+  }
+  return {address, password:'', token:sid, accountId:''};
+}
+async function gmList(){
+  const d = await gmCall({f:'check_email', seq:0, sid_token:session.token});
+  if(d.sid_token) { session.token = d.sid_token; save(); }
+  return (d.list||[]).slice().reverse().map(m=>({id:String(m.mail_id), from:decodeEnt(m.mail_from||''), subject:decodeEnt(m.mail_subject||'(sans objet)'), intro:decodeEnt((m.mail_excerpt||'')).replace(/\s+/g,' ').slice(0,110), time:(m.mail_timestamp||0)*1000, seen:!!m.mail_read}));
+}
+async function gmRead(id){
+  const m = await gmCall({f:'fetch_email', email_id:id, sid_token:session.token});
+  const body = m.mail_body || '';
+  const isHtml = /<[a-z][\s\S]*>/i.test(body);
+  const text = isHtml ? body.replace(/<br\s*\/?>/gi,'\n').replace(/<[^>]+>/g,'') : body;
+  return {subject:decodeEnt(m.mail_subject||''), from:decodeEnt(m.mail_from||''), time:(m.mail_timestamp||0)*1000, text:text.trim(), html:isHtml ? body : ''};
+}
+async function gmDelete(){
+  try{ await gmCall({f:'forget_me', email_addr:session.address, sid_token:session.token}); }catch(e){}
+}
+
+/* ============ Backend: own Worker (jour du domaine) ============
+   Même interface, endpoints du Worker livré (tempbleu-worker.js) */
+async function ownCreate(nameWanted){
+  const data = await jfetch(OWN_API_BASE + '/api/new_address', {method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({name:nameWanted||''})});
+  return {address:data.address, password:'', token:data.jwt, accountId:''};
+}
+async function ownList(){
+  const data = await jfetch(OWN_API_BASE + '/api/mails?limit=50&offset=0', {headers:{Authorization:'Bearer '+session.token}});
+  return (data.mails||data).map(m=>({id:m.id, from:m.sender||m.from||'', subject:m.subject||'', intro:(m.text||'').slice(0,90), time:m.created_at||m.createdAt, seen:true}));
+}
+async function ownRead(id){
+  const m = await jfetch(OWN_API_BASE + '/api/mail/' + id, {headers:{Authorization:'Bearer '+session.token}});
+  return {subject:m.subject||'', from:m.sender||'', time:m.created_at||'', text:m.text||'', html:m.html||''};
+}
+const API = (MODE==='own') ? {create:ownCreate, list:ownList, read:ownRead, del:async()=>{}} : {create:gmCreate, list:gmList, read:gmRead, del:gmDelete};
+
+/* ============ UI logic ============ */
+function save(){ localStorage.setItem(LS_KEY, JSON.stringify(session)); }
+function load(){ try{ return JSON.parse(localStorage.getItem(LS_KEY)); }catch(e){ return null; } }
+
+async function newAddress(nameWanted){
+  setStatus(t('creating'));
+  try{
+    session = await API.create(nameWanted);
+    knownIds = new Set();
+    session.exp = Date.now() + ADDR_TTL_MS;
+    save(); showAddress(); startPolling(); refreshInbox(); startCountdown();
+  }catch(e){
+    if(e.message==='taken'){ toast(t('taken')); setStatus(t('ready').replace('{s}',REFRESH_SEC)); }
+    else { setStatus(t('err')); setTimeout(()=>newAddress(nameWanted), 4000); }
+  }
+}
+function showAddress(){ const qp=$('qrPop'); if(qp && qp.style.display==='block' && session) $('qrImg').src='https://api.qrserver.com/v1/create-qr-code/?size=200x200&margin=8&data='+encodeURIComponent(session.address); $('addr').textContent = session.address; setStatus(t('ready').replace('{s}',REFRESH_SEC)); }
+
+function fmtTime(iso){ if(!iso || iso<=0) return ''; try{ return new Date(iso).toLocaleString(lang==='ar'?'ar':lang, {hour:'2-digit',minute:'2-digit',day:'numeric',month:'short'}); }catch(e){ return ''; } }
+
+async function refreshInbox(){
+  if(!session) return;
+  try{
+    const msgs = await API.list();
+    $('count').textContent = msgs.length ? msgs.length + ' ✉️' : '';
+    const list = $('list');
+    if($('reader').style.display==='block') return;
+    if(!msgs.length){
+      list.innerHTML = '<div class="empty"><div class="big">📭</div>' + t('waiting') + '</div>';
+      return;
+    }
+    list.innerHTML = '';
+    msgs.forEach(m=>{
+      if(!knownIds.has(m.id) && knownIds.size) toast('📩 ' + m.subject);
+      knownIds.add(m.id);
+      const d = document.createElement('div');
+      d.className = 'msg' + (m.seen ? '' : ' unread');
+      const f=document.createElement('div'); f.className='from'; f.textContent=m.from;
+      const s=document.createElement('div'); s.className='subj'; s.textContent=m.subject;
+      const i=document.createElement('div'); i.className='intro'; i.textContent=m.intro;
+      const tm=document.createElement('div'); tm.className='time'; tm.textContent=fmtTime(m.time);
+      d.append(f,s,i,tm);
+      d.onclick = ()=>openMsg(m.id);
+      list.appendChild(d);
+    });
+  }catch(e){ setStatus(t('err')); }
+}
+async function openMsg(id){
+  try{
+    const m = await API.read(id);
+    $('list').style.display='none';
+    const r=$('reader'); r.style.display='block';
+    $('rSubj').textContent = m.subject;
+    $('rMeta').textContent = m.from + ' • ' + fmtTime(m.time);
+    $('rText').textContent = m.text || '';
+    $('rText').style.display = m.text ? 'block' : 'none';
+    const w=$('rHtmlWrap'); w.innerHTML='';
+    if(m.html){
+      const ifr=document.createElement('iframe');
+      ifr.setAttribute('sandbox','');
+      ifr.srcdoc = m.html;
+      w.appendChild(ifr);
+    }
+    refreshInbox();
+  }catch(e){ toast(t('err')); }
+}
+$('btnBack').onclick = ()=>{ $('reader').style.display='none'; $('rHtmlWrap').innerHTML=''; $('list').style.display='block'; refreshInbox(); };
+
+function startPolling(){ if(timer) clearInterval(timer); timer=setInterval(()=>{ if(!document.hidden) refreshInbox(); }, REFRESH_SEC*1000); }
+document.addEventListener('visibilitychange', ()=>{ if(!document.hidden && session) refreshInbox(); });
+
+let cdTimer=null;
+function fmtMS(ms){ if(ms<0) ms=0; const sec=Math.ceil(ms/1000); return String(Math.floor(sec/60)).padStart(2,'0')+':'+String(sec%60).padStart(2,'0'); }
+function tick(){ if(!session || !session.exp) return; const left=session.exp-Date.now(); $('countdown').textContent=fmtMS(left); document.querySelector('.timer-chip').classList.toggle('low', left<60000 && left>0); if(left<=0){ clearInterval(cdTimer); expireAddress(); } }
+function startCountdown(){ if(cdTimer) clearInterval(cdTimer); tick(); cdTimer=setInterval(tick,1000); }
+async function expireAddress(){ try{ await API.del(); }catch(e){} localStorage.removeItem(LS_KEY); session=null; toast(t('expired')); newAddress(); }
+$('btnExtend').onclick = ()=>{ if(!session) return; session.exp = Math.max(session.exp||0, Date.now()) + ADDR_TTL_MS; save(); tick(); toast(t('extended')); };
+$('btnQR').onclick = ()=>{ if(!session) return; const p=$('qrPop'); if(p.style.display==='block'){ p.style.display='none'; return; } $('qrImg').src='https://api.qrserver.com/v1/create-qr-code/?size=200x200&margin=8&data='+encodeURIComponent(session.address); p.style.display='block'; };
+$('btnCopy').onclick = async ()=>{ if(!session) return; try{ await navigator.clipboard.writeText(session.address); }catch(e){ const r=document.createRange(); r.selectNodeContents($('addr')); const s=getSelection(); s.removeAllRanges(); s.addRange(r); document.execCommand('copy'); } toast(t('copied')); };
+$('btnRefresh').onclick = ()=>{ setStatus(t('checking')); refreshInbox().then(()=>setStatus(t('ready').replace('{s}',REFRESH_SEC))); };
+$('btnNew').onclick = ()=>newAddress();
+$('btnCustom').onclick = ()=>{ const b=$('customBox'); b.style.display = b.style.display==='flex' ? 'none' : 'flex'; $('customName').focus(); };
+$('btnCustomGo').onclick = ()=>{ const v=$('customName').value.trim().toLowerCase().replace(/[^a-z0-9._-]/g,''); if(v.length>=3) newAddress(v); };
+$('btnDelete').onclick = async ()=>{ if(!confirm(t('confirmDel'))) return; await API.del(); localStorage.removeItem(LS_KEY); newAddress(); };
+
+/* ============ Start ============ */
+applyLang();
+session = load();
+if(session && session.address){ if(!session.exp) session.exp = Date.now()+ADDR_TTL_MS; if(session.exp<=Date.now()){ localStorage.removeItem(LS_KEY); session=null; } }
+if(session && session.address){ showAddress(); startPolling(); refreshInbox(); startCountdown(); }
+else newAddress();
+
+</script>
+<script>
+const io = new IntersectionObserver(es=>es.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('on'); io.unobserve(e.target);} }), {threshold:.08});
+document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+</script>
+</body>
+  </html>
