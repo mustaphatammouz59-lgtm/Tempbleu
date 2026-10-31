@@ -1168,8 +1168,8 @@ window.addEventListener('popstate', () => {
 <script>/* ===== tempbleu-blog.html ===== */
 
 ;(function(){
-  const ROOT = document.getElementById('page-blog');
-  const __real = document;
+  const __real = window.document;
+  const ROOT = __real.getElementById('page-blog');
   const __scoped = {
     getElementById: id => ROOT.querySelector('#' + id),
     querySelector: s => ROOT.querySelector(s),
@@ -1349,8 +1349,8 @@ applyLang();
 })();</script><script>/* ===== tempbleu-change.html ===== */
 
 ;(function(){
-  const ROOT = document.getElementById('page-change');
-  const __real = document;
+  const __real = window.document;
+  const ROOT = __real.getElementById('page-change');
   const __scoped = {
     getElementById: id => ROOT.querySelector('#' + id),
     querySelector: s => ROOT.querySelector(s),
@@ -1472,8 +1472,8 @@ document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 })();</script><script>/* ===== tempbleu-privacy.html ===== */
 
 ;(function(){
-  const ROOT = document.getElementById('page-privacy');
-  const __real = document;
+  const __real = window.document;
+  const ROOT = __real.getElementById('page-privacy');
   const __scoped = {
     getElementById: id => ROOT.querySelector('#' + id),
     querySelector: s => ROOT.querySelector(s),
@@ -1520,8 +1520,8 @@ apply(['fr','en','ar'].includes(lang) ? lang : 'fr');
 })();</script><script>/* ===== tempbleu-terms.html ===== */
 
 ;(function(){
-  const ROOT = document.getElementById('page-terms');
-  const __real = document;
+  const __real = window.document;
+  const ROOT = __real.getElementById('page-terms');
   const __scoped = {
     getElementById: id => ROOT.querySelector('#' + id),
     querySelector: s => ROOT.querySelector(s),
@@ -1568,8 +1568,8 @@ apply(['fr','en','ar'].includes(lang) ? lang : 'fr');
 })();</script><script>/* ===== tempbleu-about.html ===== */
 
 ;(function(){
-  const ROOT = document.getElementById('page-about');
-  const __real = document;
+  const __real = window.document;
+  const ROOT = __real.getElementById('page-about');
   const __scoped = {
     getElementById: id => ROOT.querySelector('#' + id),
     querySelector: s => ROOT.querySelector(s),
@@ -1616,8 +1616,8 @@ apply(['fr','en','ar'].includes(lang) ? lang : 'fr');
 })();</script><script>/* ===== tempbleu-contact.html ===== */
 
 ;(function(){
-  const ROOT = document.getElementById('page-contact');
-  const __real = document;
+  const __real = window.document;
+  const ROOT = __real.getElementById('page-contact');
   const __scoped = {
     getElementById: id => ROOT.querySelector('#' + id),
     querySelector: s => ROOT.querySelector(s),
@@ -1663,4 +1663,4 @@ apply(['fr','en','ar'].includes(lang) ? lang : 'fr');
 
 })();</script>
 </body>
-           </html>
+ </html>
