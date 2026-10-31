@@ -117,6 +117,16 @@
     .top-grid,.main-grid{grid-template-columns:minmax(0,1fr)}
     .temp-emailbox h2{font-size:19px}
   }
+
+  /* ===== Mobile side fix: header wraps, nothing overflows the sides ===== */
+  html,body{overflow-x:hidden}
+  .card a{overflow-wrap:anywhere}
+  @media(max-width:700px){
+    .main-header .container{flex-wrap:wrap}
+    .brand{order:-1;flex:1 1 100%;text-align:center}
+    .hbtns,.btn-appstore{flex:0 1 auto}
+    .langs,.head-right{flex:0 1 auto;margin-inline-start:auto}
+  }
 </style>
 </head>
 <body>

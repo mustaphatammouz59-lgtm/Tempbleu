@@ -45,6 +45,16 @@
   .footer-nav a:hover{color:#4ADE80}
   footer small{color:#8a93b2}
   @media(max-width:700px){ .brand a{font-size:22px} .hbtns .tm-btn{padding:7px 10px;font-size:13px} .card{padding:20px} .band h1{font-size:25px} }
+
+  /* ===== Mobile side fix: header wraps, nothing overflows the sides ===== */
+  html,body{overflow-x:hidden}
+  .card a{overflow-wrap:anywhere}
+  @media(max-width:700px){
+    .main-header .container{flex-wrap:wrap}
+    .brand{order:-1;flex:1 1 100%;text-align:center}
+    .hbtns,.btn-appstore{flex:0 1 auto}
+    .langs,.head-right{flex:0 1 auto;margin-inline-start:auto}
+  }
 </style>
 </head>
 <body>
