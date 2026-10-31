@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TempBleu — Contact</title>
+<meta name="description" content="Une question, une suggestion, un abus à signaler ? Écrivez-nous.">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Segoe UI',system-ui,Arial,sans-serif;background:#eef1fb;color:#1c2340;line-height:1.65}
+  .container{max-width:1180px;margin:0 auto;padding:0 14px}
+  .grad{background:linear-gradient(140deg,#3F51B5 0%,#5b3fb8 55%,#8e2fb8 130%)}
+  .main-header{background:#fff;box-shadow:0 4px 18px rgba(26,35,126,.10);padding:12px 0}
+  .main-header .container{display:flex;align-items:center;justify-content:space-between;gap:10px}
+  .hbtns{display:flex;gap:8px;flex:1}
+  .tm-btn{display:inline-flex;align-items:center;gap:7px;border:2px solid #3F51B5;color:#3F51B5;background:#fff;border-radius:12px;padding:8px 15px;font-weight:800;font-size:14px;text-decoration:none;transition:all .15s}
+  .tm-btn:hover{background:#3F51B5;color:#fff}
+  .brand{flex:1;text-align:center}
+  .brand a{font-size:29px;font-weight:900;text-decoration:none;background:linear-gradient(120deg,#3F51B5,#8e2fb8);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .brand a span{color:#4CAF50;-webkit-text-fill-color:#4CAF50}
+  .langs{flex:1;display:flex;justify-content:flex-end;gap:5px}
+  .langs button{background:#eef1fa;border:1.5px solid #c9d2f0;color:#26307a;border-radius:18px;padding:4px 12px;cursor:pointer;font-weight:800;font-size:13px}
+  .langs button.on{background:linear-gradient(135deg,#3F51B5,#5b3fb8);color:#fff;border-color:transparent}
+  .band{padding:38px 14px 44px;text-align:center;position:relative;overflow:hidden}
+  .band h1{color:#fff;font-size:30px;text-shadow:0 3px 12px rgba(0,0,0,.25);margin-bottom:6px}
+  .band p{color:#dfe5ff;font-size:15.5px;max-width:640px;margin:0 auto}
+  .band .upd{color:#aeb9ec;font-size:13px;margin-top:10px}
+  main{max-width:840px;margin:-22px auto 0;padding:0 14px 10px;position:relative;z-index:3}
+  .card{background:#fff;border-radius:20px;box-shadow:0 16px 40px rgba(38,48,122,.14);padding:26px 28px}
+  .card h2{color:#26307a;font-size:19.5px;margin:20px 0 7px}
+  .card h2:first-child{margin-top:0}
+  .card p{color:#39415f;margin-bottom:9px}
+  .card ul{margin:0 0 10px;padding-inline-start:22px;color:#39415f}
+  .card li{margin-bottom:5px}
+  .card a{color:#3F51B5;font-weight:700}
+  .fld{margin-bottom:12px}
+  .fld label{display:block;font-weight:700;font-size:14px;color:#26307a;margin-bottom:5px}
+  .fld input,.fld select,.fld textarea{width:100%;padding:12px 15px;border:2px solid #c9d2f0;border-radius:12px;font-size:15.5px;color:#26307a;background:#fff;font-family:inherit}
+  .fld input:focus,.fld select:focus,.fld textarea:focus{border-color:#3F51B5;box-shadow:0 0 0 4px rgba(63,81,181,.15);outline:none}
+  .send{background:linear-gradient(135deg,#43c24f,#2f9e44);color:#fff;border:none;border-radius:12px;padding:13px 30px;font-size:16px;font-weight:800;cursor:pointer;width:100%}
+  .send:hover{filter:brightness(1.07)}
+  footer{background:linear-gradient(160deg,#171d3d,#232a5e);color:#c6cdf0;margin-top:36px;padding:26px 14px 30px;text-align:center}
+  .footer-nav{list-style:none;display:flex;justify-content:center;flex-wrap:wrap;gap:6px 20px;margin-bottom:14px}
+  .footer-nav a{color:#fff;text-decoration:none;font-weight:800;font-size:13.5px;text-transform:uppercase;letter-spacing:.4px}
+  .footer-nav a:hover{color:#4ADE80}
+  footer small{color:#8a93b2}
+  @media(max-width:700px){ .brand a{font-size:22px} .hbtns .tm-btn{padding:7px 10px;font-size:13px} .card{padding:20px} .band h1{font-size:25px} }
+</style>
+</head>
+<body>
+<header class="main-header">
+  <div class="container">
+    <div class="hbtns">
+      <a class="tm-btn" href="tempbleu.html">🏠 <span data-k="home"></span></a>
+      <a class="tm-btn" href="tempbleu-blog.html">📚 Blog</a>
+    </div>
+    <div class="brand"><a href="tempbleu.html">TempBleu<span>.com</span></a></div>
+    <div class="langs">
+      <button data-lang="fr" class="on">FR</button><button data-lang="en">EN</button><button data-lang="ar">ع</button>
+    </div>
+  </div>
+</header>
+<div class="band grad">
+  <h1 id="pgTitle"></h1>
+  <p id="pgSub"></p>
+  <div class="upd" id="pgUpd"></div>
+</div>
+<main><div class="card" id="pgBody"></div></main>
+<footer>
+  <ul class="footer-nav">
+    <li><a href="tempbleu.html" data-k="home"></a></li>
+    <li><a href="tempbleu-blog.html">Blog</a></li>
+    <li><a href="tempbleu-privacy.html" data-k="privacy"></a></li>
+    <li><a href="tempbleu-terms.html" data-k="terms"></a></li>
+    <li><a href="tempbleu-about.html" data-k="about"></a></li>
+    <li><a href="tempbleu-contact.html" data-k="contact"></a></li>
+  </ul>
+  <small>© 2026 TempBleu.com — <span data-k="rights"></span></small>
+</footer>
+<script>
+const PAGE = {"title": {"fr": "Contact", "en": "Contact", "ar": "اتصل بنا"}, "sub": {"fr": "Une question, une suggestion, un abus à signaler ? Écrivez-nous.", "en": "A question, a suggestion, abuse to report? Write to us.", "ar": "سؤال، اقتراح، أو إساءة بغيتي تبلغ عليها؟ كتب لينا."}, "html": {"fr": "\n<h2>Par e-mail</h2>\n<p>Le moyen le plus simple : <b>contact@tempbleu.com</b>. Nous lisons tout et répondons en général sous 48 heures ouvrées.</p>\n<h2>Formulaire</h2>\n<p>Remplissez ce formulaire : il ouvre votre application e-mail avec le message déjà préparé, adressé à notre équipe.</p>\n<form id=\"cForm\">\n  <div class=\"fld\"><label>Votre nom</label><input type=\"text\" id=\"cfName\" autocomplete=\"name\"></div>\n  <div class=\"fld\"><label>Votre e-mail</label><input type=\"email\" id=\"cfMail\" autocomplete=\"email\"></div>\n  <div class=\"fld\"><label>Sujet</label>\n    <select id=\"cfSubj\"><option>Question générale</option><option>Suggestion</option><option>Signaler un abus</option><option>Problème technique</option><option>Autre</option></select></div>\n  <div class=\"fld\"><label>Votre message</label><textarea id=\"cfMsg\" rows=\"5\"></textarea></div>\n  <button class=\"send\" type=\"submit\">📧 Envoyer le message</button>\n</form>\n<h2>Signaler un abus</h2>\n<p>Si une adresse TempBleu est utilisée pour du spam, une fraude ou du harcèlement, signalez-le avec le sujet « Signaler un abus » en précisant l'adresse concernée et les faits. Nous prenons ces signalements au sérieux.</p>\n<h2>Bon à savoir</h2>\n<p>Nous ne pouvons pas récupérer une adresse expirée ni ses messages : tout est supprimé automatiquement après 10 minutes, par conception. Pour comprendre comment le service fonctionne, lisez notre page <a href=\"tempbleu-about.html\">À propos</a> et notre <a href=\"tempbleu-blog.html\">blog</a>.</p>\n", "en": "\n<h2>By e-mail</h2>\n<p>The simplest way: <b>contact@tempbleu.com</b>. We read everything and usually reply within 2 business days.</p>\n<h2>Form</h2>\n<p>Fill in this form: it opens your e-mail app with the message already prepared, addressed to our team.</p>\n<form id=\"cForm\">\n  <div class=\"fld\"><label>Your name</label><input type=\"text\" id=\"cfName\" autocomplete=\"name\"></div>\n  <div class=\"fld\"><label>Your e-mail</label><input type=\"email\" id=\"cfMail\" autocomplete=\"email\"></div>\n  <div class=\"fld\"><label>Subject</label>\n    <select id=\"cfSubj\"><option>General question</option><option>Suggestion</option><option>Report abuse</option><option>Technical problem</option><option>Other</option></select></div>\n  <div class=\"fld\"><label>Your message</label><textarea id=\"cfMsg\" rows=\"5\"></textarea></div>\n  <button class=\"send\" type=\"submit\">📧 Send the message</button>\n</form>\n<h2>Report abuse</h2>\n<p>If a TempBleu address is used for spam, fraud or harassment, report it with the subject \"Report abuse\", stating the address involved and the facts. We take these reports seriously.</p>\n<h2>Good to know</h2>\n<p>We cannot recover an expired address or its messages: everything is automatically deleted after 10 minutes, by design. To understand how the service works, read our <a href=\"tempbleu-about.html\">About</a> page and our <a href=\"tempbleu-blog.html\">blog</a>.</p>\n", "ar": "\n<h2>بالإيميل</h2>\n<p>أسهل طريقة: <b>contact@tempbleu.com</b>. كنقراو كلشي وكنجاوبو عادة في ظرف يومي عمل.</p>\n<h2>النموذج</h2>\n<p>عمر هاد النموذج: غادي يفتح تطبيق الإيميل ديالك بالرسالة واجدة، موجهة لفريقنا.</p>\n<form id=\"cForm\">\n  <div class=\"fld\"><label>اسمك</label><input type=\"text\" id=\"cfName\" autocomplete=\"name\"></div>\n  <div class=\"fld\"><label>إيميلك</label><input type=\"email\" id=\"cfMail\" autocomplete=\"email\"></div>\n  <div class=\"fld\"><label>الموضوع</label>\n    <select id=\"cfSubj\"><option>سؤال عام</option><option>اقتراح</option><option>تبليغ عن إساءة</option><option>مشكل تقني</option><option>آخر</option></select></div>\n  <div class=\"fld\"><label>رسالتك</label><textarea id=\"cfMsg\" rows=\"5\"></textarea></div>\n  <button class=\"send\" type=\"submit\">📧 صيفط الرسالة</button>\n</form>\n<h2>التبليغ عن إساءة</h2>\n<p>إلا تستعمل عنوان TempBleu للسبام أو النصب أو التحرش، بلغ عليه بالموضوع «تبليغ عن إساءة» مع ذكر العنوان المعني والوقائع. كناخدو هاد التبليغات بجدية.</p>\n<h2>مهم تعرف</h2>\n<p>ما نقدروش نرجعو عنوان سالات مدتو أو رسائله: كلشي كيتمسح بوحدو بعد 10 دقائق، بالتصميم. باش تفهم كيفاش خدامة الخدمة، قرا صفحة <a href=\"tempbleu-about.html\">حول TempBleu</a> و <a href=\"tempbleu-blog.html\">المدونة</a>.</p>\n"}};
+const NAVL = {"home": {"fr": "Accueil", "en": "Home", "ar": "الرئيسية"}, "privacy": {"fr": "Confidentialité", "en": "Privacy", "ar": "الخصوصية"}, "terms": {"fr": "Conditions", "en": "Terms", "ar": "الشروط"}, "about": {"fr": "À propos", "en": "About", "ar": "حول"}, "contact": {"fr": "Contact", "en": "Contact", "ar": "اتصل بنا"}, "rights": {"fr": "Tous droits réservés.", "en": "All rights reserved.", "ar": "جميع الحقوق محفوظة."}};
+const UPD = {"fr": "Dernière mise à jour : 31 octobre 2026", "en": "Last updated: October 31, 2026", "ar": "آخر تحديث: 31 أكتوبر 2026"};
+let lang = localStorage.getItem('tempbleu_lang') || 'fr';
+function apply(l){
+  lang = l; localStorage.setItem('tempbleu_lang', l);
+  document.documentElement.lang = l; document.documentElement.dir = (l==='ar') ? 'rtl' : 'ltr';
+  document.querySelectorAll('.langs button').forEach(b=>b.classList.toggle('on', b.dataset.lang===l));
+  document.getElementById('pgTitle').textContent = PAGE.title[l];
+  document.getElementById('pgSub').textContent = PAGE.sub[l];
+  document.getElementById('pgUpd').textContent = false ? UPD[l] : '';
+  document.getElementById('pgBody').innerHTML = PAGE.html[l];
+  document.querySelectorAll('[data-k]').forEach(el=>{ el.textContent = NAVL[el.dataset.k][l]; });
+  document.title = 'TempBleu — ' + PAGE.title[l];
+  bindForm();
+}
+function bindForm(){
+  const f = document.getElementById('cForm');
+  if(!f) return;
+  f.onsubmit = (e)=>{
+    e.preventDefault();
+    const name=document.getElementById('cfName').value, mail=document.getElementById('cfMail').value,
+          subj=document.getElementById('cfSubj').value, msg=document.getElementById('cfMsg').value;
+    const body = msg + '\n\n— ' + name + (mail ? ' <'+mail+'>' : '');
+    location.href = 'mailto:contact@tempbleu.com?subject=' + encodeURIComponent('[TempBleu] ' + subj) + '&body=' + encodeURIComponent(body);
+  };
+}
+document.querySelectorAll('.langs button').forEach(b=> b.onclick = ()=>apply(b.dataset.lang));
+apply(['fr','en','ar'].includes(lang) ? lang : 'fr');
+</script>
+</body>
+</html>

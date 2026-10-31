@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TempBleu — À propos de TempBleu</title>
+<meta name="description" content="Un e-mail temporaire simple, gratuit et honnête — créé pour protéger votre vraie boîte.">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Segoe UI',system-ui,Arial,sans-serif;background:#eef1fb;color:#1c2340;line-height:1.65}
+  .container{max-width:1180px;margin:0 auto;padding:0 14px}
+  .grad{background:linear-gradient(140deg,#3F51B5 0%,#5b3fb8 55%,#8e2fb8 130%)}
+  .main-header{background:#fff;box-shadow:0 4px 18px rgba(26,35,126,.10);padding:12px 0}
+  .main-header .container{display:flex;align-items:center;justify-content:space-between;gap:10px}
+  .hbtns{display:flex;gap:8px;flex:1}
+  .tm-btn{display:inline-flex;align-items:center;gap:7px;border:2px solid #3F51B5;color:#3F51B5;background:#fff;border-radius:12px;padding:8px 15px;font-weight:800;font-size:14px;text-decoration:none;transition:all .15s}
+  .tm-btn:hover{background:#3F51B5;color:#fff}
+  .brand{flex:1;text-align:center}
+  .brand a{font-size:29px;font-weight:900;text-decoration:none;background:linear-gradient(120deg,#3F51B5,#8e2fb8);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .brand a span{color:#4CAF50;-webkit-text-fill-color:#4CAF50}
+  .langs{flex:1;display:flex;justify-content:flex-end;gap:5px}
+  .langs button{background:#eef1fa;border:1.5px solid #c9d2f0;color:#26307a;border-radius:18px;padding:4px 12px;cursor:pointer;font-weight:800;font-size:13px}
+  .langs button.on{background:linear-gradient(135deg,#3F51B5,#5b3fb8);color:#fff;border-color:transparent}
+  .band{padding:38px 14px 44px;text-align:center;position:relative;overflow:hidden}
+  .band h1{color:#fff;font-size:30px;text-shadow:0 3px 12px rgba(0,0,0,.25);margin-bottom:6px}
+  .band p{color:#dfe5ff;font-size:15.5px;max-width:640px;margin:0 auto}
+  .band .upd{color:#aeb9ec;font-size:13px;margin-top:10px}
+  main{max-width:840px;margin:-22px auto 0;padding:0 14px 10px;position:relative;z-index:3}
+  .card{background:#fff;border-radius:20px;box-shadow:0 16px 40px rgba(38,48,122,.14);padding:26px 28px}
+  .card h2{color:#26307a;font-size:19.5px;margin:20px 0 7px}
+  .card h2:first-child{margin-top:0}
+  .card p{color:#39415f;margin-bottom:9px}
+  .card ul{margin:0 0 10px;padding-inline-start:22px;color:#39415f}
+  .card li{margin-bottom:5px}
+  .card a{color:#3F51B5;font-weight:700}
+  .fld{margin-bottom:12px}
+  .fld label{display:block;font-weight:700;font-size:14px;color:#26307a;margin-bottom:5px}
+  .fld input,.fld select,.fld textarea{width:100%;padding:12px 15px;border:2px solid #c9d2f0;border-radius:12px;font-size:15.5px;color:#26307a;background:#fff;font-family:inherit}
+  .fld input:focus,.fld select:focus,.fld textarea:focus{border-color:#3F51B5;box-shadow:0 0 0 4px rgba(63,81,181,.15);outline:none}
+  .send{background:linear-gradient(135deg,#43c24f,#2f9e44);color:#fff;border:none;border-radius:12px;padding:13px 30px;font-size:16px;font-weight:800;cursor:pointer;width:100%}
+  .send:hover{filter:brightness(1.07)}
+  footer{background:linear-gradient(160deg,#171d3d,#232a5e);color:#c6cdf0;margin-top:36px;padding:26px 14px 30px;text-align:center}
+  .footer-nav{list-style:none;display:flex;justify-content:center;flex-wrap:wrap;gap:6px 20px;margin-bottom:14px}
+  .footer-nav a{color:#fff;text-decoration:none;font-weight:800;font-size:13.5px;text-transform:uppercase;letter-spacing:.4px}
+  .footer-nav a:hover{color:#4ADE80}
+  footer small{color:#8a93b2}
+  @media(max-width:700px){ .brand a{font-size:22px} .hbtns .tm-btn{padding:7px 10px;font-size:13px} .card{padding:20px} .band h1{font-size:25px} }
+</style>
+</head>
+<body>
+<header class="main-header">
+  <div class="container">
+    <div class="hbtns">
+      <a class="tm-btn" href="tempbleu.html">🏠 <span data-k="home"></span></a>
+      <a class="tm-btn" href="tempbleu-blog.html">📚 Blog</a>
+    </div>
+    <div class="brand"><a href="tempbleu.html">TempBleu<span>.com</span></a></div>
+    <div class="langs">
+      <button data-lang="fr" class="on">FR</button><button data-lang="en">EN</button><button data-lang="ar">ع</button>
+    </div>
+  </div>
+</header>
+<div class="band grad">
+  <h1 id="pgTitle"></h1>
+  <p id="pgSub"></p>
+  <div class="upd" id="pgUpd"></div>
+</div>
+<main><div class="card" id="pgBody"></div></main>
+<footer>
+  <ul class="footer-nav">
+    <li><a href="tempbleu.html" data-k="home"></a></li>
+    <li><a href="tempbleu-blog.html">Blog</a></li>
+    <li><a href="tempbleu-privacy.html" data-k="privacy"></a></li>
+    <li><a href="tempbleu-terms.html" data-k="terms"></a></li>
+    <li><a href="tempbleu-about.html" data-k="about"></a></li>
+    <li><a href="tempbleu-contact.html" data-k="contact"></a></li>
+  </ul>
+  <small>© 2026 TempBleu.com — <span data-k="rights"></span></small>
+</footer>
+<script>
+const PAGE = {"title": {"fr": "À propos de TempBleu", "en": "About TempBleu", "ar": "حول TempBleu"}, "sub": {"fr": "Un e-mail temporaire simple, gratuit et honnête — créé pour protéger votre vraie boîte.", "en": "A simple, free and honest temporary e-mail — built to protect your real inbox.", "ar": "إيميل مؤقت بسيط، مجاني وصريح — تصاوب باش يحمي صندوقك الحقيقي."}, "html": {"fr": "\n<h2>Notre idée</h2>\n<p>Chaque jour, des sites vous demandent votre e-mail pour une inscription sans importance — puis vous inondent de publicités pendant des années. TempBleu est né d'un constat simple : pour ces usages-là, vous ne devriez jamais donner votre vraie adresse. Nous vous en prêtons une, le temps qu'il faut, puis elle disparaît.</p>\n<h2>Comment ça marche</h2>\n<ul>\n<li><b>1.</b> Une adresse temporaire est créée instantanément, sans inscription.</li>\n<li><b>2.</b> Vous la donnez au site qui vous demande un e-mail ; le message de confirmation arrive ici.</li>\n<li><b>3.</b> Après 10 minutes (prolongeables), l'adresse et ses messages sont automatiquement supprimés.</li>\n</ul>\n<h2>Nos engagements</h2>\n<ul>\n<li><b>100 % gratuit</b>, sans compte premium et sans inscription.</li>\n<li><b>Vie privée par conception</b> : aucune donnée personnelle demandée, aucune conservation au-delà de 10 minutes.</li>\n<li><b>Honnêteté</b> : nous disons clairement ce que le service ne peut pas faire — par exemple, certains grands sites refusent les adresses temporaires, et il ne faut jamais l'utiliser pour des comptes importants.</li>\n<li><b>Contenu original</b> : notre blog explique le sujet en profondeur, sans copier qui que ce soit.</li>\n</ul>\n<h2>La famille Bleu</h2>\n<p>TempBleu fait partie d'une petite famille de sites gratuits construits avec le même soin : <b>CalcBlue.com</b> (calculatrices financières et pratiques) et <b>PdfBleu.com</b> (outils PDF qui fonctionnent dans votre navigateur). Même philosophie partout : gratuit, rapide, respectueux de l'utilisateur.</p>\n<h2>Nous écrire</h2>\n<p>Une question, une suggestion, un abus à signaler ? Passez par la page <a href=\"tempbleu-contact.html\">Contact</a>.</p>\n", "en": "\n<h2>Our idea</h2>\n<p>Every day, websites ask for your e-mail for a sign-up that doesn't matter — then flood you with ads for years. TempBleu started from a simple observation: for those uses, you should never hand over your real address. We lend you one, for as long as needed, then it disappears.</p>\n<h2>How it works</h2>\n<ul>\n<li><b>1.</b> A temporary address is created instantly, with no sign-up.</li>\n<li><b>2.</b> You give it to the site asking for an e-mail; the confirmation message arrives here.</li>\n<li><b>3.</b> After 10 minutes (extendable), the address and its messages are automatically deleted.</li>\n</ul>\n<h2>Our commitments</h2>\n<ul>\n<li><b>100% free</b>, no premium account and no sign-up.</li>\n<li><b>Privacy by design</b>: no personal data requested, nothing kept beyond 10 minutes.</li>\n<li><b>Honesty</b>: we clearly state what the service cannot do — for example, some large sites refuse temporary addresses, and it must never be used for important accounts.</li>\n<li><b>Original content</b>: our blog explains the topic in depth, copying no one.</li>\n</ul>\n<h2>The Bleu family</h2>\n<p>TempBleu belongs to a small family of free sites built with the same care: <b>CalcBlue.com</b> (financial and everyday calculators) and <b>PdfBleu.com</b> (PDF tools that run in your browser). Same philosophy everywhere: free, fast, respectful of the user.</p>\n<h2>Write to us</h2>\n<p>A question, a suggestion, abuse to report? Use the <a href=\"tempbleu-contact.html\">Contact</a> page.</p>\n", "ar": "\n<h2>فكرتنا</h2>\n<p>كل نهار، مواقع كيطلبو إيميلك لتسجيل ما عندو أهمية — ومن بعد كيغرقوك بالإعلانات لسنوات. TempBleu تولد من ملاحظة بسيطة: لهاد الاستعمالات، ما خاصكش أبدا تعطي عنوانك الحقيقي. حنا كنسلفوك واحد، للوقت اللي تحتاج، ومن بعد كيختفي.</p>\n<h2>كيفاش خدام</h2>\n<ul>\n<li><b>1.</b> عنوان مؤقت كيتصاوب فورا، بلا تسجيل.</li>\n<li><b>2.</b> كتعطيه للموقع اللي طلب الإيميل؛ رسالة التأكيد كتوصل هنا.</li>\n<li><b>3.</b> بعد 10 دقائق (قابلة للتمديد)، العنوان ورسائله كيتمسحو بوحدهم.</li>\n</ul>\n<h2>التزاماتنا</h2>\n<ul>\n<li><b>مجاني 100%</b>، بلا حساب مدفوع وبلا تسجيل.</li>\n<li><b>الخصوصية بالتصميم</b>: حتى بيانات شخصية ما كتطلب، وحتى حاجة ما كتبقى فوق 10 دقائق.</li>\n<li><b>الصراحة</b>: كنقولو بوضوح شنو الخدمة ما تقدرش تدير — مثلا، بعض المواقع الكبيرة كترفض العناوين المؤقتة، وما خاصهاش تستعمل أبدا للحسابات المهمة.</li>\n<li><b>محتوى أصلي</b>: مدونتنا كتشرح الموضوع بعمق، بلا نسخ من حتى واحد.</li>\n</ul>\n<h2>عائلة Bleu</h2>\n<p>TempBleu جزء من عائلة صغيرة ديال مواقع مجانية مبنية بنفس العناية: <b>CalcBlue.com</b> (حاسبات مالية وعملية) و <b>PdfBleu.com</b> (أدوات PDF كتخدم في متصفحك). نفس الفلسفة في كل بلاصة: مجاني، سريع، وكيحترم المستعمل.</p>\n<h2>كتب لينا</h2>\n<p>سؤال، اقتراح، أو إساءة بغيتي تبلغ عليها؟ دوز من صفحة <a href=\"tempbleu-contact.html\">اتصل بنا</a>.</p>\n"}};
+const NAVL = {"home": {"fr": "Accueil", "en": "Home", "ar": "الرئيسية"}, "privacy": {"fr": "Confidentialité", "en": "Privacy", "ar": "الخصوصية"}, "terms": {"fr": "Conditions", "en": "Terms", "ar": "الشروط"}, "about": {"fr": "À propos", "en": "About", "ar": "حول"}, "contact": {"fr": "Contact", "en": "Contact", "ar": "اتصل بنا"}, "rights": {"fr": "Tous droits réservés.", "en": "All rights reserved.", "ar": "جميع الحقوق محفوظة."}};
+const UPD = {"fr": "Dernière mise à jour : 31 octobre 2026", "en": "Last updated: October 31, 2026", "ar": "آخر تحديث: 31 أكتوبر 2026"};
+let lang = localStorage.getItem('tempbleu_lang') || 'fr';
+function apply(l){
+  lang = l; localStorage.setItem('tempbleu_lang', l);
+  document.documentElement.lang = l; document.documentElement.dir = (l==='ar') ? 'rtl' : 'ltr';
+  document.querySelectorAll('.langs button').forEach(b=>b.classList.toggle('on', b.dataset.lang===l));
+  document.getElementById('pgTitle').textContent = PAGE.title[l];
+  document.getElementById('pgSub').textContent = PAGE.sub[l];
+  document.getElementById('pgUpd').textContent = false ? UPD[l] : '';
+  document.getElementById('pgBody').innerHTML = PAGE.html[l];
+  document.querySelectorAll('[data-k]').forEach(el=>{ el.textContent = NAVL[el.dataset.k][l]; });
+  document.title = 'TempBleu — ' + PAGE.title[l];
+  bindForm();
+}
+function bindForm(){
+  const f = document.getElementById('cForm');
+  if(!f) return;
+  f.onsubmit = (e)=>{
+    e.preventDefault();
+    const name=document.getElementById('cfName').value, mail=document.getElementById('cfMail').value,
+          subj=document.getElementById('cfSubj').value, msg=document.getElementById('cfMsg').value;
+    const body = msg + '\n\n— ' + name + (mail ? ' <'+mail+'>' : '');
+    location.href = 'mailto:contact@tempbleu.com?subject=' + encodeURIComponent('[TempBleu] ' + subj) + '&body=' + encodeURIComponent(body);
+  };
+}
+document.querySelectorAll('.langs button').forEach(b=> b.onclick = ()=>apply(b.dataset.lang));
+apply(['fr','en','ar'].includes(lang) ? lang : 'fr');
+</script>
+</body>
+</html>

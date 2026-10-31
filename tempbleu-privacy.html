@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TempBleu — Politique de confidentialité</title>
+<meta name="description" content="Comment TempBleu traite vos données : presque rien, et seulement 10 minutes.">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Segoe UI',system-ui,Arial,sans-serif;background:#eef1fb;color:#1c2340;line-height:1.65}
+  .container{max-width:1180px;margin:0 auto;padding:0 14px}
+  .grad{background:linear-gradient(140deg,#3F51B5 0%,#5b3fb8 55%,#8e2fb8 130%)}
+  .main-header{background:#fff;box-shadow:0 4px 18px rgba(26,35,126,.10);padding:12px 0}
+  .main-header .container{display:flex;align-items:center;justify-content:space-between;gap:10px}
+  .hbtns{display:flex;gap:8px;flex:1}
+  .tm-btn{display:inline-flex;align-items:center;gap:7px;border:2px solid #3F51B5;color:#3F51B5;background:#fff;border-radius:12px;padding:8px 15px;font-weight:800;font-size:14px;text-decoration:none;transition:all .15s}
+  .tm-btn:hover{background:#3F51B5;color:#fff}
+  .brand{flex:1;text-align:center}
+  .brand a{font-size:29px;font-weight:900;text-decoration:none;background:linear-gradient(120deg,#3F51B5,#8e2fb8);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .brand a span{color:#4CAF50;-webkit-text-fill-color:#4CAF50}
+  .langs{flex:1;display:flex;justify-content:flex-end;gap:5px}
+  .langs button{background:#eef1fa;border:1.5px solid #c9d2f0;color:#26307a;border-radius:18px;padding:4px 12px;cursor:pointer;font-weight:800;font-size:13px}
+  .langs button.on{background:linear-gradient(135deg,#3F51B5,#5b3fb8);color:#fff;border-color:transparent}
+  .band{padding:38px 14px 44px;text-align:center;position:relative;overflow:hidden}
+  .band h1{color:#fff;font-size:30px;text-shadow:0 3px 12px rgba(0,0,0,.25);margin-bottom:6px}
+  .band p{color:#dfe5ff;font-size:15.5px;max-width:640px;margin:0 auto}
+  .band .upd{color:#aeb9ec;font-size:13px;margin-top:10px}
+  main{max-width:840px;margin:-22px auto 0;padding:0 14px 10px;position:relative;z-index:3}
+  .card{background:#fff;border-radius:20px;box-shadow:0 16px 40px rgba(38,48,122,.14);padding:26px 28px}
+  .card h2{color:#26307a;font-size:19.5px;margin:20px 0 7px}
+  .card h2:first-child{margin-top:0}
+  .card p{color:#39415f;margin-bottom:9px}
+  .card ul{margin:0 0 10px;padding-inline-start:22px;color:#39415f}
+  .card li{margin-bottom:5px}
+  .card a{color:#3F51B5;font-weight:700}
+  .fld{margin-bottom:12px}
+  .fld label{display:block;font-weight:700;font-size:14px;color:#26307a;margin-bottom:5px}
+  .fld input,.fld select,.fld textarea{width:100%;padding:12px 15px;border:2px solid #c9d2f0;border-radius:12px;font-size:15.5px;color:#26307a;background:#fff;font-family:inherit}
+  .fld input:focus,.fld select:focus,.fld textarea:focus{border-color:#3F51B5;box-shadow:0 0 0 4px rgba(63,81,181,.15);outline:none}
+  .send{background:linear-gradient(135deg,#43c24f,#2f9e44);color:#fff;border:none;border-radius:12px;padding:13px 30px;font-size:16px;font-weight:800;cursor:pointer;width:100%}
+  .send:hover{filter:brightness(1.07)}
+  footer{background:linear-gradient(160deg,#171d3d,#232a5e);color:#c6cdf0;margin-top:36px;padding:26px 14px 30px;text-align:center}
+  .footer-nav{list-style:none;display:flex;justify-content:center;flex-wrap:wrap;gap:6px 20px;margin-bottom:14px}
+  .footer-nav a{color:#fff;text-decoration:none;font-weight:800;font-size:13.5px;text-transform:uppercase;letter-spacing:.4px}
+  .footer-nav a:hover{color:#4ADE80}
+  footer small{color:#8a93b2}
+  @media(max-width:700px){ .brand a{font-size:22px} .hbtns .tm-btn{padding:7px 10px;font-size:13px} .card{padding:20px} .band h1{font-size:25px} }
+</style>
+</head>
+<body>
+<header class="main-header">
+  <div class="container">
+    <div class="hbtns">
+      <a class="tm-btn" href="tempbleu.html">🏠 <span data-k="home"></span></a>
+      <a class="tm-btn" href="tempbleu-blog.html">📚 Blog</a>
+    </div>
+    <div class="brand"><a href="tempbleu.html">TempBleu<span>.com</span></a></div>
+    <div class="langs">
+      <button data-lang="fr" class="on">FR</button><button data-lang="en">EN</button><button data-lang="ar">ع</button>
+    </div>
+  </div>
+</header>
+<div class="band grad">
+  <h1 id="pgTitle"></h1>
+  <p id="pgSub"></p>
+  <div class="upd" id="pgUpd"></div>
+</div>
+<main><div class="card" id="pgBody"></div></main>
+<footer>
+  <ul class="footer-nav">
+    <li><a href="tempbleu.html" data-k="home"></a></li>
+    <li><a href="tempbleu-blog.html">Blog</a></li>
+    <li><a href="tempbleu-privacy.html" data-k="privacy"></a></li>
+    <li><a href="tempbleu-terms.html" data-k="terms"></a></li>
+    <li><a href="tempbleu-about.html" data-k="about"></a></li>
+    <li><a href="tempbleu-contact.html" data-k="contact"></a></li>
+  </ul>
+  <small>© 2026 TempBleu.com — <span data-k="rights"></span></small>
+</footer>
+<script>
+const PAGE = {"title": {"fr": "Politique de confidentialité", "en": "Privacy Policy", "ar": "سياسة الخصوصية"}, "sub": {"fr": "Comment TempBleu traite vos données : presque rien, et seulement 10 minutes.", "en": "How TempBleu handles your data: almost nothing, and only for 10 minutes.", "ar": "كيف كيتعامل TempBleu مع بياناتك: تقريبا والو، وغير لمدة 10 دقائق."}, "html": {"fr": "\n<h2>1. Qui sommes-nous</h2>\n<p>TempBleu.com est un service gratuit de réception d'e-mails temporaires. Vous pouvez nous contacter via notre page <a href=\"tempbleu-contact.html\">Contact</a>. Cette politique explique quelles données le service manipule, pourquoi, et combien de temps.</p>\n<h2>2. Les données que nous traitons</h2>\n<p>Le service fonctionne <b>sans inscription</b> : nous ne demandons ni nom, ni mot de passe, ni votre véritable adresse e-mail.</p>\n<ul>\n<li><b>L'adresse temporaire</b> générée pour vous et les messages qu'elle reçoit : ils sont conservés au maximum <b>10 minutes</b>, puis automatiquement supprimés.</li>\n<li><b>Les données techniques minimales</b> : comme tout site web, notre hébergeur peut enregistrer des journaux techniques (adresse IP, navigateur, pages visitées) pour la sécurité et la lutte contre les abus.</li>\n<li><b>Le stockage local de votre navigateur</b> : la langue choisie, l'adresse en cours et le consentement aux cookies sont gardés sur votre appareil (localStorage), jamais transmis comme données personnelles.</li>\n</ul>\n<h2>3. Cookies</h2>\n<p>Nous utilisons des cookies et le stockage local pour le fonctionnement du service (langue, session temporaire, consentement). Vous pouvez les effacer à tout moment depuis les réglages de votre navigateur ; le service continuera de fonctionner, avec une nouvelle adresse.</p>\n<h2>4. Publicité — Google AdSense</h2>\n<p>Ce site peut afficher des publicités fournies par Google (AdSense) et d'autres régies. À ce titre :</p>\n<ul>\n<li>Des fournisseurs tiers, dont Google, utilisent des cookies pour diffuser des annonces en fonction de vos visites précédentes sur ce site et sur d'autres sites.</li>\n<li>L'utilisation par Google de cookies publicitaires lui permet, ainsi qu'à ses partenaires, de vous proposer des annonces personnalisées.</li>\n<li>Vous pouvez désactiver la publicité personnalisée dans les <a href=\"https://adssettings.google.com\" target=\"_blank\" rel=\"noopener\">Paramètres des annonces Google</a>, ou via <a href=\"https://www.aboutads.info/choices/\" target=\"_blank\" rel=\"noopener\">aboutads.info</a>.</li>\n</ul>\n<h2>5. Partage des données</h2>\n<p>Nous ne vendons aucune donnée. En phase de lancement, la réception technique des messages peut être assurée par un partenaire technique nommé en pied de page ; il ne reçoit que le contenu des messages adressés à votre adresse temporaire, pour les afficher dans votre navigateur. Les journaux techniques restent chez l'hébergeur.</p>\n<h2>6. Durée de conservation</h2>\n<p>Adresses et messages : <b>10 minutes maximum</b>, suppression automatique ensuite. Journaux techniques : durée courte, limitée aux besoins de sécurité.</p>\n<h2>7. Vos choix</h2>\n<ul>\n<li>Le bouton « Supprimer » détruit immédiatement votre adresse et sa session.</li>\n<li>Vous pouvez bloquer ou effacer les cookies dans votre navigateur.</li>\n<li>Pour toute question sur vos données, écrivez-nous via la page Contact.</li>\n</ul>\n<h2>8. Enfants</h2>\n<p>Ce service ne s'adresse pas aux enfants de moins de 13 ans et ne collecte sciemment aucune donnée les concernant.</p>\n<h2>9. Modifications</h2>\n<p>Cette politique peut évoluer ; la date de mise à jour figure en haut de la page. Les changements importants seront signalés sur le site.</p>\n", "en": "\n<h2>1. Who we are</h2>\n<p>TempBleu.com is a free temporary e-mail receiving service. You can reach us through our <a href=\"tempbleu-contact.html\">Contact</a> page. This policy explains what data the service handles, why, and for how long.</p>\n<h2>2. Data we handle</h2>\n<p>The service works <b>with no sign-up</b>: we never ask for your name, a password, or your real e-mail address.</p>\n<ul>\n<li><b>The temporary address</b> generated for you and the messages it receives: kept for a maximum of <b>10 minutes</b>, then automatically deleted.</li>\n<li><b>Minimal technical data</b>: like any website, our host may keep technical logs (IP address, browser, pages visited) for security and abuse prevention.</li>\n<li><b>Your browser's local storage</b>: chosen language, current address and cookie consent stay on your device (localStorage) and are never sent to us as personal data.</li>\n</ul>\n<h2>3. Cookies</h2>\n<p>We use cookies and local storage for the service to work (language, temporary session, consent). You can clear them anytime in your browser settings; the service keeps working, with a new address.</p>\n<h2>4. Advertising — Google AdSense</h2>\n<p>This site may display ads provided by Google (AdSense) and other ad networks. Therefore:</p>\n<ul>\n<li>Third-party vendors, including Google, use cookies to serve ads based on your prior visits to this and other websites.</li>\n<li>Google's use of advertising cookies enables it and its partners to serve you personalized ads.</li>\n<li>You can opt out of personalized advertising in <a href=\"https://adssettings.google.com\" target=\"_blank\" rel=\"noopener\">Google Ads Settings</a>, or via <a href=\"https://www.aboutads.info/choices/\" target=\"_blank\" rel=\"noopener\">aboutads.info</a>.</li>\n</ul>\n<h2>5. Data sharing</h2>\n<p>We sell no data. During the launch phase, technical message receiving may be handled by a technical partner named in the footer; it only receives the content of messages sent to your temporary address, in order to display them in your browser. Technical logs stay with the host.</p>\n<h2>6. Retention</h2>\n<p>Addresses and messages: <b>10 minutes maximum</b>, then automatic deletion. Technical logs: short retention, limited to security needs.</p>\n<h2>7. Your choices</h2>\n<ul>\n<li>The \"Delete\" button immediately destroys your address and its session.</li>\n<li>You can block or clear cookies in your browser.</li>\n<li>For any question about your data, write to us via the Contact page.</li>\n</ul>\n<h2>8. Children</h2>\n<p>This service is not directed at children under 13 and knowingly collects no data about them.</p>\n<h2>9. Changes</h2>\n<p>This policy may change; the update date appears at the top of this page. Significant changes will be announced on the site.</p>\n", "ar": "\n<h2>1. شكون حنا</h2>\n<p>TempBleu.com خدمة مجانية لاستقبال الإيميلات المؤقتة. تقدر تواصل معانا من صفحة <a href=\"tempbleu-contact.html\">اتصل بنا</a>. هاد السياسة كتشرح شنو البيانات اللي كتتعامل معها الخدمة، علاش، وشحال كتبقى.</p>\n<h2>2. البيانات اللي كنعالجو</h2>\n<p>الخدمة خدامة <b>بلا تسجيل</b>: ما كنطلبو لا اسم، لا كلمة سر، لا إيميلك الحقيقي.</p>\n<ul>\n<li><b>العنوان المؤقت</b> اللي كيتصاوب لك والرسائل اللي كيستقبل: كيبقاو <b>10 دقائق على الأكثر</b>، ومن بعد كيتمسحو بوحدهم.</li>\n<li><b>بيانات تقنية بسيطة</b>: كيف أي موقع، المستضيف يقدر يسجل سجلات تقنية (عنوان IP، المتصفح، الصفحات المزارة) للأمن ومحاربة الإساءة.</li>\n<li><b>التخزين المحلي في متصفحك</b>: اللغة المختارة، العنوان الحالي وموافقة الكوكيز كيبقاو في جهازك (localStorage) وما كيتصيفطو لينا كبيانات شخصية.</li>\n</ul>\n<h2>3. الكوكيز</h2>\n<p>كنستعملو الكوكيز والتخزين المحلي باش تخدم الخدمة (اللغة، الجلسة المؤقتة، الموافقة). تقدر تمسحهم في أي وقت من إعدادات المتصفح؛ الخدمة غادي تكمل خدامة بعنوان جديد.</p>\n<h2>4. الإعلانات — Google AdSense</h2>\n<p>هاد الموقع يقدر يعرض إعلانات من Google (AdSense) وشبكات أخرى. وبالتالي:</p>\n<ul>\n<li>مقدمون خارجيون، منهم Google، كيستعملو الكوكيز لعرض إعلانات بناء على زياراتك السابقة لهاد الموقع ومواقع أخرى.</li>\n<li>استعمال Google لكوكيز الإعلانات كيخليه هو وشركاؤه يعرضو عليك إعلانات مخصصة.</li>\n<li>تقدر تلغي الإعلانات المخصصة من <a href=\"https://adssettings.google.com\" target=\"_blank\" rel=\"noopener\">إعدادات إعلانات Google</a> أو عبر <a href=\"https://www.aboutads.info/choices/\" target=\"_blank\" rel=\"noopener\">aboutads.info</a>.</li>\n</ul>\n<h2>5. مشاركة البيانات</h2>\n<p>ما كنبيعو حتى بيانات. في مرحلة الإطلاق، الاستقبال التقني للرسائل يقدر يكون عند شريك تقني مذكور في أسفل الصفحة؛ هو كيستقبل غير محتوى الرسائل المرسلة لعنوانك المؤقت باش يعرضهم في متصفحك. والسجلات التقنية كتبقى عند المستضيف.</p>\n<h2>6. مدة الاحتفاظ</h2>\n<p>العناوين والرسائل: <b>10 دقائق على الأكثر</b>، ومن بعد حذف تلقائي. السجلات التقنية: مدة قصيرة، محدودة بحاجيات الأمن.</p>\n<h2>7. اختياراتك</h2>\n<ul>\n<li>زر «حذف» كيدمر عنوانك وجلستك فورا.</li>\n<li>تقدر تحظر أو تمسح الكوكيز من متصفحك.</li>\n<li>لأي سؤال على بياناتك، كتب لينا من صفحة اتصل بنا.</li>\n</ul>\n<h2>8. الأطفال</h2>\n<p>هاد الخدمة ماشي موجهة للأطفال أقل من 13 عام وما كتجمع حتى بيانات عليهم عن قصد.</p>\n<h2>9. التعديلات</h2>\n<p>هاد السياسة تقدر تبدل؛ تاريخ التحديث باين في أعلى الصفحة. والتغييرات المهمة غادي نعلنو عليها في الموقع.</p>\n"}};
+const NAVL = {"home": {"fr": "Accueil", "en": "Home", "ar": "الرئيسية"}, "privacy": {"fr": "Confidentialité", "en": "Privacy", "ar": "الخصوصية"}, "terms": {"fr": "Conditions", "en": "Terms", "ar": "الشروط"}, "about": {"fr": "À propos", "en": "About", "ar": "حول"}, "contact": {"fr": "Contact", "en": "Contact", "ar": "اتصل بنا"}, "rights": {"fr": "Tous droits réservés.", "en": "All rights reserved.", "ar": "جميع الحقوق محفوظة."}};
+const UPD = {"fr": "Dernière mise à jour : 31 octobre 2026", "en": "Last updated: October 31, 2026", "ar": "آخر تحديث: 31 أكتوبر 2026"};
+let lang = localStorage.getItem('tempbleu_lang') || 'fr';
+function apply(l){
+  lang = l; localStorage.setItem('tempbleu_lang', l);
+  document.documentElement.lang = l; document.documentElement.dir = (l==='ar') ? 'rtl' : 'ltr';
+  document.querySelectorAll('.langs button').forEach(b=>b.classList.toggle('on', b.dataset.lang===l));
+  document.getElementById('pgTitle').textContent = PAGE.title[l];
+  document.getElementById('pgSub').textContent = PAGE.sub[l];
+  document.getElementById('pgUpd').textContent = true ? UPD[l] : '';
+  document.getElementById('pgBody').innerHTML = PAGE.html[l];
+  document.querySelectorAll('[data-k]').forEach(el=>{ el.textContent = NAVL[el.dataset.k][l]; });
+  document.title = 'TempBleu — ' + PAGE.title[l];
+  bindForm();
+}
+function bindForm(){
+  const f = document.getElementById('cForm');
+  if(!f) return;
+  f.onsubmit = (e)=>{
+    e.preventDefault();
+    const name=document.getElementById('cfName').value, mail=document.getElementById('cfMail').value,
+          subj=document.getElementById('cfSubj').value, msg=document.getElementById('cfMsg').value;
+    const body = msg + '\n\n— ' + name + (mail ? ' <'+mail+'>' : '');
+    location.href = 'mailto:contact@tempbleu.com?subject=' + encodeURIComponent('[TempBleu] ' + subj) + '&body=' + encodeURIComponent(body);
+  };
+}
+document.querySelectorAll('.langs button').forEach(b=> b.onclick = ()=>apply(b.dataset.lang));
+apply(['fr','en','ar'].includes(lang) ? lang : 'fr');
+</script>
+</body>
+</html>

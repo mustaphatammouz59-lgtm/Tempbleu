@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TempBleu — Conditions d'utilisation</title>
+<meta name="description" content="Les règles simples du service TempBleu, en langage clair.">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Segoe UI',system-ui,Arial,sans-serif;background:#eef1fb;color:#1c2340;line-height:1.65}
+  .container{max-width:1180px;margin:0 auto;padding:0 14px}
+  .grad{background:linear-gradient(140deg,#3F51B5 0%,#5b3fb8 55%,#8e2fb8 130%)}
+  .main-header{background:#fff;box-shadow:0 4px 18px rgba(26,35,126,.10);padding:12px 0}
+  .main-header .container{display:flex;align-items:center;justify-content:space-between;gap:10px}
+  .hbtns{display:flex;gap:8px;flex:1}
+  .tm-btn{display:inline-flex;align-items:center;gap:7px;border:2px solid #3F51B5;color:#3F51B5;background:#fff;border-radius:12px;padding:8px 15px;font-weight:800;font-size:14px;text-decoration:none;transition:all .15s}
+  .tm-btn:hover{background:#3F51B5;color:#fff}
+  .brand{flex:1;text-align:center}
+  .brand a{font-size:29px;font-weight:900;text-decoration:none;background:linear-gradient(120deg,#3F51B5,#8e2fb8);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .brand a span{color:#4CAF50;-webkit-text-fill-color:#4CAF50}
+  .langs{flex:1;display:flex;justify-content:flex-end;gap:5px}
+  .langs button{background:#eef1fa;border:1.5px solid #c9d2f0;color:#26307a;border-radius:18px;padding:4px 12px;cursor:pointer;font-weight:800;font-size:13px}
+  .langs button.on{background:linear-gradient(135deg,#3F51B5,#5b3fb8);color:#fff;border-color:transparent}
+  .band{padding:38px 14px 44px;text-align:center;position:relative;overflow:hidden}
+  .band h1{color:#fff;font-size:30px;text-shadow:0 3px 12px rgba(0,0,0,.25);margin-bottom:6px}
+  .band p{color:#dfe5ff;font-size:15.5px;max-width:640px;margin:0 auto}
+  .band .upd{color:#aeb9ec;font-size:13px;margin-top:10px}
+  main{max-width:840px;margin:-22px auto 0;padding:0 14px 10px;position:relative;z-index:3}
+  .card{background:#fff;border-radius:20px;box-shadow:0 16px 40px rgba(38,48,122,.14);padding:26px 28px}
+  .card h2{color:#26307a;font-size:19.5px;margin:20px 0 7px}
+  .card h2:first-child{margin-top:0}
+  .card p{color:#39415f;margin-bottom:9px}
+  .card ul{margin:0 0 10px;padding-inline-start:22px;color:#39415f}
+  .card li{margin-bottom:5px}
+  .card a{color:#3F51B5;font-weight:700}
+  .fld{margin-bottom:12px}
+  .fld label{display:block;font-weight:700;font-size:14px;color:#26307a;margin-bottom:5px}
+  .fld input,.fld select,.fld textarea{width:100%;padding:12px 15px;border:2px solid #c9d2f0;border-radius:12px;font-size:15.5px;color:#26307a;background:#fff;font-family:inherit}
+  .fld input:focus,.fld select:focus,.fld textarea:focus{border-color:#3F51B5;box-shadow:0 0 0 4px rgba(63,81,181,.15);outline:none}
+  .send{background:linear-gradient(135deg,#43c24f,#2f9e44);color:#fff;border:none;border-radius:12px;padding:13px 30px;font-size:16px;font-weight:800;cursor:pointer;width:100%}
+  .send:hover{filter:brightness(1.07)}
+  footer{background:linear-gradient(160deg,#171d3d,#232a5e);color:#c6cdf0;margin-top:36px;padding:26px 14px 30px;text-align:center}
+  .footer-nav{list-style:none;display:flex;justify-content:center;flex-wrap:wrap;gap:6px 20px;margin-bottom:14px}
+  .footer-nav a{color:#fff;text-decoration:none;font-weight:800;font-size:13.5px;text-transform:uppercase;letter-spacing:.4px}
+  .footer-nav a:hover{color:#4ADE80}
+  footer small{color:#8a93b2}
+  @media(max-width:700px){ .brand a{font-size:22px} .hbtns .tm-btn{padding:7px 10px;font-size:13px} .card{padding:20px} .band h1{font-size:25px} }
+</style>
+</head>
+<body>
+<header class="main-header">
+  <div class="container">
+    <div class="hbtns">
+      <a class="tm-btn" href="tempbleu.html">🏠 <span data-k="home"></span></a>
+      <a class="tm-btn" href="tempbleu-blog.html">📚 Blog</a>
+    </div>
+    <div class="brand"><a href="tempbleu.html">TempBleu<span>.com</span></a></div>
+    <div class="langs">
+      <button data-lang="fr" class="on">FR</button><button data-lang="en">EN</button><button data-lang="ar">ع</button>
+    </div>
+  </div>
+</header>
+<div class="band grad">
+  <h1 id="pgTitle"></h1>
+  <p id="pgSub"></p>
+  <div class="upd" id="pgUpd"></div>
+</div>
+<main><div class="card" id="pgBody"></div></main>
+<footer>
+  <ul class="footer-nav">
+    <li><a href="tempbleu.html" data-k="home"></a></li>
+    <li><a href="tempbleu-blog.html">Blog</a></li>
+    <li><a href="tempbleu-privacy.html" data-k="privacy"></a></li>
+    <li><a href="tempbleu-terms.html" data-k="terms"></a></li>
+    <li><a href="tempbleu-about.html" data-k="about"></a></li>
+    <li><a href="tempbleu-contact.html" data-k="contact"></a></li>
+  </ul>
+  <small>© 2026 TempBleu.com — <span data-k="rights"></span></small>
+</footer>
+<script>
+const PAGE = {"title": {"fr": "Conditions d'utilisation", "en": "Terms of Service", "ar": "شروط الاستخدام"}, "sub": {"fr": "Les règles simples du service TempBleu, en langage clair.", "en": "The simple rules of the TempBleu service, in plain language.", "ar": "قواعد خدمة TempBleu البسيطة، بلغة واضحة."}, "html": {"fr": "\n<h2>1. Le service</h2>\n<p>TempBleu.com fournit gratuitement des adresses e-mail temporaires permettant uniquement de <b>recevoir</b> des messages pendant <b>10 minutes</b> (prolongation possible par tranches de 10 minutes). L'envoi de messages n'est pas possible. Aucune inscription n'est requise.</p>\n<h2>2. Acceptation</h2>\n<p>En utilisant ce site, vous acceptez les présentes conditions. Si vous n'êtes pas d'accord, n'utilisez pas le service.</p>\n<h2>3. Usage acceptable</h2>\n<ul>\n<li>Utilisez le service uniquement à des fins légales.</li>\n<li>Ne l'utilisez pas pour créer des comptes frauduleux, contourner des interdictions, harceler, ou recevoir des contenus illégaux.</li>\n<li>Ne tentez pas de perturber le service, de le surcharger, ou d'accéder aux messages d'autres utilisateurs.</li>\n<li>Les adresses sont publiques par nature : n'importe qui connaît l'adresse peut lire ses messages. Ne recevez donc <b>jamais</b> de documents sensibles ni de codes liés à des comptes importants (banque, paiements, récupération de votre compte principal).</li>\n</ul>\n<h2>4. Disponibilité et suppression</h2>\n<p>Adresses et messages disparaissent automatiquement après leur durée de vie, sans possibilité de récupération. Le service est fourni « tel quel », sans garantie de disponibilité continue ni de réception de chaque message : certains expéditeurs bloquent les domaines temporaires, ce qui échappe à notre contrôle.</p>\n<h2>5. Responsabilité</h2>\n<p>Vous êtes responsable de l'usage que vous faites de l'adresse temporaire. Dans les limites permises par la loi, TempBleu ne peut être tenu responsable des pertes liées à l'expiration d'une adresse, à un message non reçu, ou à l'usage d'une adresse temporaire pour un compte important malgré nos avertissements.</p>\n<h2>6. Propriété intellectuelle</h2>\n<p>Le nom TempBleu, le logo, le design et les textes de ce site appartiennent à leurs auteurs et ne peuvent être reproduits sans autorisation.</p>\n<h2>7. Modifications</h2>\n<p>Nous pouvons modifier ces conditions ; la version en vigueur est celle publiée sur cette page, avec sa date de mise à jour.</p>\n<h2>8. Contact</h2>\n<p>Pour toute question sur ces conditions, utilisez notre page <a href=\"tempbleu-contact.html\">Contact</a>.</p>\n", "en": "\n<h2>1. The service</h2>\n<p>TempBleu.com provides free temporary e-mail addresses that can only <b>receive</b> messages, for <b>10 minutes</b> (extendable in 10-minute steps). Sending messages is not possible. No sign-up is required.</p>\n<h2>2. Acceptance</h2>\n<p>By using this site, you accept these terms. If you do not agree, please do not use the service.</p>\n<h2>3. Acceptable use</h2>\n<ul>\n<li>Use the service only for lawful purposes.</li>\n<li>Do not use it to create fraudulent accounts, evade bans, harass anyone, or receive illegal content.</li>\n<li>Do not attempt to disrupt or overload the service, or to access other users' messages.</li>\n<li>Addresses are public by nature: anyone who knows the address can read its messages. So <b>never</b> receive sensitive documents or codes tied to important accounts (banking, payments, recovery of your main account).</li>\n</ul>\n<h2>4. Availability and deletion</h2>\n<p>Addresses and messages disappear automatically at the end of their lifetime, with no way to recover them. The service is provided \"as is\", with no guarantee of continuous availability or of receiving every message: some senders block temporary domains, which is beyond our control.</p>\n<h2>5. Liability</h2>\n<p>You are responsible for how you use the temporary address. To the extent permitted by law, TempBleu cannot be held liable for losses linked to an address expiring, a message not received, or the use of a temporary address for an important account despite our warnings.</p>\n<h2>6. Intellectual property</h2>\n<p>The TempBleu name, logo, design and texts on this site belong to their authors and may not be reproduced without permission.</p>\n<h2>7. Changes</h2>\n<p>We may change these terms; the version in force is the one published on this page, with its update date.</p>\n<h2>8. Contact</h2>\n<p>For any question about these terms, use our <a href=\"tempbleu-contact.html\">Contact</a> page.</p>\n", "ar": "\n<h2>1. الخدمة</h2>\n<p>TempBleu.com كيوفر عناوين إيميل مؤقتة مجانية، للاستقبال <b>فقط</b>، لمدة <b>10 دقائق</b> (قابلة للتمديد بـ 10 دقائق في كل مرة). الإرسال غير ممكن. ولا حاجة لأي تسجيل.</p>\n<h2>2. القبول</h2>\n<p>باستعمالك هاد الموقع، أنت قابل هاد الشروط. إلا ما كنتيش موافق، ما تستعملش الخدمة.</p>\n<h2>3. الاستعمال المقبول</h2>\n<ul>\n<li>استعمل الخدمة غير لأغراض قانونية.</li>\n<li>ما تستعملهاش لإنشاء حسابات وهمية، تجاوز الحظر، التحرش، أو استقبال محتوى غير قانوني.</li>\n<li>ما تحاولش تعطل الخدمة أو تثقلها، أو توصل لرسائل مستعملين آخرين.</li>\n<li>العناوين عمومية بطبيعتها: أي واحد كيعرف العنوان يقدر يقرا رسائله. لذلك <b>أبدا</b> ما تستقبل وثائق حساسة أو أكواد مرتبطة بحسابات مهمة (البنك، الأداء، استرجاع حسابك الرئيسي).</li>\n</ul>\n<h2>4. التوفر والحذف</h2>\n<p>العناوين والرسائل كيختفيو بوحدهم في نهاية مدتهم، بلا إمكانية استرجاع. الخدمة مقدمة «كما هي»، بلا ضمان توفر مستمر ولا استقبال كل رسالة: بعض المرسلين كيحظرو الدومينات المؤقتة، وهذا خارج سيطرتنا.</p>\n<h2>5. المسؤولية</h2>\n<p>أنت مسؤول على استعمالك للعنوان المؤقت. في الحدود اللي كيسمح بيها القانون، TempBleu ما يتحملش مسؤولية خسائر مرتبطة بانتهاء عنوان، رسالة ما وصلاتش، أو استعمال عنوان مؤقت لحساب مهم رغم تحذيراتنا.</p>\n<h2>6. الملكية الفكرية</h2>\n<p>اسم TempBleu واللوغو والتصميم ونصوص هاد الموقع ملك لأصحابها وما يمكنش يعاد إنتاجهم بلا إذن.</p>\n<h2>7. التعديلات</h2>\n<p>نقدرو نبدلو هاد الشروط؛ النسخة السارية هي المنشورة في هاد الصفحة مع تاريخ تحديثها.</p>\n<h2>8. الاتصال</h2>\n<p>لأي سؤال على هاد الشروط، استعمل صفحة <a href=\"tempbleu-contact.html\">اتصل بنا</a>.</p>\n"}};
+const NAVL = {"home": {"fr": "Accueil", "en": "Home", "ar": "الرئيسية"}, "privacy": {"fr": "Confidentialité", "en": "Privacy", "ar": "الخصوصية"}, "terms": {"fr": "Conditions", "en": "Terms", "ar": "الشروط"}, "about": {"fr": "À propos", "en": "About", "ar": "حول"}, "contact": {"fr": "Contact", "en": "Contact", "ar": "اتصل بنا"}, "rights": {"fr": "Tous droits réservés.", "en": "All rights reserved.", "ar": "جميع الحقوق محفوظة."}};
+const UPD = {"fr": "Dernière mise à jour : 31 octobre 2026", "en": "Last updated: October 31, 2026", "ar": "آخر تحديث: 31 أكتوبر 2026"};
+let lang = localStorage.getItem('tempbleu_lang') || 'fr';
+function apply(l){
+  lang = l; localStorage.setItem('tempbleu_lang', l);
+  document.documentElement.lang = l; document.documentElement.dir = (l==='ar') ? 'rtl' : 'ltr';
+  document.querySelectorAll('.langs button').forEach(b=>b.classList.toggle('on', b.dataset.lang===l));
+  document.getElementById('pgTitle').textContent = PAGE.title[l];
+  document.getElementById('pgSub').textContent = PAGE.sub[l];
+  document.getElementById('pgUpd').textContent = true ? UPD[l] : '';
+  document.getElementById('pgBody').innerHTML = PAGE.html[l];
+  document.querySelectorAll('[data-k]').forEach(el=>{ el.textContent = NAVL[el.dataset.k][l]; });
+  document.title = 'TempBleu — ' + PAGE.title[l];
+  bindForm();
+}
+function bindForm(){
+  const f = document.getElementById('cForm');
+  if(!f) return;
+  f.onsubmit = (e)=>{
+    e.preventDefault();
+    const name=document.getElementById('cfName').value, mail=document.getElementById('cfMail').value,
+          subj=document.getElementById('cfSubj').value, msg=document.getElementById('cfMsg').value;
+    const body = msg + '\n\n— ' + name + (mail ? ' <'+mail+'>' : '');
+    location.href = 'mailto:contact@tempbleu.com?subject=' + encodeURIComponent('[TempBleu] ' + subj) + '&body=' + encodeURIComponent(body);
+  };
+}
+document.querySelectorAll('.langs button').forEach(b=> b.onclick = ()=>apply(b.dataset.lang));
+apply(['fr','en','ar'].includes(lang) ? lang : 'fr');
+</script>
+</body>
+</html>

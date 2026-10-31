@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blog TempBleu — Guides e-mail temporaire | مدونة البريد المؤقت</title>
+<meta name="description" content="Guides et astuces TempBleu : e-mail jetable, anti-spam, codes OTP, confidentialité et domaine personnel.">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Segoe UI',system-ui,Arial,sans-serif;background:#eef1fb;color:#1c2340;line-height:1.65}
+  header{position:absolute;top:0;left:0;right:0;z-index:20;padding:14px 18px;display:flex;justify-content:space-between;align-items:center}
+  .logo{font-size:25px;font-weight:800;color:#fff;text-decoration:none;text-shadow:0 2px 10px rgba(0,0,0,.25)}
+  .logo span{color:#4ADE80}
+  .langs button{background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.45);color:#fff;border-radius:20px;padding:4px 13px;margin-inline-start:6px;cursor:pointer;font-weight:700}
+  .langs button.on{background:#fff;color:#3F51B5}
+  .hero{background:linear-gradient(140deg,#3F51B5 0%,#5b3fb8 55%,#8e2fb8 130%);padding:92px 14px 64px;text-align:center;position:relative;overflow:hidden}
+  .hero .mail{position:absolute;font-size:28px;opacity:.18;animation:float 9s ease-in-out infinite}
+  @keyframes float{0%,100%{transform:translateY(0) rotate(-8deg)}50%{transform:translateY(-22px) rotate(8deg)}}
+  .hero h1{color:#fff;font-size:32px;text-shadow:0 3px 14px rgba(0,0,0,.25);position:relative}
+  .hero p{color:#dfe5ff;margin:8px auto 20px;max-width:620px;position:relative}
+  .search{max-width:520px;margin:0 auto;position:relative}
+  .search input{width:100%;padding:14px 20px;border:none;border-radius:40px;font-size:16px;box-shadow:0 14px 34px rgba(15,20,60,.3);outline:none}
+  main{max-width:960px;margin:0 auto;padding:26px 14px 10px}
+  .chips{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-bottom:20px}
+  .chip{background:#fff;border:1.5px solid #c9d2f0;color:#26307a;border-radius:30px;padding:7px 18px;font-weight:800;cursor:pointer;font-size:14.5px}
+  .chip.on{background:#3F51B5;color:#fff;border-color:#3F51B5}
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+  .post{background:#fff;border-radius:18px;overflow:hidden;box-shadow:0 10px 26px rgba(38,48,122,.11);cursor:pointer;transition:transform .18s,box-shadow .18s;display:flex;flex-direction:column}
+  .post:hover{transform:translateY(-4px);box-shadow:0 18px 38px rgba(38,48,122,.18)}
+  .cover{height:120px;display:flex;align-items:center;justify-content:center;font-size:52px;position:relative}
+  .g1{background:linear-gradient(135deg,#3F51B5,#7b5cff)}.g2{background:linear-gradient(135deg,#00897b,#4db6ac)}
+  .g3{background:linear-gradient(135deg,#fb8c00,#ffb74d)}.g4{background:linear-gradient(135deg,#8e24aa,#ba68c8)}
+  .g5{background:linear-gradient(135deg,#3949ab,#5c6bc0)}.g6{background:linear-gradient(135deg,#e53935,#ef5350)}
+  .cat{position:absolute;top:10px;inset-inline-start:10px;background:rgba(255,255,255,.92);color:#26307a;font-size:12px;font-weight:800;border-radius:20px;padding:3px 11px}
+  .feat-tag{position:absolute;top:10px;inset-inline-end:10px;background:#FFD54F;color:#5d4200;font-size:12px;font-weight:900;border-radius:20px;padding:3px 11px}
+  .pbody{padding:15px 17px 17px;display:flex;flex-direction:column;flex:1}
+  .pbody h3{color:#26307a;font-size:17px;line-height:1.45;margin-bottom:6px}
+  .pbody p{color:#5a6482;font-size:14px;flex:1}
+  .meta{display:flex;justify-content:space-between;color:#8a93b2;font-size:12.5px;margin-top:12px}
+  .meta .read{color:#3F51B5;font-weight:800}
+  .featured{grid-column:1/-1;flex-direction:row}
+  .featured .cover{height:auto;min-height:190px;flex:0 0 38%;font-size:74px}
+  .featured .pbody h3{font-size:22px}
+  .featured .pbody p{font-size:15px}
+  .empty{text-align:center;color:#8a93b2;padding:36px 10px;font-size:16px}
+  /* ===== Article reader ===== */
+  #reader{display:none;background:#fff;border-radius:20px;box-shadow:0 10px 30px rgba(38,48,122,.12);padding:26px 24px 30px}
+  #reader .rcover{height:150px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:64px;margin-bottom:18px}
+  #reader h1{color:#26307a;font-size:26px;line-height:1.4;margin-bottom:6px}
+  #reader .rmeta{color:#8a93b2;font-size:13.5px;border-bottom:1px solid #e2e7f5;padding-bottom:12px;margin-bottom:16px}
+  #reader .note{background:#fff8e1;border:1px solid #ffb300;color:#6d5600;border-radius:12px;padding:9px 14px;font-size:13.5px;margin-bottom:16px}
+  #reader .content p{margin-bottom:13px;color:#39415f}
+  #reader .content h3{color:#26307a;margin:18px 0 8px;font-size:18.5px}
+  #reader .content ul{padding-inline-start:22px;color:#39415f;margin-bottom:13px}
+  #reader .content li{margin-bottom:5px}
+  .btn{border:none;border-radius:12px;padding:11px 18px;font-size:15px;font-weight:800;cursor:pointer;background:#eef1fa;color:#26307a}
+  .btn:hover{background:#dde4f7}
+  .cta{background:linear-gradient(135deg,#3F51B5,#8e2fb8);border-radius:18px;padding:22px;text-align:center;color:#fff;margin:24px 0 6px}
+  .cta b{font-size:19px}
+  .cta a{display:inline-block;margin-top:12px;background:#fff;color:#3F51B5;font-weight:900;text-decoration:none;border-radius:30px;padding:11px 26px}
+  footer{background:#171d3d;color:#aab3d6;margin-top:36px;padding:30px 18px 24px;text-align:center;font-size:13.5px}
+  .foot-logo{font-size:22px;font-weight:800;color:#fff}
+  .foot-logo span{color:#4ADE80}
+  footer a{color:#8fa2ff}
+  @media(max-width:760px){ .grid{grid-template-columns:1fr} .featured{flex-direction:column} .featured .cover{min-height:130px} .hero h1{font-size:26px} }
+</style>
+</head>
+<body>
+<header>
+  <a class="logo" href="tempbleu.html">TempBleu<span>.com</span></a>
+  <div class="langs">
+    <button data-lang="fr" class="on">FR</button><button data-lang="en">EN</button><button data-lang="ar">ع</button>
+  </div>
+</header>
+
+<section class="hero">
+  <span class="mail" style="top:64px;left:7%">✉️</span>
+  <span class="mail" style="top:120px;right:9%;animation-delay:1.6s">📚</span>
+  <span class="mail" style="bottom:36px;left:20%;animation-delay:2.8s;font-size:22px">📩</span>
+  <h1 data-i="blogT"></h1>
+  <p data-i="blogSub"></p>
+  <div class="search"><input id="search" type="search" autocomplete="off"></div>
+</section>
+
+<main>
+  <div id="listView">
+    <div class="chips" id="chips"></div>
+    <div class="grid" id="grid"></div>
+    <div class="empty" id="noRes" style="display:none">🔍 <span data-i="noRes"></span></div>
+    <div class="cta"><b data-i="ctaT"></b><br><a href="tempbleu.html" data-i="ctaB"></a></div>
+  </div>
+
+  <article id="reader">
+    <button class="btn" id="btnBack" data-i="backList"></button>
+    <div class="rcover" id="rCover"></div>
+    <h1 id="rTitle"></h1>
+    <div class="rmeta" id="rMeta"></div>
+    <div class="note" id="rNote" data-i="bodyNote"></div>
+    <div class="content" id="rBody"></div>
+    <div class="cta"><b data-i="ctaT"></b><br><a href="tempbleu.html" data-i="ctaB"></a></div>
+  </article>
+</main>
+
+<footer>
+  <div class="foot-logo">TempBleu<span>.com</span></div>
+  © 2026 TempBleu.com — <span data-i="rights"></span> · <a href="tempbleu.html" data-i="home"></a><br><a href="tempbleu-privacy.html">Privacy</a> · <a href="tempbleu-terms.html">Terms</a> · <a href="tempbleu-about.html">About</a> · <a href="tempbleu-contact.html">Contact</a>
+</footer>
+
+<script>
+"use strict";
+const I18N = {
+  fr:{blogT:"📚 Le Blog TempBleu",blogSub:"Guides, astuces et sécurité autour de l'e-mail temporaire — écrits par l'équipe TempBleu.",searchPh:"🔍 Rechercher un article…",all:"Tous",read:"Lire →",backList:"← Tous les articles",feat:"⭐ À la une",min:"min",noRes:"Aucun article ne correspond à votre recherche.",ctaT:"Besoin d'une adresse maintenant ?",ctaB:"✉️ Obtenir mon e-mail temporaire",bodyNote:"ℹ️ Article complet en français — les titres et résumés sont disponibles en 3 langues.",rights:"Tous droits réservés.",home:"Accueil Temp Mail",cat_guide:"Guides",cat_secu:"Sécurité",cat_astuce:"Astuces",cat_tech:"Technique"},
+  en:{blogT:"📚 The TempBleu Blog",blogSub:"Guides, tips and security around temporary e-mail — written by the TempBleu team.",searchPh:"🔍 Search an article…",all:"All",read:"Read →",backList:"← All articles",feat:"⭐ Featured",min:"min",noRes:"No article matches your search.",ctaT:"Need an address right now?",ctaB:"✉️ Get my temporary e-mail",bodyNote:"ℹ️ Full article in French — titles and summaries are available in 3 languages.",rights:"All rights reserved.",home:"Temp Mail home",cat_guide:"Guides",cat_secu:"Security",cat_astuce:"Tips",cat_tech:"Technical"},
+  ar:{blogT:"📚 مدونة TempBleu",blogSub:"أدلة ونصائح وأمان حول البريد المؤقت — من فريق TempBleu.",searchPh:"🔍 ابحث عن مقال…",all:"الكل",read:"اقرأ ←",backList:"→ كل المقالات",feat:"⭐ مختار",min:"دقائق",noRes:"لا يوجد مقال يطابق بحثك.",ctaT:"محتاج عنوانا الآن؟",ctaB:"✉️ احصل على بريدي المؤقت",bodyNote:"ℹ️ المقال الكامل بالفرنسية — العناوين والملخصات متوفرة بثلاث لغات.",rights:"كل الحقوق محفوظة.",home:"رئيسية البريد المؤقت",cat_guide:"أدلة",cat_secu:"أمان",cat_astuce:"نصائح",cat_tech:"تقني"}
+};
+let lang='fr', curCat='all', curQ='';
+const t=k=>I18N[lang][k]||k;
+
+const ARTICLES=[
+{id:1,icon:"📬",grad:"g1",cat:"guide",date:"2026-10-30",mins:5,feat:true,
+ title:{fr:"Qu'est-ce qu'un e-mail jetable ? Le guide complet",en:"What is a disposable e-mail? The complete guide",ar:"ما هو البريد المؤقت؟ الدليل الكامل"},
+ ex:{fr:"Définition, fonctionnement réel, vrais avantages et limites honnêtes de l'adresse temporaire — tout ce qu'il faut savoir avant de l'utiliser.",en:"Definition, how it really works, real benefits and honest limits of a temporary address — everything to know before using one.",ar:"التعريف، كيف يشتغل فعلا، المزايا الحقيقية والحدود بصراحة — كل ما خاصك تعرف قبل ما تستعمله."},
+ body:`<p>Un e-mail jetable — on dit aussi temporaire ou « temp mail » — est une adresse créée en une seconde, sans inscription, qui sert à recevoir des messages pendant une courte période avant d'être abandonnée. Ce n'est pas un faux e-mail : les messages arrivent réellement, dans une boîte que vous lisez depuis votre navigateur.</p>
+ <h3>Comment ça marche, concrètement</h3>
+ <p>Derrière la page que vous voyez, trois pièces travaillent ensemble. D'abord, un nom de domaine configuré pour recevoir du courrier : ses enregistrements MX indiquent aux serveurs du monde entier où livrer les messages. Ensuite, une règle dite « catch-all » : n'importe quelle adresse du domaine — par exemple <b>soleil4821@exemple.com</b> — est acceptée, sans qu'il soit nécessaire de la créer à l'avance. Enfin, un programme reçoit chaque message, le range dans une base temporaire, et votre page l'affiche en quelques secondes. Après un délai court, tout est effacé automatiquement.</p>
+ <h3>Pourquoi les gens l'utilisent</h3>
+ <ul><li><b>Éviter le spam</b> : l'adresse donnée aux sites peu importants absorbe les publicités à la place de votre vraie boîte.</li><li><b>Recevoir un code de vérification</b> : inscription à un forum, essai gratuit, téléchargement… le code arrive ici, pas dans votre vie privée.</li><li><b>Tester</b> : les développeurs créent des dizaines d'adresses pour vérifier leurs propres applications.</li></ul>
+ <h3>Les limites, honnêtement</h3>
+ <p>Une adresse temporaire n'est pas faite pour durer : si vous perdez la page, vous perdez l'accès aux messages. Certains grands services la refusent dès l'inscription parce que son domaine est connu. Et surtout, elle ne doit jamais servir pour la banque, les paiements ou la récupération de vos comptes importants. Utilisée pour ce qu'elle est — un outil jetable, comme un mouchoir en papier — elle rend un vrai service, tous les jours.</p>`},
+{id:2,icon:"🛡️",grad:"g2",cat:"secu",date:"2026-10-27",mins:4,
+ title:{fr:"Spam : la méthode simple pour garder votre boîte propre",en:"Spam: the simple method to keep your inbox clean",ar:"السبام: الطريقة البسيطة باش يبقى بريدك نظيفا"},
+ ex:{fr:"D'où vient vraiment le spam, la règle d'une adresse par usage, et les habitudes qui changent tout en une semaine.",en:"Where spam really comes from, the one-address-per-use rule, and the habits that change everything in a week.",ar:"من أين يأتي السبام فعلا، قاعدة عنوان لكل استعمال، والعادات اللي كتبدل كلشي في أسبوع."},
+ body:`<p>Le spam ne tombe pas du ciel. Dans la grande majorité des cas, votre adresse a été collectée là où vous l'avez donnée : une inscription, un concours, un achat… puis revendue, échangée, ou récupérée lors d'une fuite de données d'un site que vous aviez oublié.</p>
+ <h3>La règle qui change tout : une adresse par niveau de confiance</h3>
+ <p>Gardez votre adresse principale pour ce qui compte vraiment : famille, travail, banque, administrations. Pour tout le reste — boutiques occasionnelles, forums, essais, téléchargements — servez-vous d'une adresse temporaire. Le jour où l'une d'elles se met à recevoir des publicités, vous l'abandonnez, et votre vraie boîte n'a rien vu passer.</p>
+ <h3>Trois habitudes en plus</h3>
+ <ul><li>Ne publiez jamais votre adresse principale en clair sur une page publique : les robots la récoltent.</li><li>Désinscrivez-vous des listes que vous ne lisez plus, au lieu de les ignorer pendant des mois.</li><li>Méfiez-vous des cases pré-cochées « recevoir nos offres partenaires » lors d'une inscription.</li></ul>
+ <p>En une semaine d'application, la plupart des utilisateurs voient leur boîte principale redevenir calme. Le spam n'a pas disparu d'Internet : il a simplement changé d'adresse — une adresse jetable.</p>`},
+{id:3,icon:"🔢",grad:"g3",cat:"guide",date:"2026-10-24",mins:3,
+ title:{fr:"Codes de vérification (OTP) : recevoir un code en 30 secondes",en:"Verification codes (OTP): receive a code in 30 seconds",ar:"أكواد التحقق (OTP): استقبل كودا في 30 ثانية"},
+ ex:{fr:"Le pas-à-pas exact pour recevoir un code avec TempBleu, et quoi faire quand le code n'arrive pas.",en:"The exact step-by-step to receive a code with TempBleu, and what to do when the code does not arrive.",ar:"الخطوات بالضبط باش تستقبل كودا مع TempBleu، وشنو تدير إذا ما وصلش الكود."},
+ body:`<p>Un code OTP est un mot de passe à usage unique, le plus souvent 6 chiffres, envoyé par e-mail ou SMS pour prouver que vous contrôlez bien l'adresse ou le numéro indiqué. Voici comment le recevoir avec une adresse temporaire.</p>
+ <h3>Pas à pas</h3>
+ <ul><li><b>1.</b> Ouvrez TempBleu : une adresse s'affiche immédiatement. Copiez-la avec le bouton vert.</li><li><b>2.</b> Collez-la dans le formulaire du site qui demande une vérification.</li><li><b>3.</b> Revenez sur l'onglet TempBleu sans le fermer : la page vérifie automatiquement toutes les 10 secondes.</li><li><b>4.</b> Le message apparaît dans la boîte : cliquez dessus, le code est en gros dans le texte.</li></ul>
+ <h3>Le code n'arrive pas ?</h3>
+ <p>Patientez d'abord deux minutes complètes : certains services envoient par lots. Vérifiez ensuite que l'adresse collée est exactement celle affichée, sans espace ajouté. Enfin, sachez que certains services refusent d'envoyer vers des domaines temporaires connus : dans ce cas, rien ne « bloquera » chez vous, le service a simplement décidé de ne pas écrire à ce type d'adresse — utilisez alors une adresse durable pour ce service-là.</p>
+ <p><b>Sécurité :</b> un code OTP est un secret éphémère. Ne le partagez avec personne, ne le saisissez que sur le site qui vient de vous l'envoyer.</p>`},
+{id:4,icon:"📱",grad:"g4",cat:"astuce",date:"2026-10-20",mins:4,
+ title:{fr:"E-mail temporaire et réseaux sociaux : ce qui marche, ce qui bloque",en:"Temporary e-mail and social networks: what works, what blocks",ar:"البريد المؤقت ومواقع التواصل: شنو خدام وشنو كيتحظر"},
+ ex:{fr:"La vérité sans fard : les grandes plateformes détectent souvent les domaines jetables. Voici quand l'adresse temporaire reste utile — et quand elle vous piègera.",en:"The plain truth: big platforms often detect disposable domains. Here is when a temporary address stays useful — and when it will trap you.",ar:"الحقيقة بلا تجميل: المنصات الكبرى غالبا كتكشف الدومينات المؤقتة. هنا إمتى كيبقى العنوان المؤقت مفيدا — وإمتى غادي يضرك."},
+ body:`<p>Beaucoup d'articles promettent monts et merveilles. Soyons directs : Facebook, Google, Instagram et la plupart des grandes plateformes entretiennent des listes de domaines temporaires connus, et refusent l'inscription dès la saisie de l'adresse. Ce n'est pas un bug de votre côté, c'est une politique assumée contre les faux comptes.</p>
+ <h3>Quand l'adresse temporaire reste utile</h3>
+ <ul><li>Créer un compte de <b>test</b> sur un petit service, un forum, un jeu.</li><li>Lire un contenu ou télécharger un fichier qui exige une « inscription ».</li><li>Essayer une application avant de décider si elle mérite votre vraie adresse.</li></ul>
+ <h3>Le piège classique</h3>
+ <p>Le vrai danger n'est pas le refus à l'inscription, c'est la perte d'accès plus tard. Un compte créé avec une adresse jetable devient irrécupérable le jour où le mot de passe est oublié : le lien de réinitialisation part vers une boîte qui n'existe plus. Si un compte compte pour vous — contacts, photos, historique — il mérite une adresse durable, éventuellement un alias de votre boîte principale.</p>
+ <p>La règle TempBleu : <b>jetable pour le jetable, durable pour le durable.</b> Choisir en connaissance de cause, c'est déjà être protégé.</p>`},
+{id:5,icon:"🌐",grad:"g5",cat:"tech",date:"2026-10-16",mins:5,
+ title:{fr:"Votre propre e-mail temporaire avec votre domaine : comment ça marche",en:"Your own temporary e-mail on your domain: how it works",ar:"بريدك المؤقت الخاص بدومينك: كيفاش كيخدم"},
+ ex:{fr:"MX, catch-all, routage et stockage temporaire expliqués simplement — c'est exactement la feuille de route que suit TempBleu.",en:"MX, catch-all, routing and temporary storage explained simply — this is exactly the roadmap TempBleu follows.",ar:"MX و catch-all والتوجيه والتخزين المؤقت مشروحة ببساطة — وهي بالضبط خطة الطريق اللي كيتبعها TempBleu."},
+ body:`<p>Peut-on avoir son propre service d'e-mail temporaire, avec ses adresses à soi — par exemple <b>nimporte@mon-domaine.com</b> ? Oui, et l'infrastructure moderne a rendu cela étonnamment abordable. Voici les pièces du puzzle, sans jargon inutile.</p>
+ <h3>Les quatre pièces</h3>
+ <ul><li><b>Un domaine dédié</b> (environ 10 €/an) : dédié, car un domaine temporaire finit souvent sur des listes de blocage — on ne risque jamais son domaine principal.</li><li><b>Les enregistrements MX</b> : ils annoncent au monde où livrer le courrier de ce domaine.</li><li><b>Un service de routage d'e-mails</b> avec une règle « catch-all » : tout ce qui arrive sur le domaine, vers n'importe quelle adresse, est transmis à votre programme.</li><li><b>Un petit programme + une base temporaire</b> : il lit chaque message, le stocke quelques heures, et une page web l'affiche à la bonne personne. Un nettoyage automatique efface le reste.</li></ul>
+ <h3>Combien ça coûte, vraiment</h3>
+ <p>Le domaine est le seul coût obligatoire. Le routage, l'hébergement de la page et la petite base de données existent en offres gratuites généreuses chez les grands hébergeurs « edge » — largement assez pour démarrer et apprendre. On paie plus tard, seulement si le trafic le justifie.</p>
+ <p>C'est exactement la feuille de route de TempBleu : d'abord une page qui fonctionne avec un partenaire de réception, ensuite — dernière étape — le domaine personnel et le programme maison qui prennent le relais, sans changer l'expérience des visiteurs.</p>`},
+{id:6,icon:"⚠️",grad:"g6",cat:"secu",date:"2026-10-12",mins:4,
+ title:{fr:"7 erreurs à éviter avec un e-mail temporaire",en:"7 mistakes to avoid with a temporary e-mail",ar:"7 أخطاء خاصك تتجنبها مع البريد المؤقت"},
+ ex:{fr:"Banque, récupération de compte, codes partagés… les sept usages qui transforment un outil pratique en vrai problème.",en:"Banking, account recovery, shared codes… the seven uses that turn a handy tool into a real problem.",ar:"البنك، استرجاع الحساب، مشاركة الأكواد… سبعة استعمالات كتحول أداة مفيدة لمشكل حقيقي."},
+ body:`<p>L'e-mail temporaire est un excellent outil — à condition de ne pas lui demander ce qu'il ne peut pas donner. Voici les sept erreurs que nous voyons le plus souvent.</p>
+ <h3>La liste</h3>
+ <ul><li><b>1. L'utiliser pour la banque ou les paiements.</b> Relevés, alertes, confirmations : tout cela doit arriver sur une adresse durable et protégée.</li><li><b>2. Le mettre en « e-mail de secours »</b> de votre boîte principale : le jour du problème, le secours n'existe plus.</li><li><b>3. Créer un compte important</b> (travail, réseau social principal) avec une adresse qu'on abandonnera.</li><li><b>4. Réutiliser le même mot de passe</b> partout « parce que c'est un compte jetable » : les fuites ne font pas la différence.</li><li><b>5. Recevoir des documents sensibles</b> : contrats, dossiers médicaux, pièces d'identité n'ont rien à faire dans une boîte éphémère.</li><li><b>6. Croire à un anonymat total</b> : une adresse temporaire protège votre boîte, elle ne vous rend pas invisible.</li><li><b>7. Partager un code OTP reçu</b> : un code se saisit, il ne se transmet jamais à un tiers.</li></ul>
+ <p>Évitez ces sept cas, et l'outil reste ce qu'il doit être : simple, rapide, et sans conséquence le jour où vous fermez la page.</p>`},
+{id:7,icon:"🕵️",grad:"g2",cat:"secu",date:"2026-10-08",mins:4,
+ title:{fr:"Phishing : pourquoi une adresse jetable désarme les arnaqueurs",en:"Phishing: why a disposable address disarms scammers",ar:"التصيد: علاش العنوان المؤقت كيضعف المحتالين"},
+ ex:{fr:"Lien piégé, fausse livraison, banque imitée : le phishing vit de votre vraie adresse. Voici comment le temp mail casse son modèle.",en:"Trapped links, fake deliveries, imitated banks: phishing lives off your real address. Here is how temp mail breaks its model.",ar:"روابط مفخخة، توصيل وهمي، بنك مقلد: التصيد كيعيش من عنوانك الحقيقي. هاكيفاش الإيميل المؤقت كيكسر هاد النموذج."},
+ body:`<p>Le phishing — ces faux messages qui imitent votre banque, un transporteur ou un service officiel — commence presque toujours au même endroit : quelqu'un a obtenu votre vraie adresse e-mail. Sans elle, l'arnaque ne peut même pas commencer.</p>
+ <h3>Le parcours d'une arnaque réussie</h3>
+ <p>Première étape, la collecte : votre adresse est récupérée lors d'une fuite de données, achetée dans des listes, ou moissonnée là où vous l'avez laissée. Deuxième étape, le message piégé arrive dans une boîte que vous lisez tous les jours, mélangé à vos vrais messages — c'est ce mélange qui le rend crédible. Troisième étape, un clic pressé, et vos identifiants partent chez l'arnaqueur.</p>
+ <h3>Ce que change l'adresse temporaire</h3>
+ <ul><li><b>Elle casse l'étape 1</b> : les sites secondaires ne reçoivent jamais votre vraie adresse, donc elle circule beaucoup moins.</li><li><b>Elle isole l'étape 2</b> : un message « officiel » qui arrive dans une boîte jetable est suspect par définition — vous savez que votre banque n'écrit jamais là.</li><li><b>Elle s'auto-détruit</b> : après 10 minutes, même l'adresse piégée cesse d'exister.</li></ul>
+ <p>Le temp mail ne remplace ni l'antivirus ni la vigilance : vérifiez toujours l'expéditeur réel et ne cliquez jamais un lien de « banque » reçu par e-mail. Mais en réduisant la circulation de votre vraie adresse, il retire aux arnaqueurs leur matière première.</p>`},
+{id:8,icon:"🛒",grad:"g3",cat:"astuce",date:"2026-10-05",mins:4,
+ title:{fr:"Achats en ligne : profiter des promos sans le spam éternel",en:"Online shopping: grab the deals without the eternal spam",ar:"التسوق أونلاين: استافد من العروض بلا سبام أبدي"},
+ ex:{fr:"-10 % contre votre e-mail : l'échange semble honnête, la facture arrive ensuite en newsletters infinies. La méthode propre, étape par étape.",en:"-10% for your e-mail: the deal looks fair, the bill arrives later as endless newsletters. The clean method, step by step.",ar:"-10% مقابل إيميلك: الصفقة كتبان عادلة، والفاتورة كتوصل من بعد في نشرات لا نهائية. الطريقة النظيفة، خطوة بخطوة."},
+ body:`<p>« Inscrivez-vous à la newsletter et recevez -10 % sur votre première commande. » L'offre est partout, et elle fonctionne : le marchand obtient une adresse qu'il pourra solliciter pendant des années, pour un bon d'achat à usage unique. Le calcul n'est pas en votre faveur.</p>
+ <h3>La méthode propre</h3>
+ <ul><li><b>1.</b> Au moment de créer le compte « juste pour la promo », utilisez une adresse temporaire.</li><li><b>2.</b> Le code de réduction arrive ici ; passez votre commande avec, comme invité ou avec le compte jetable.</li><li><b>3.</b> Laissez l'adresse expirer : les relances « vous nous manquez » partiront dans le vide.</li></ul>
+ <h3>Les deux exceptions à retenir</h3>
+ <p>Pour un achat important — garantie, facture, livraison suivie — utilisez votre vraie adresse : vous aurez besoin des messages pendant des mois. Et si la boutique refuse l'adresse temporaire (certaines entretiennent des listes de domaines connus), c'est son droit : à vous de décider si la promo vaut votre vraie adresse. L'idée n'est pas de fuir toutes les newsletters, mais de choisir lesquelles méritent d'entrer chez vous.</p>`},
+{id:9,icon:"🧪",grad:"g5",cat:"tech",date:"2026-10-02",mins:5,
+ title:{fr:"Développeurs : tester les e-mails de votre application avec des adresses jetables",en:"Developers: test your app's e-mails with disposable addresses",ar:"للمطورين: جرب إيميلات تطبيقك بعناوين مؤقتة"},
+ ex:{fr:"Inscriptions, confirmations, réinitialisations : une app envoie plus d'e-mails qu'on ne croit. Comment les tester proprement, sans polluer de vraies boîtes.",en:"Sign-ups, confirmations, resets: an app sends more e-mails than you think. How to test them cleanly, without polluting real inboxes.",ar:"تسجيلات، تأكيدات، إعادة تعيين: التطبيق كيصيفط إيميلات كثر مما كتظن. كيفاش تجربهم بنظافة، بلا ما توسخ صناديق حقيقية."},
+ body:`<p>Chaque application finit par envoyer des e-mails : confirmation d'inscription, réinitialisation de mot de passe, reçus, alertes. Les tester avec sa propre adresse devient vite un cauchemar — sujets mélangés, impossible de vérifier l'inscription « comme un nouvel utilisateur », boîtes partagées entre testeurs.</p>
+ <h3>Le protocole simple</h3>
+ <ul><li><b>Une adresse par scénario</b> : inscription, mot de passe oublié, changement d'e-mail — chacun avec sa propre adresse jetable, pour ne jamais confondre les messages.</li><li><b>Vérifiez le fond et la forme</b> : le code ou le lien fonctionne-t-il ? L'objet s'affiche-t-il correctement, y compris les caractères accentués ? Le rendu mobile est-il lisible ?</li><li><b>Testez le pire cas</b> : lien cliqué après expiration du code, double inscription avec la même adresse, message marqué comme spam.</li></ul>
+ <h3>Les limites de l'exercice</h3>
+ <p>Les adresses temporaires testent le contenu et le parcours utilisateur, pas la délivrabilité réelle : pour mesurer vos taux de rebond et votre réputation d'expéditeur (SPF, DKIM, DMARC), utilisez vos propres outils d'envoi. Les deux approches sont complémentaires — et aucune ne demande de sacrifier la boîte personnelle de qui que ce soit.</p>`},
+{id:10,icon:"🏷️",grad:"g4",cat:"guide",date:"2026-09-28",mins:4,
+ title:{fr:"Alias, « +adressing », jetable : quelles différences ?",en:"Aliases, plus-addressing, disposable: what are the differences?",ar:"الأسماء المستعارة، +adressing، المؤقت: شنو الفرق؟"},
+ ex:{fr:"Trois outils pour ne pas donner la même adresse partout — mais ils ne protègent pas de la même façon. Le comparatif honnête.",en:"Three tools to avoid giving the same address everywhere — but they do not protect in the same way. The honest comparison.",ar:"ثلاثة أدوات باش ما تعطيش نفس العنوان في كل بلاصة — ولكن ما كيحميوكش بنفس الطريقة. المقارنة الصريحة."},
+ body:`<p>Vous voulez arrêter de donner votre adresse principale partout. Trois techniques existent, souvent confondues. Voici ce que chacune fait vraiment.</p>
+ <h3>Le « +adressing »</h3>
+ <p>Chez beaucoup de fournisseurs, <b>vous+site@exemple.com</b> arrive dans la même boîte que <b>vous@exemple.com</b>. Pratique pour repérer qui a revendu votre adresse… mais le site n'a qu'à retirer le « +site » pour retrouver l'adresse mère. Protection : faible, traçabilité : bonne.</p>
+ <h3>L'alias</h3>
+ <p>Une autre adresse, durable, qui redirige vers votre boîte (services dédiés ou fonction de votre fournisseur). Elle cache votre vraie adresse tant que vous ne répondez pas avec. Protection : moyenne à bonne, durée : permanente — pensez à la supprimer si elle commence à recevoir du spam.</p>
+ <h3>L'adresse jetable</h3>
+ <p>Créée en une seconde, sans compte, elle reçoit pendant quelques minutes puis disparaît entièrement — adresse et messages. Protection : maximale pour les usages courts, durée : minimale par conception. C'est l'outil des inscriptions ponctuelles, des codes de vérification et des tests ; les deux autres servent les relations qui durent.</p>
+ <p>Le bon choix dépend donc d'une seule question : aurez-vous encore besoin de cette adresse dans un mois ? Non → jetable. Oui → alias. Juste curieux de savoir qui spamme → +adressing.</p>`}
+];
+
+const $=id=>document.getElementById(id);
+function applyLang(){
+  document.querySelectorAll('[data-i]').forEach(el=>{ el.textContent=t(el.dataset.i); });
+  $('search').placeholder=t('searchPh');
+  document.documentElement.lang=lang;
+  document.documentElement.dir=(lang==='ar')?'rtl':'ltr';
+  document.querySelectorAll('.langs button').forEach(b=>b.classList.toggle('on',b.dataset.lang===lang));
+  renderChips(); renderGrid();
+}
+document.querySelectorAll('.langs button').forEach(b=>b.onclick=()=>{ lang=b.dataset.lang; applyLang(); if($('reader').style.display==='block'){ /* keep body, refresh list behind */ } });
+
+function fmtDate(iso){ try{ return new Date(iso+'T12:00:00').toLocaleDateString(lang==='ar'?'ar':lang,{day:'numeric',month:'short',year:'numeric'}); }catch(e){ return iso; } }
+function renderChips(){
+  const cats=['all','guide','secu','astuce','tech'];
+  $('chips').innerHTML='';
+  cats.forEach(c=>{
+    const b=document.createElement('button');
+    b.className='chip'+(curCat===c?' on':'');
+    b.textContent=(c==='all')?t('all'):t('cat_'+c);
+    b.onclick=()=>{ curCat=c; renderChips(); renderGrid(); };
+    $('chips').appendChild(b);
+  });
+}
+function renderGrid(){
+  const q=curQ.trim().toLowerCase();
+  const list=ARTICLES.filter(a=>
+    (curCat==='all'||a.cat===curCat) &&
+    (!q || (a.title[lang]+' '+a.ex[lang]).toLowerCase().includes(q))
+  );
+  const g=$('grid'); g.innerHTML='';
+  $('noRes').style.display=list.length?'none':'block';
+  list.forEach(a=>{
+    const d=document.createElement('article');
+    d.className='post'+(a.feat&&curCat==='all'&&!q?' featured':'');
+    d.innerHTML='<div class="cover '+a.grad+'"><span>'+a.icon+'</span><span class="cat"></span>'+(a.feat?'<span class="feat-tag"></span>':'')+'</div>'
+      +'<div class="pbody"><h3></h3><p></p><div class="meta"><span class="d"></span><span class="read"></span></div></div>';
+    d.querySelector('.cat').textContent=t('cat_'+a.cat);
+    if(a.feat) d.querySelector('.feat-tag').textContent=t('feat');
+    d.querySelector('h3').textContent=a.title[lang];
+    d.querySelector('p').textContent=a.ex[lang];
+    d.querySelector('.d').textContent=fmtDate(a.date)+' · '+a.mins+' '+t('min');
+    d.querySelector('.read').textContent=t('read');
+    d.onclick=()=>openArticle(a.id);
+    g.appendChild(d);
+  });
+}
+function openArticle(id){
+  const a=ARTICLES.find(x=>x.id===id); if(!a) return;
+  $('listView').style.display='none';
+  const r=$('reader'); r.style.display='block';
+  const cov=$('rCover'); cov.className='rcover '+a.grad; cov.textContent=a.icon;
+  $('rTitle').textContent=a.title[lang];
+  $('rMeta').textContent=t('cat_'+a.cat)+' · '+fmtDate(a.date)+' · '+a.mins+' '+t('min');
+  $('rNote').style.display=(lang==='fr')?'none':'block';
+  $('rBody').innerHTML=a.body;
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+$('btnBack').onclick=()=>{ $('reader').style.display='none'; $('listView').style.display='block'; window.scrollTo({top:0,behavior:'smooth'}); };
+$('search').addEventListener('input',e=>{ curQ=e.target.value; renderGrid(); });
+
+applyLang();
+</script>
+</body>
+</html>
