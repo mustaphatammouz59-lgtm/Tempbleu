@@ -81,7 +81,7 @@
   .reader h3{color:#26307a;margin:10px 0 4px}
   .reader .meta{color:#5a6482;font-size:14px;margin-bottom:12px;border-bottom:1px solid #e2e7f5;padding-bottom:10px}
   .reader .body{white-space:pre-wrap;word-break:break-word;background:#f7f9ff;border-radius:12px;padding:14px;font-size:15px}
-  .reader iframe{width:100%;min-height:320px;border:1px solid #e2e7f5;border-radius:12px;background:#fff}
+  .reader iframe{width:100%;min-height:200px;border:1px solid #e2e7f5;border-radius:12px;background:#fff}
   /* ===== Sections ===== */
   .rv{opacity:0;transform:translateY(26px);transition:opacity .6s ease,transform .6s ease}
   .rv.on{opacity:1;transform:none}
@@ -1013,13 +1013,13 @@ async function gmCreate(nameWanted){
 async function gmList(){
   const d = await gmCall({f:'check_email', seq:0, sid_token:session.token});
   if(d.sid_token) { session.token = d.sid_token; save(); }
-  return (d.list||[]).slice().reverse().map(m=>({id:String(m.mail_id), from:decodeEnt(m.mail_from||''), subject:decodeEnt(m.mail_subject||'(sans objet)'), intro:decodeEnt((m.mail_excerpt||'')).replace(/\s+/g,' ').slice(0,110), time:(m.mail_timestamp||0)*1000, seen:!!m.mail_read}));
+  return (d.list||[]).slice().map(m=>({id:String(m.mail_id), from:decodeEnt(m.mail_from||''), subject:decodeEnt(m.mail_subject||'(sans objet)'), intro:decodeEnt((m.mail_excerpt||'')).replace(/\s+/g,' ').slice(0,110), time:(m.mail_timestamp||0)*1000, seen:!!m.mail_read}));
 }
 async function gmRead(id){
   const m = await gmCall({f:'fetch_email', email_id:id, sid_token:session.token});
   const body = m.mail_body || '';
   const isHtml = /<[a-z][\s\S]*>/i.test(body);
-  const text = isHtml ? body.replace(/<br\s*\/?>/gi,'\n').replace(/<[^>]+>/g,'') : body;
+  const text = isHtml ? decodeEnt(body.replace(/<br\s*\/?>/gi,'\n').replace(/<[^>]+>/g,'')) : body;
   return {subject:decodeEnt(m.mail_subject||''), from:decodeEnt(m.mail_from||''), time:(m.mail_timestamp||0)*1000, text:text.trim(), html:isHtml ? body : ''};
 }
 async function gmDelete(){
@@ -1066,6 +1066,7 @@ async function refreshInbox(){
   if(!session) return;
   try{
     const msgs = await API.list();
+    msgs.sort((a,b)=> (b.time - a.time) || ((parseInt(b.id,10)||0) - (parseInt(a.id,10)||0)));
     $('count').textContent = msgs.length ? msgs.length + ' ✉️' : '';
     const list = $('list');
     if($('reader').style.display==='block') return;
@@ -1089,6 +1090,7 @@ async function refreshInbox(){
     });
   }catch(e){ setStatus(t('err')); }
 }
+function fitFrame(ifr){ try{ const doc = ifr.contentDocument; if(!doc) return; const hgt = Math.max(doc.documentElement ? doc.documentElement.scrollHeight : 0, doc.body ? doc.body.scrollHeight : 0); if(hgt) ifr.style.height = Math.max(200, Math.min(hgt, 1400)) + 'px'; }catch(e){} }
 async function openMsg(id){
   try{
     const m = await API.read(id);
@@ -1096,13 +1098,15 @@ async function openMsg(id){
     const r=$('reader'); r.style.display='block';
     $('rSubj').textContent = m.subject;
     $('rMeta').textContent = m.from + ' • ' + fmtTime(m.time);
-    $('rText').textContent = m.text || '';
-    $('rText').style.display = m.text ? 'block' : 'none';
+    const cleanText = (m.text || '').replace(/\r\n?/g,'\n').replace(/\u00a0/g,' ').replace(/[ \t]{2,}/g,' ').replace(/ *\n */g,'\n').replace(/\n{3,}/g,'\n\n').trim();
+    $('rText').textContent = cleanText;
+    $('rText').style.display = cleanText ? 'block' : 'none';
     const w=$('rHtmlWrap'); w.innerHTML='';
     if(m.html){
       const ifr=document.createElement('iframe');
-      ifr.setAttribute('sandbox','');
+      ifr.setAttribute('sandbox','allow-same-origin');
       ifr.srcdoc = m.html;
+      ifr.onload = ()=>{ fitFrame(ifr); setTimeout(()=>fitFrame(ifr), 600); };
       w.appendChild(ifr);
     }
     refreshInbox();
