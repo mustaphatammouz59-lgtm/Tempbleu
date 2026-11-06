@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://tempbleu.mustaphatammouz59.workers.dev/sitemap.xml
