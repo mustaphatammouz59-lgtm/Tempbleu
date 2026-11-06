@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TempBleu — Politique des cookies</title>
+<meta name="description" content="Quels cookies TempBleu utilise, pourquoi, et comment les contrôler.">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Segoe UI',system-ui,Arial,sans-serif;background:#eef1fb;color:#1c2340;line-height:1.65}
+  .container{max-width:1180px;margin:0 auto;padding:0 14px}
+  .grad{background:linear-gradient(140deg,#3F51B5 0%,#5b3fb8 55%,#8e2fb8 130%)}
+  .main-header{background:#fff;box-shadow:0 4px 18px rgba(26,35,126,.10);padding:12px 0}
+  .main-header .container{display:flex;align-items:center;justify-content:space-between;gap:10px}
+  .hbtns{display:flex;gap:8px;flex:1}
+  .tm-btn{display:inline-flex;align-items:center;gap:7px;border:2px solid #3F51B5;color:#3F51B5;background:#fff;border-radius:12px;padding:8px 15px;font-weight:800;font-size:14px;text-decoration:none;transition:all .15s}
+  .tm-btn:hover{background:#3F51B5;color:#fff}
+  .brand{flex:1;text-align:center}
+  .brand a{font-size:29px;font-weight:900;text-decoration:none;background:linear-gradient(120deg,#3F51B5,#8e2fb8);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .brand a span{color:#4CAF50;-webkit-text-fill-color:#4CAF50}
+  .langs{flex:1;display:flex;justify-content:flex-end;gap:5px}
+  .langs button{background:#eef1fa;border:1.5px solid #c9d2f0;color:#26307a;border-radius:18px;padding:4px 12px;cursor:pointer;font-weight:800;font-size:13px}
+  .langs button.on{background:linear-gradient(135deg,#3F51B5,#5b3fb8);color:#fff;border-color:transparent}
+  .band{padding:38px 14px 44px;text-align:center;position:relative;overflow:hidden}
+  .band h1{color:#fff;font-size:30px;text-shadow:0 3px 12px rgba(0,0,0,.25);margin-bottom:6px}
+  .band p{color:#dfe5ff;font-size:15.5px;max-width:640px;margin:0 auto}
+  .band .upd{color:#aeb9ec;font-size:13px;margin-top:10px}
+  main{max-width:840px;margin:-22px auto 0;padding:0 14px 10px;position:relative;z-index:3}
+  .card{background:#fff;border-radius:20px;box-shadow:0 16px 40px rgba(38,48,122,.14);padding:26px 28px}
+  .card h2{color:#26307a;font-size:19.5px;margin:20px 0 7px}
+  .card h2:first-child{margin-top:0}
+  .card p{color:#39415f;margin-bottom:9px}
+  .card ul{margin:0 0 10px;padding-inline-start:22px;color:#39415f}
+  .card li{margin-bottom:5px}
+  .card a{color:#3F51B5;font-weight:700}
+  .fld{margin-bottom:12px}
+  .fld label{display:block;font-weight:700;font-size:14px;color:#26307a;margin-bottom:5px}
+  .fld input,.fld select,.fld textarea{width:100%;padding:12px 15px;border:2px solid #c9d2f0;border-radius:12px;font-size:15.5px;color:#26307a;background:#fff;font-family:inherit}
+  .fld input:focus,.fld select:focus,.fld textarea:focus{border-color:#3F51B5;box-shadow:0 0 0 4px rgba(63,81,181,.15);outline:none}
+  .send{background:linear-gradient(135deg,#43c24f,#2f9e44);color:#fff;border:none;border-radius:12px;padding:13px 30px;font-size:16px;font-weight:800;cursor:pointer;width:100%}
+  .send:hover{filter:brightness(1.07)}
+  footer{background:linear-gradient(160deg,#171d3d,#232a5e);color:#c6cdf0;margin-top:36px;padding:26px 14px 30px;text-align:center}
+  .footer-nav{list-style:none;display:flex;justify-content:center;flex-wrap:wrap;gap:6px 20px;margin-bottom:14px}
+  .footer-nav a{color:#fff;text-decoration:none;font-weight:800;font-size:13.5px;text-transform:uppercase;letter-spacing:.4px}
+  .footer-nav a:hover{color:#4ADE80}
+  footer small{color:#8a93b2}
+  @media(max-width:700px){ .brand a{font-size:22px} .hbtns .tm-btn{padding:7px 10px;font-size:13px} .card{padding:20px} .band h1{font-size:25px} }
+</style>
+</head>
+<body>
+<header class="main-header">
+  <div class="container">
+    <div class="hbtns">
+      <a class="tm-btn" href="tempbleu.html">🏠 <span data-k="home"></span></a>
+      <a class="tm-btn" href="tempbleu-blog.html">📚 Blog</a>
+    </div>
+    <div class="brand"><a href="tempbleu.html">TempBleu<span>.com</span></a></div>
+    <div class="langs">
+      <button data-lang="fr" class="on">FR</button><button data-lang="en">EN</button><button data-lang="ar">ع</button>
+    </div>
+  </div>
+</header>
+<div class="band grad">
+  <h1 id="pgTitle"></h1>
+  <p id="pgSub"></p>
+  <div class="upd" id="pgUpd"></div>
+</div>
+<main><div class="card" id="pgBody"></div></main>
+<footer>
+  <ul class="footer-nav">
+    <li><a href="tempbleu.html" data-k="home"></a></li>
+    <li><a href="tempbleu-blog.html">Blog</a></li>
+    <li><a href="tempbleu-privacy.html" data-k="privacy"></a></li>
+    <li><a href="tempbleu-terms.html" data-k="terms"></a></li>
+    <li><a href="tempbleu-about.html" data-k="about"></a></li>
+    <li><a href="tempbleu-contact.html" data-k="contact"></a></li>
+    <li><a href="tempbleu-cookies.html" data-k="cookies"></a></li>
+    <li><a href="tempbleu-dmca.html" data-k="dmca"></a></li>
+  </ul>
+  <small>© 2026 TempBleu.com — <span data-k="rights"></span></small>
+</footer>
+<script>
+const PAGE = {"title": {"fr": "Politique des cookies", "en": "Cookie Policy", "ar": "سياسة ملفات تعريف الارتباط"}, "sub": {"fr": "Quels cookies TempBleu utilise, pourquoi, et comment les contrôler.", "en": "Which cookies TempBleu uses, why, and how to control them.", "ar": "ما هي ملفات تعريف الارتباط التي يستخدمها TempBleu، ولماذا، وكيف تتحكم فيها."}, "html": {"fr": "\n<h2>1. Qu'est-ce qu'un cookie</h2>\n<p>Un cookie est un petit fichier texte déposé sur votre appareil par un site web. TempBleu utilise aussi le <b>stockage local</b> de votre navigateur (localStorage), qui fonctionne de manière similaire mais ne quitte jamais votre appareil.</p>\n<h2>2. Cookies et stockage indispensables</h2>\n<ul>\n<li><b>Langue</b> : mémorise votre choix (français, anglais, arabe).</li>\n<li><b>Session temporaire</b> : garde votre adresse en cours et son compte à rebours de 10 minutes, pour survivre à un rechargement de page.</li>\n<li><b>Consentement</b> : retient que vous avez vu et accepté le bandeau cookies.</li>\n<li><b>Préférences</b> : par exemple le réglage du son des notifications et vos adresses enregistrées.</li>\n</ul>\n<p>Ces éléments sont nécessaires au fonctionnement du service. Ils ne contiennent ni mot de passe, ni donnée d'identité, et disparaissent avec les réglages de votre navigateur.</p>\n<h2>3. Cookies publicitaires</h2>\n<p>Lorsque des publicités sont affichées (Google AdSense), des fournisseurs tiers — dont Google — peuvent déposer des cookies pour mesurer et personnaliser les annonces. Vous pouvez refuser la personnalisation dans les <a href=\"https://adssettings.google.com\" target=\"_blank\" rel=\"noopener\">Paramètres des annonces Google</a>. Le détail complet figure dans notre <a href=\"tempbleu-privacy.html\">Politique de confidentialité</a>.</p>\n<h2>4. Cookies de mesure d'audience</h2>\n<p>Notre hébergeur peut générer des journaux techniques anonymisés (pages visitées, type d'appareil) pour faire fonctionner et sécuriser le site. Nous n'utilisons pas ces données pour vous identifier.</p>\n<h2>5. Comment les contrôler</h2>\n<ul>\n<li>Chaque navigateur permet de bloquer ou d'effacer les cookies et le stockage local (réglages « Confidentialité »).</li>\n<li>Effacer le stockage local de TempBleu supprime votre adresse en cours : une nouvelle sera créée, sans autre conséquence.</li>\n<li>Le mode navigation privée limite automatiquement la durée de vie de ces fichiers.</li>\n</ul>\n<h2>6. Modifications</h2>\n<p>Cette politique peut évoluer avec le service ; la date de mise à jour figure en haut de page.</p>\n", "en": "\n<h2>1. What a cookie is</h2>\n<p>A cookie is a small text file stored on your device by a website. TempBleu also uses your browser's <b>local storage</b> (localStorage), which works similarly but never leaves your device.</p>\n<h2>2. Essential cookies and storage</h2>\n<ul>\n<li><b>Language</b>: remembers your choice (French, English, Arabic).</li>\n<li><b>Temporary session</b>: keeps your current address and its 10-minute countdown, so it survives a page reload.</li>\n<li><b>Consent</b>: remembers that you saw and accepted the cookie banner.</li>\n<li><b>Preferences</b>: for example the notification-sound setting and your saved addresses.</li>\n</ul>\n<p>These items are required for the service to work. They contain no password and no identity data, and they disappear with your browser settings.</p>\n<h2>3. Advertising cookies</h2>\n<p>When ads are displayed (Google AdSense), third-party vendors — including Google — may set cookies to measure and personalize ads. You can opt out of personalization in <a href=\"https://adssettings.google.com\" target=\"_blank\" rel=\"noopener\">Google Ads Settings</a>. Full details are in our <a href=\"tempbleu-privacy.html\">Privacy Policy</a>.</p>\n<h2>4. Audience measurement</h2>\n<p>Our host may generate anonymized technical logs (pages visited, device type) to run and secure the site. We do not use this data to identify you.</p>\n<h2>5. How to control them</h2>\n<ul>\n<li>Every browser lets you block or clear cookies and local storage (the \"Privacy\" settings).</li>\n<li>Clearing TempBleu's local storage removes your current address: a new one will be created, with no other consequence.</li>\n<li>Private browsing mode automatically limits these files' lifetime.</li>\n</ul>\n<h2>6. Changes</h2>\n<p>This policy may evolve with the service; the update date appears at the top of the page.</p>\n", "ar": "\n<h2>1. ما هو ملف تعريف الارتباط</h2>\n<p>ملف تعريف الارتباط (كوكيز) هو ملف نصي صغير يخزنه موقع ويب على جهازك. يستخدم TempBleu أيضًا <b>التخزين المحلي</b> في متصفحك (localStorage)، وهو يعمل بطريقة مشابهة لكنه لا يغادر جهازك أبدًا.</p>\n<h2>2. ملفات ضرورية للخدمة</h2>\n<ul>\n<li><b>اللغة</b>: تحفظ اختيارك (الفرنسية، الإنجليزية، العربية).</li>\n<li><b>الجلسة المؤقتة</b>: تحفظ عنوانك الحالي وعدّاده التنازلي (10 دقائق) حتى يصمد عند إعادة تحميل الصفحة.</li>\n<li><b>الموافقة</b>: تحفظ أنك رأيت شريط الكوكيز ووافقت عليه.</li>\n<li><b>التفضيلات</b>: مثل إعداد صوت الإشعارات وعناوينك المحفوظة.</li>\n</ul>\n<p>هذه العناصر ضرورية لعمل الخدمة. لا تحتوي على أي كلمة سر ولا بيانات هوية، وتختفي بمسح إعدادات متصفحك.</p>\n<h2>3. ملفات الإعلانات</h2>\n<p>عند عرض الإعلانات (Google AdSense)، قد يضع مقدمون خارجيون — ومنهم Google — ملفات لقياس الإعلانات وتخصيصها. يمكنك رفض التخصيص من <a href=\"https://adssettings.google.com\" target=\"_blank\" rel=\"noopener\">إعدادات إعلانات Google</a>. والتفاصيل الكاملة في <a href=\"tempbleu-privacy.html\">سياسة الخصوصية</a>.</p>\n<h2>4. قياس الجمهور</h2>\n<p>قد ينتج مستضيفنا سجلات تقنية مجهولة الهوية (الصفحات المُزارة، نوع الجهاز) لتشغيل الموقع وتأمينه. لا نستخدم هذه البيانات للتعرف عليك.</p>\n<h2>5. كيف تتحكم فيها</h2>\n<ul>\n<li>كل متصفح يسمح بحظر ملفات تعريف الارتباط والتخزين المحلي أو مسحها (إعدادات «الخصوصية»).</li>\n<li>مسح التخزين المحلي لـ TempBleu يحذف عنوانك الحالي: سيتم إنشاء عنوان جديد، دون أي أثر آخر.</li>\n<li>وضع التصفح الخاص يحد تلقائيًا من عمر هذه الملفات.</li>\n</ul>\n<h2>6. التعديلات</h2>\n<p>قد تتطور هذه السياسة مع الخدمة؛ ويظهر تاريخ التحديث في أعلى الصفحة.</p>\n"}};
+const NAVL = {"home": {"fr": "Accueil", "en": "Home", "ar": "الرئيسية"}, "privacy": {"fr": "Confidentialité", "en": "Privacy", "ar": "الخصوصية"}, "terms": {"fr": "Conditions", "en": "Terms", "ar": "الشروط"}, "about": {"fr": "À propos", "en": "About", "ar": "حول"}, "contact": {"fr": "Contact", "en": "Contact", "ar": "اتصل بنا"}, "rights": {"fr": "Tous droits réservés.", "en": "All rights reserved.", "ar": "جميع الحقوق محفوظة."}, "cookies": {"fr": "Cookies", "en": "Cookies", "ar": "الكوكيز"}, "dmca": {"fr": "DMCA", "en": "DMCA", "ar": "DMCA"}};
+const UPD = {"fr": "Dernière mise à jour : 31 octobre 2026", "en": "Last updated: October 31, 2026", "ar": "آخر تحديث: 31 أكتوبر 2026"};
+let lang = localStorage.getItem('tempbleu_lang') || 'fr';
+function apply(l){
+  lang = l; localStorage.setItem('tempbleu_lang', l);
+  document.documentElement.lang = l; document.documentElement.dir = (l==='ar') ? 'rtl' : 'ltr';
+  document.querySelectorAll('.langs button').forEach(b=>b.classList.toggle('on', b.dataset.lang===l));
+  document.getElementById('pgTitle').textContent = PAGE.title[l];
+  document.getElementById('pgSub').textContent = PAGE.sub[l];
+  document.getElementById('pgUpd').textContent = true ? UPD[l] : '';
+  document.getElementById('pgBody').innerHTML = PAGE.html[l];
+  document.querySelectorAll('[data-k]').forEach(el=>{ el.textContent = NAVL[el.dataset.k][l]; });
+  document.title = 'TempBleu — ' + PAGE.title[l];
+  bindForm();
+}
+function bindForm(){
+  const f = document.getElementById('cForm');
+  if(!f) return;
+  f.onsubmit = (e)=>{
+    e.preventDefault();
+    const name=document.getElementById('cfName').value, mail=document.getElementById('cfMail').value,
+          subj=document.getElementById('cfSubj').value, msg=document.getElementById('cfMsg').value;
+    const body = msg + '\n\n— ' + name + (mail ? ' <'+mail+'>' : '');
+    location.href = 'mailto:contact@tempbleu.com?subject=' + encodeURIComponent('[TempBleu] ' + subj) + '&body=' + encodeURIComponent(body);
+  };
+}
+document.querySelectorAll('.langs button').forEach(b=> b.onclick = ()=>apply(b.dataset.lang));
+apply(['fr','en','ar'].includes(lang) ? lang : 'fr');
+</script>
+</body>
+</html>
