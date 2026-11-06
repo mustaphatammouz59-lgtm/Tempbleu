@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TempBleu — DMCA et droits d'auteur</title>
+<meta name="description" content="Comment signaler un contenu protégé reçu via TempBleu, et notre engagement contre les abus.">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Segoe UI',system-ui,Arial,sans-serif;background:#eef1fb;color:#1c2340;line-height:1.65}
+  .container{max-width:1180px;margin:0 auto;padding:0 14px}
+  .grad{background:linear-gradient(140deg,#3F51B5 0%,#5b3fb8 55%,#8e2fb8 130%)}
+  .main-header{background:#fff;box-shadow:0 4px 18px rgba(26,35,126,.10);padding:12px 0}
+  .main-header .container{display:flex;align-items:center;justify-content:space-between;gap:10px}
+  .hbtns{display:flex;gap:8px;flex:1}
+  .tm-btn{display:inline-flex;align-items:center;gap:7px;border:2px solid #3F51B5;color:#3F51B5;background:#fff;border-radius:12px;padding:8px 15px;font-weight:800;font-size:14px;text-decoration:none;transition:all .15s}
+  .tm-btn:hover{background:#3F51B5;color:#fff}
+  .brand{flex:1;text-align:center}
+  .brand a{font-size:29px;font-weight:900;text-decoration:none;background:linear-gradient(120deg,#3F51B5,#8e2fb8);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .brand a span{color:#4CAF50;-webkit-text-fill-color:#4CAF50}
+  .langs{flex:1;display:flex;justify-content:flex-end;gap:5px}
+  .langs button{background:#eef1fa;border:1.5px solid #c9d2f0;color:#26307a;border-radius:18px;padding:4px 12px;cursor:pointer;font-weight:800;font-size:13px}
+  .langs button.on{background:linear-gradient(135deg,#3F51B5,#5b3fb8);color:#fff;border-color:transparent}
+  .band{padding:38px 14px 44px;text-align:center;position:relative;overflow:hidden}
+  .band h1{color:#fff;font-size:30px;text-shadow:0 3px 12px rgba(0,0,0,.25);margin-bottom:6px}
+  .band p{color:#dfe5ff;font-size:15.5px;max-width:640px;margin:0 auto}
+  .band .upd{color:#aeb9ec;font-size:13px;margin-top:10px}
+  main{max-width:840px;margin:-22px auto 0;padding:0 14px 10px;position:relative;z-index:3}
+  .card{background:#fff;border-radius:20px;box-shadow:0 16px 40px rgba(38,48,122,.14);padding:26px 28px}
+  .card h2{color:#26307a;font-size:19.5px;margin:20px 0 7px}
+  .card h2:first-child{margin-top:0}
+  .card p{color:#39415f;margin-bottom:9px}
+  .card ul{margin:0 0 10px;padding-inline-start:22px;color:#39415f}
+  .card li{margin-bottom:5px}
+  .card a{color:#3F51B5;font-weight:700}
+  .fld{margin-bottom:12px}
+  .fld label{display:block;font-weight:700;font-size:14px;color:#26307a;margin-bottom:5px}
+  .fld input,.fld select,.fld textarea{width:100%;padding:12px 15px;border:2px solid #c9d2f0;border-radius:12px;font-size:15.5px;color:#26307a;background:#fff;font-family:inherit}
+  .fld input:focus,.fld select:focus,.fld textarea:focus{border-color:#3F51B5;box-shadow:0 0 0 4px rgba(63,81,181,.15);outline:none}
+  .send{background:linear-gradient(135deg,#43c24f,#2f9e44);color:#fff;border:none;border-radius:12px;padding:13px 30px;font-size:16px;font-weight:800;cursor:pointer;width:100%}
+  .send:hover{filter:brightness(1.07)}
+  footer{background:linear-gradient(160deg,#171d3d,#232a5e);color:#c6cdf0;margin-top:36px;padding:26px 14px 30px;text-align:center}
+  .footer-nav{list-style:none;display:flex;justify-content:center;flex-wrap:wrap;gap:6px 20px;margin-bottom:14px}
+  .footer-nav a{color:#fff;text-decoration:none;font-weight:800;font-size:13.5px;text-transform:uppercase;letter-spacing:.4px}
+  .footer-nav a:hover{color:#4ADE80}
+  footer small{color:#8a93b2}
+  @media(max-width:700px){ .brand a{font-size:22px} .hbtns .tm-btn{padding:7px 10px;font-size:13px} .card{padding:20px} .band h1{font-size:25px} }
+</style>
+</head>
+<body>
+<header class="main-header">
+  <div class="container">
+    <div class="hbtns">
+      <a class="tm-btn" href="tempbleu.html">🏠 <span data-k="home"></span></a>
+      <a class="tm-btn" href="tempbleu-blog.html">📚 Blog</a>
+    </div>
+    <div class="brand"><a href="tempbleu.html">TempBleu<span>.com</span></a></div>
+    <div class="langs">
+      <button data-lang="fr" class="on">FR</button><button data-lang="en">EN</button><button data-lang="ar">ع</button>
+    </div>
+  </div>
+</header>
+<div class="band grad">
+  <h1 id="pgTitle"></h1>
+  <p id="pgSub"></p>
+  <div class="upd" id="pgUpd"></div>
+</div>
+<main><div class="card" id="pgBody"></div></main>
+<footer>
+  <ul class="footer-nav">
+    <li><a href="tempbleu.html" data-k="home"></a></li>
+    <li><a href="tempbleu-blog.html">Blog</a></li>
+    <li><a href="tempbleu-privacy.html" data-k="privacy"></a></li>
+    <li><a href="tempbleu-terms.html" data-k="terms"></a></li>
+    <li><a href="tempbleu-about.html" data-k="about"></a></li>
+    <li><a href="tempbleu-contact.html" data-k="contact"></a></li>
+    <li><a href="tempbleu-cookies.html" data-k="cookies"></a></li>
+    <li><a href="tempbleu-dmca.html" data-k="dmca"></a></li>
+  </ul>
+  <small>© 2026 TempBleu.com — <span data-k="rights"></span></small>
+</footer>
+<script>
+const PAGE = {"title": {"fr": "DMCA et droits d'auteur", "en": "DMCA & Copyright", "ar": "حقوق النشر وDMCA"}, "sub": {"fr": "Comment signaler un contenu protégé reçu via TempBleu, et notre engagement contre les abus.", "en": "How to report protected content received through TempBleu, and our commitment against abuse.", "ar": "كيف تبلغ عن محتوى محمي وصل عبر TempBleu، والتزامنا ضد إساءة الاستخدام."}, "html": {"fr": "\n<h2>1. Notre position</h2>\n<p>TempBleu est un service de réception d'e-mails temporaires : nous ne publions pas de contenu et n'hébergeons aucune œuvre. Les messages reçus appartiennent à leurs expéditeurs, transitent par le service et sont <b>automatiquement supprimés après 10 minutes</b>. Nous respectons le droit d'auteur et la procédure de notification prévue par le DMCA (Digital Millennium Copyright Act) ainsi que les lois équivalentes.</p>\n<h2>2. Signaler une atteinte</h2>\n<p>Si vous êtes titulaire de droits (ou son représentant) et qu'un contenu protégé a été reçu ou utilisé de manière abusive via une adresse TempBleu, écrivez-nous via la page <a href=\"tempbleu-contact.html\">Contact</a> (sujet « Signaler un abus ») ou à <b>contact@tempbleu.com</b>, en précisant :</p>\n<ul>\n<li>Votre nom et un moyen de vous joindre.</li>\n<li>L'œuvre protégée concernée.</li>\n<li>L'adresse TempBleu ou le message en cause, avec la date et l'heure.</li>\n<li>Une déclaration de bonne foi indiquant que l'usage n'est pas autorisé.</li>\n<li>Une déclaration d'exactitude, sous peine de parjure, et votre signature (électronique acceptée).</li>\n</ul>\n<h2>3. Notre traitement</h2>\n<p>Tout signalement complet est examiné rapidement. Les adresses étant éphémères par conception (10 minutes), le contenu incriminé disparaît de lui-même très vite ; nous pouvons en outre bloquer les adresses et expéditeurs abusifs signalés de manière répétée.</p>\n<h2>4. Contenu du site lui-même</h2>\n<p>Le design, le code et les textes de TempBleu — y compris les articles du blog — sont des créations originales. Si vous estimez qu'un élément de ce site porte atteinte à vos droits, contactez-nous avec les précisions ci-dessus : tout élément valablement signalé sera retiré ou corrigé.</p>\n<h2>5. Contre-notification</h2>\n<p>Si vous pensez qu'un signalement vous concernant est erroné, écrivez-nous avec vos coordonnées et les éléments justificatifs ; nous réexaminerons le dossier.</p>\n", "en": "\n<h2>1. Our position</h2>\n<p>TempBleu is a temporary e-mail receiving service: we publish no content and host no works. Received messages belong to their senders, pass through the service and are <b>automatically deleted after 10 minutes</b>. We respect copyright and the notice procedure of the DMCA (Digital Millennium Copyright Act) and equivalent laws.</p>\n<h2>2. Report an infringement</h2>\n<p>If you are a rights holder (or their representative) and protected content was received or abused through a TempBleu address, write to us via the <a href=\"tempbleu-contact.html\">Contact</a> page (subject \"Report abuse\") or at <b>contact@tempbleu.com</b>, stating:</p>\n<ul>\n<li>Your name and a way to reach you.</li>\n<li>The protected work concerned.</li>\n<li>The TempBleu address or message involved, with date and time.</li>\n<li>A good-faith statement that the use is not authorized.</li>\n<li>A statement of accuracy, under penalty of perjury, and your signature (electronic accepted).</li>\n</ul>\n<h2>3. How we handle it</h2>\n<p>Every complete report is reviewed promptly. As addresses are ephemeral by design (10 minutes), the reported content disappears by itself very quickly; we can additionally block addresses and senders reported repeatedly for abuse.</p>\n<h2>4. The site's own content</h2>\n<p>TempBleu's design, code and texts — including the blog articles — are original creations. If you believe any element of this site infringes your rights, contact us with the details above: any validly reported element will be removed or corrected.</p>\n<h2>5. Counter-notification</h2>\n<p>If you believe a report about you is mistaken, write to us with your contact details and supporting elements; we will review the case again.</p>\n", "ar": "\n<h2>1. موقفنا</h2>\n<p>TempBleu خدمة لاستقبال البريد المؤقت: لا ننشر أي محتوى ولا نستضيف أي أعمال. الرسائل المستلمة ملك لمرسليها، تمر عبر الخدمة وتُحذف <b>تلقائيًا بعد 10 دقائق</b>. نحترم حقوق النشر وإجراء الإشعار المنصوص عليه في قانون DMCA والقوانين المماثلة.</p>\n<h2>2. التبليغ عن انتهاك</h2>\n<p>إذا كنت صاحب حقوق (أو ممثله) وتم استقبال محتوى محمي أو إساءة استخدامه عبر عنوان TempBleu، راسلنا عبر صفحة <a href=\"tempbleu-contact.html\">اتصل بنا</a> (الموضوع «تبليغ عن إساءة») أو على <b>contact@tempbleu.com</b>، مع ذكر:</p>\n<ul>\n<li>اسمك ووسيلة للتواصل معك.</li>\n<li>العمل المحمي المعني.</li>\n<li>عنوان TempBleu أو الرسالة المعنية، مع التاريخ والوقت.</li>\n<li>تصريح بحسن نية بأن الاستخدام غير مصرح به.</li>\n<li>تصريح بالدقة تحت طائلة عقوبة شهادة الزور، وتوقيعك (الإلكتروني مقبول).</li>\n</ul>\n<h2>3. كيف نعالج التبليغ</h2>\n<p>يتم فحص كل تبليغ كامل بسرعة. وبما أن العناوين زائلة بالتصميم (10 دقائق)، فإن المحتوى المُبلَّغ عنه يختفي من تلقاء نفسه بسرعة كبيرة؛ كما يمكننا حظر العناوين والمرسلين المُبلَّغ عنهم تكرارًا بسبب الإساءة.</p>\n<h2>4. محتوى الموقع نفسه</h2>\n<p>تصميم TempBleu وكوده ونصوصه — بما فيها مقالات المدونة — إبداعات أصلية. إذا اعتقدت أن أي عنصر في هذا الموقع ينتهك حقوقك، راسلنا بالتفاصيل أعلاه: سيتم حذف أي عنصر مُبلَّغ عنه بشكل صحيح أو تصحيحه.</p>\n<h2>5. الإشعار المضاد</h2>\n<p>إذا اعتقدت أن تبليغًا بشأنك خاطئ، راسلنا بإحداثياتك والعناصر الداعمة؛ سنعيد فحص الملف.</p>\n"}};
+const NAVL = {"home": {"fr": "Accueil", "en": "Home", "ar": "الرئيسية"}, "privacy": {"fr": "Confidentialité", "en": "Privacy", "ar": "الخصوصية"}, "terms": {"fr": "Conditions", "en": "Terms", "ar": "الشروط"}, "about": {"fr": "À propos", "en": "About", "ar": "حول"}, "contact": {"fr": "Contact", "en": "Contact", "ar": "اتصل بنا"}, "rights": {"fr": "Tous droits réservés.", "en": "All rights reserved.", "ar": "جميع الحقوق محفوظة."}, "cookies": {"fr": "Cookies", "en": "Cookies", "ar": "الكوكيز"}, "dmca": {"fr": "DMCA", "en": "DMCA", "ar": "DMCA"}};
+const UPD = {"fr": "Dernière mise à jour : 31 octobre 2026", "en": "Last updated: October 31, 2026", "ar": "آخر تحديث: 31 أكتوبر 2026"};
+let lang = localStorage.getItem('tempbleu_lang') || 'fr';
+function apply(l){
+  lang = l; localStorage.setItem('tempbleu_lang', l);
+  document.documentElement.lang = l; document.documentElement.dir = (l==='ar') ? 'rtl' : 'ltr';
+  document.querySelectorAll('.langs button').forEach(b=>b.classList.toggle('on', b.dataset.lang===l));
+  document.getElementById('pgTitle').textContent = PAGE.title[l];
+  document.getElementById('pgSub').textContent = PAGE.sub[l];
+  document.getElementById('pgUpd').textContent = true ? UPD[l] : '';
+  document.getElementById('pgBody').innerHTML = PAGE.html[l];
+  document.querySelectorAll('[data-k]').forEach(el=>{ el.textContent = NAVL[el.dataset.k][l]; });
+  document.title = 'TempBleu — ' + PAGE.title[l];
+  bindForm();
+}
+function bindForm(){
+  const f = document.getElementById('cForm');
+  if(!f) return;
+  f.onsubmit = (e)=>{
+    e.preventDefault();
+    const name=document.getElementById('cfName').value, mail=document.getElementById('cfMail').value,
+          subj=document.getElementById('cfSubj').value, msg=document.getElementById('cfMsg').value;
+    const body = msg + '\n\n— ' + name + (mail ? ' <'+mail+'>' : '');
+    location.href = 'mailto:contact@tempbleu.com?subject=' + encodeURIComponent('[TempBleu] ' + subj) + '&body=' + encodeURIComponent(body);
+  };
+}
+document.querySelectorAll('.langs button').forEach(b=> b.onclick = ()=>apply(b.dataset.lang));
+apply(['fr','en','ar'].includes(lang) ? lang : 'fr');
+</script>
+</body>
+</html>
